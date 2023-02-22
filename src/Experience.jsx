@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import * as THREE from 'three'
 
 export default function Experience() {
-    const { sectionBkgdColor } = useControls({ sectionBkgdColor: '#ffffff' })
+    const { sectionBkgdColor, textPos, textRotation } = useControls({ sectionBkgdColor: '#ffffff', textPos: [ -0.9, 2, 0.5], textRotation: [ -Math.PI * .5 , 0, 0 ] })
     const light = useRef(null)
     useHelper(light, THREE.DirectionalLightHelper, 1)
     return (
@@ -36,7 +36,8 @@ export default function Experience() {
                 anchor={[ 0, 0, 0 ]}
             >
                 <Text
-                    position={[ 0, 3, 0 ]}
+                    position={ textPos }
+                    rotation={ textRotation }
                     castShadow
                 >
                     Work
