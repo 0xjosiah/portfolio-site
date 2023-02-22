@@ -2,7 +2,8 @@ import vertexShader from '../shaders/ocean/vertex.glsl'
 import fragmentShader from '../shaders/ocean/fragment.glsl'
 import { shaderMaterial } from '@react-three/drei'
 import * as THREE from 'three'
-import { extend } from '@react-three/fiber'
+import { extend, useFrame } from '@react-three/fiber'
+import { useRef } from 'react'
 
 // console.log(vertex)
 // console.log(fragment)
@@ -39,13 +40,18 @@ const OceanMaterial = shaderMaterial(
 extend({ OceanMaterial })
 
 export default function Ocean() {
+    const oceanMat = useRef(null)
+    useFrame((state, delta) => {
+        oceanMat.current.uTime += delta
+    })
+
     return (
         <>
             <mesh
                 geometry={ waterGeometry }
                 rotation-x={ - Math.PI * 0.5 }
             >
-                <oceanMaterial />
+                <oceanMaterial ref={ oceanMat } />
             </mesh>
         </>
     )
