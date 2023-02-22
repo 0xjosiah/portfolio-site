@@ -43,10 +43,12 @@ export default function Ocean() {
         oceanMat.current.uTime += delta
     })
 
-    const { pos, rotation } = useControls({
-        pos: [ 0, 0, 0 ],
-        rotation: [ - Math.PI * 0.5, 0, 0 ]
-    })
+    // const { pos, rotation } = useControls({
+    //     pos: [ 0, 0, 0 ],
+    //     rotation: [ - Math.PI * 0.5, 0, 0 ]
+    // })
+    const pos = [ 0, 0, 0 ]
+    const rotation = [ - Math.PI * 0.5, 0, 0 ]
 
     return (
         <>
