@@ -1,4 +1,5 @@
 import { OrbitControls } from '@react-three/drei'
+import Ocean from './components/Ocean'
 import Section from './components/Section'
 
 export default function Experience() {
@@ -7,7 +8,8 @@ export default function Experience() {
         <>
             <OrbitControls makeDefault />
             {/* <ambientLight intensity={ 0.5 } /> */}
-
+            
+            <Ocean />
             <Section />
         </>
     )
