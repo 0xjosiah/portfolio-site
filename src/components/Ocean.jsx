@@ -43,6 +43,7 @@ export default function Ocean() {
         <>
             <mesh
                 geometry={ waterGeometry }
+                rotation-x={ - Math.PI * 0.5 }
             >
                 <oceanMaterial />
             </mesh>

@@ -10,7 +10,7 @@ export default function Experience() {
             {/* <ambientLight intensity={ 0.5 } /> */}
             
             <Ocean />
-            <Section />
+            {/* <Section /> */}
         </>
     )
 }
