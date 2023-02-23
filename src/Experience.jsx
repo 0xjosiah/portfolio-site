@@ -1,5 +1,6 @@
 import { OrbitControls, Sky } from '@react-three/drei'
 import { useControls } from 'leva'
+import { Perf } from 'r3f-perf'
 import Ocean from './components/Ocean'
 import Section from './components/Section'
 
@@ -18,7 +19,7 @@ export default function Experience() {
     return (
         <>
             <OrbitControls makeDefault />
-            {/* <ambientLight intensity={ 0.5 } /> */}
+            <Perf position='top-left' />
             
             <Ocean />
             {/* <Sky 
@@ -30,7 +31,7 @@ export default function Experience() {
                 azimuth={ azimuth }
                 exposure={ exposure }
             /> */}
-            {/* <Section /> */}
+            <Section />
         </>
     )
 }

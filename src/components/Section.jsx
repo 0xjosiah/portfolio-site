@@ -4,7 +4,12 @@ import { useRef } from 'react'
 import * as THREE from 'three'
 
 export default function Section({ }) {
-    const { sectionBkgdColor, textPos, textRotation } = useControls({ sectionBkgdColor: '#ffffff', textPos: [ -0.9, 2, 0.5], textRotation: [ -Math.PI * .5 , 0, 0 ] })
+    const { sectionBkgdColor, textPos, textRotation, textColor } = useControls({
+        sectionBkgdColor: '#ffffff',
+        textPos: [ -0.9, 2, 0.5],
+        textRotation: [ -Math.PI * .5 , 0, 0 ],
+        textColor: { r: 0, g: 0, b: 0 },
+    })
     const light = useRef(null)
     useHelper(light, THREE.DirectionalLightHelper, 1)
 
@@ -36,9 +41,11 @@ export default function Section({ }) {
                 <Text
                     position={ textPos }
                     rotation={ textRotation }
+                    color={ textColor }
                     castShadow
                 >
                     Work
+                    {/* <meshMatcapMaterial /> */}
                 </Text>
 
             </PivotControls>
