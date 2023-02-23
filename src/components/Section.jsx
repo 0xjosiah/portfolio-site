@@ -1,4 +1,4 @@
-import { GizmoHelper, OrbitControls, PivotControls, SpotLight, Text, useHelper } from '@react-three/drei'
+import { ContactShadows, GizmoHelper, OrbitControls, PivotControls, SpotLight, Text, useHelper } from '@react-three/drei'
 import { useControls } from 'leva'
 import { useRef } from 'react'
 import * as THREE from 'three'
@@ -23,14 +23,14 @@ export default function Section({ }) {
                     ref={ light }
                     castShadow
                     position={ [ -1, 4, 1 ] }
-                    intensity={ 1.5 }
-                    shadow-mapSize={ [ 1024, 1024 ] }
+                    intensity={ .75 }
+                    shadow-mapSize={ [ 2048, 2048 ] }
                     shadow-camera-near={ 1 }
-                    shadow-camera-far={ 10 }
-                    shadow-camera-top={ 10 }
-                    shadow-camera-right={ 10 }
-                    shadow-camera-bottom={ - 10 }
-                    shadow-camera-left={ - 10 }
+                    shadow-camera-far={ 20 }
+                    shadow-camera-top={ 20 }
+                    shadow-camera-right={ 20 }
+                    shadow-camera-bottom={ - 20 }
+                    shadow-camera-left={ - 20 }
                 />
             </PivotControls>
 
