@@ -24,9 +24,18 @@ export function Fish(props) {
 
   return (
     <group ref={model} {...props} dispose={null}>
-      <mesh geometry={nodes.Mesh_fish.geometry} material={new THREE.MeshBasicMaterial( { color: pink } )} />
-      <mesh geometry={nodes.Mesh_fish_1.geometry} material={new THREE.MeshBasicMaterial( { color: grey } )} />
-      <mesh geometry={nodes.Mesh_fish_2.geometry} material={new THREE.MeshBasicMaterial({ color: defaultColor })} />
+      <mesh geometry={nodes.Mesh_fish.geometry} material={
+        // new THREE.MeshBasicMaterial( { color: pink } )
+        materials.pink
+      } />
+      <mesh geometry={nodes.Mesh_fish_1.geometry} material={
+        // new THREE.MeshBasicMaterial( { color: grey } )
+        materials.greyLight
+      } />
+      <mesh geometry={nodes.Mesh_fish_2.geometry} material={
+        // new THREE.MeshBasicMaterial({ color: defaultColor })
+        materials._defaultMat
+      } />
     </group>
   )
 }

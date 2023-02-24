@@ -38,7 +38,7 @@ export default function Section({ }) {
     return (
         <>
             {/* Directional Light */}
-            {/* <PivotControls
+            <PivotControls
                 // anchor={[ 0, 0, 0 ]}
             >
                 <directionalLight
@@ -54,7 +54,7 @@ export default function Section({ }) {
                     shadow-camera-bottom={ - 20 }
                     shadow-camera-left={ - 20 }
                 />
-            </PivotControls> */}
+            </PivotControls>
 
             {/* Section Title */}
             {/* <PivotControls
@@ -75,11 +75,11 @@ export default function Section({ }) {
             {/* Section Board */}
             <mesh
                 receiveShadow
-                position={[ 0, 0, 0 ]}
+                position={[ 0, 0, -0.2 ]}
             >
                 <planeGeometry args={[ 4, 4]} />
-                <meshStandardMaterial color={ sectionBkgdColor } side={THREE.DoubleSide}/>
-                {/* <MeshTransmissionMaterial {...config} /> */}
+                {/* <meshStandardMaterial color={ sectionBkgdColor } side={THREE.DoubleSide}/> */}
+                <MeshTransmissionMaterial {...config} />
             </mesh>
         </>
     )

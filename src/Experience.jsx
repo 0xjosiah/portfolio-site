@@ -32,9 +32,10 @@ export default function Experience() {
                         position={[ width * 0.6, 2, 2 ]}
                     >
                         <Fish rotation-y={Math.PI * 0.5} position-x={-2} />
-                        <Text color='black'>
+                        <Text color='black' castShadow>
                             About
                         </Text>
+                        <Section />
                     </Float>
                     <Float
                         position={[ width, 2, -4 ]}
