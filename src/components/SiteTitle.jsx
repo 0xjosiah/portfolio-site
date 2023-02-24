@@ -13,14 +13,23 @@ export default function SiteTitle(props) {
         bevelSegments: 4
     }
 
-    const textureProps = useTexture({
-        matcap: './textures/matcaps/chrome.png'
-    })
+    // TODO: clean up when decide texture
+    const [ chrome, colorShift, gore, limeGreenToon, skin, slate, sunSet, tan ] = useTexture([
+        './textures/matcaps/chrome.png',
+        './textures/matcaps/colorShift.png',
+        './textures/matcaps/gore.png',
+        './textures/matcaps/limeGreenToon.png',
+        './textures/matcaps/skin.png',
+        './textures/matcaps/slate.png',
+        './textures/matcaps/sunSet.png',
+        './textures/matcaps/tan.png',
+
+    ])
 
     return (
         <Text3D font={'./fonts/dosis/Dosis_Regular.json'} {...textOptions} {...props}>
             {text}
-            <meshMatcapMaterial {...textureProps} />
+            <meshMatcapMaterial matcap={ chrome } />
         </Text3D>
     )
 }
