@@ -2,6 +2,7 @@ import { Float, OrbitControls, Scroll, ScrollControls, Sky, Text } from '@react-
 import { useThree } from '@react-three/fiber'
 import { useControls } from 'leva'
 import { Perf } from 'r3f-perf'
+import { Fish } from './components/Fish'
 import Ocean from './components/Ocean'
 import Section from './components/Section'
 import SiteTitle from './components/SiteTitle'
@@ -30,6 +31,7 @@ export default function Experience() {
                     <Float
                         position={[ width * 0.6, 2, 2 ]}
                     >
+                        <Fish />
                         <Text color='black'>
                             About
                         </Text>
