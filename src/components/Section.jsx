@@ -1,4 +1,4 @@
-import { ContactShadows, GizmoHelper, OrbitControls, PivotControls, SpotLight, Text, useHelper } from '@react-three/drei'
+import { ContactShadows, GizmoHelper, MeshTransmissionMaterial, OrbitControls, PivotControls, SpotLight, Text, useHelper } from '@react-three/drei'
 import { useControls } from 'leva'
 import { useRef } from 'react'
 import * as THREE from 'three'
@@ -13,10 +13,32 @@ export default function Section({ }) {
     const light = useRef(null)
     useHelper(light, THREE.DirectionalLightHelper, 1)
 
+    // transmission material config
+    const config = useControls({
+        backside: false,
+        samples: { value: 16, min: 1, max: 32, step: 1 },
+        resolution: { value: 256, min: 64, max: 2048, step: 64 },
+        transmission: { value: 0.95, min: 0, max: 1 },
+        roughness: { value: 0.5, min: 0, max: 1, step: 0.01 },
+        clearcoat: { value: 0.1, min: 0, max: 1, step: 0.01 },
+        clearcoatRoughness: { value: 0.1, min: 0, max: 1, step: 0.01 },
+        thickness: { value: 200, min: 0, max: 200, step: 0.01 },
+        backsideThickness: { value: 200, min: 0, max: 200, step: 0.01 },
+        ior: { value: 1.5, min: 1, max: 5, step: 0.01 },
+        chromaticAberration: { value: 1, min: 0, max: 1 },
+        anisotropy: { value: 1, min: 0, max: 10, step: 0.01 },
+        distortion: { value: 0, min: 0, max: 1, step: 0.01 },
+        distortionScale: { value: 0.2, min: 0.01, max: 1, step: 0.01 },
+        temporalDistortion: { value: 0, min: 0, max: 1, step: 0.01 },
+        attenuationDistance: { value: 0.5, min: 0, max: 10, step: 0.01 },
+        attenuationColor: '#ffffff',
+        color: '#ffffff',
+      })
+
     return (
         <>
             {/* Directional Light */}
-            <PivotControls
+            {/* <PivotControls
                 // anchor={[ 0, 0, 0 ]}
             >
                 <directionalLight
@@ -32,23 +54,23 @@ export default function Section({ }) {
                     shadow-camera-bottom={ - 20 }
                     shadow-camera-left={ - 20 }
                 />
-            </PivotControls>
+            </PivotControls> */}
 
             {/* Section Title */}
-            <PivotControls
+            {/* <PivotControls
                 anchor={[ 0, 0, 0 ]}
-            >
-                <Text
+            > */}
+                {/* <Text
                     position={ textPos }
                     rotation={ textRotation }
                     color={ textColor }
                     castShadow
-                >
-                    Work
+                > */}
+                    {/* Work */}
                     {/* <meshMatcapMaterial /> */}
-                </Text>
+                {/* </Text> */}
 
-            </PivotControls>
+            {/* </PivotControls> */}
 
             {/* Section Board */}
             <mesh
@@ -57,6 +79,7 @@ export default function Section({ }) {
             >
                 <planeGeometry args={[ 4, 4]} />
                 <meshStandardMaterial color={ sectionBkgdColor } side={THREE.DoubleSide}/>
+                {/* <MeshTransmissionMaterial {...config} /> */}
             </mesh>
         </>
     )

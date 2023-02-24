@@ -21,8 +21,9 @@ export default function Experience() {
             {/* <Perf position='top-left' /> */}
             
             <Ocean />
-            {/* <Section /> */}
             <SiteTitle text='0xJosiah' position={ [ -0.35, -0.2, 4.5 ] } rotation={ [ 0, 1, 0.09 ] }/>
+            
+            <Section />
 
             <ScrollControls pages={6} infinite horizontal>
                 <Scroll>
