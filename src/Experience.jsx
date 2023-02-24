@@ -10,10 +10,10 @@ export default function Experience() {
 
     const { width, height } = useThree((state) => state.viewport)
 
-    const { position, rotation } = useControls({
-        position: [ 0, 0, 0 ],
-        rotation: [ 0, 0, 0 ]
-    })
+    // const { position, rotation } = useControls({
+    //     position: [ 0, 0, 0 ],
+    //     rotation: [ 0, 0, 0 ]
+    // })
 
     return (
         <>
@@ -23,7 +23,7 @@ export default function Experience() {
             <Ocean />
             <SiteTitle text='0xJosiah' position={ [ -0.35, -0.2, 4.5 ] } rotation={ [ 0, 1, 0.09 ] }/>
             
-            <Section />
+            {/* <Section /> */}
 
             <ScrollControls pages={6} infinite horizontal>
                 <Scroll>
