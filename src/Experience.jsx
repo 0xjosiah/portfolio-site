@@ -1,5 +1,6 @@
 import { Float, OrbitControls, Scroll, ScrollControls, Sky, Text } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
+import { useControls } from 'leva'
 import { Perf } from 'r3f-perf'
 import Ocean from './components/Ocean'
 import Section from './components/Section'
@@ -9,6 +10,11 @@ export default function Experience() {
 
     const { width, height } = useThree((state) => state.viewport)
 
+    const { position, rotation } = useControls({
+        position: [ 0, 0, 0 ],
+        rotation: [ 0, 0, 0 ]
+    })
+
     return (
         <>
             {/* <OrbitControls makeDefault /> */}
@@ -16,7 +22,8 @@ export default function Experience() {
             
             <Ocean />
             {/* <Section /> */}
-            <SiteTitle />
+            <SiteTitle text='0xJosiah' position={ [ -0.35, -0.2, 4.5 ] } rotation={ [ 0, 1, 0.09 ] }/>
+
             <ScrollControls pages={6} infinite horizontal>
                 <Scroll>
                     <Float
