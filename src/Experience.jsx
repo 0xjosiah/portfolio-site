@@ -31,7 +31,7 @@ export default function Experience() {
                     <Float
                         position={[ width * 0.6, 2, 2 ]}
                     >
-                        <Fish />
+                        <Fish rotation-y={Math.PI * 0.5} position-x={-2} />
                         <Text color='black'>
                             About
                         </Text>
@@ -39,6 +39,7 @@ export default function Experience() {
                     <Float
                         position={[ width, 2, -4 ]}
                     >
+                        <Fish rotation-y={Math.PI * 0.5} position-x={-2} />
                         <Text color='black'>
                             Experience
                         </Text>
@@ -53,6 +54,7 @@ export default function Experience() {
                     <Float
                         position={[ width*1.7, 2, 1 ]}
                     >
+                        <Fish rotation-y={Math.PI * 0.5} position-x={-2} />
                         <Text color='black'>
                             Projects
                         </Text>

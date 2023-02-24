@@ -8,8 +8,10 @@ import * as THREE from 'three'
 
 const newMaterial = new THREE.MeshBasicMaterial({ color: 'red' })
 
-const pink = new THREE.Color('rgb(100%, 53%, 56%)')
-const grey = new THREE.Color('rgb(84%, 90%, 95%)')
+// const pink = new THREE.Color('rgb(100%, 53%, 56%)')
+const grey = new THREE.Color(0xf291a0)
+// const grey = new THREE.Color('rgb(84%, 90%, 95%)')
+const pink = new THREE.Color(0x365187)
 const defaultColor = new THREE.Color( 1, 1, 1 )
 
 export function Fish(props) {
