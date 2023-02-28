@@ -1,4 +1,4 @@
-import { Float, Html, OrbitControls, Scroll, ScrollControls, Sky, Text } from '@react-three/drei'
+import { Billboard, Float, GradientTexture, Html, OrbitControls, Scroll, ScrollControls, Sky, Text, Text3D, Trail } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import { useControls } from 'leva'
 import { Perf } from 'r3f-perf'
@@ -32,10 +32,30 @@ export default function Experience() {
                         position={[ width * 0.6, 2, 2 ]}
                     >
                         {/* <Fish rotation-y={Math.PI * 0.5} position-x={-2} /> */}
-                        <Text color='black' castShadow>
-                            About
-                        </Text>
-                        <Section />
+                        <Billboard follow={ false } >
+                        <Trail
+                            width={ 2 }
+                            length={ .5 }
+                            decay={ .5 }
+                            stride={ 0 }
+                            attenuation={(width) => width * 2}
+                            
+                        >
+                            <Text castShadow>
+                                About
+                                <meshBasicMaterial>
+                                    <GradientTexture
+                                    stops={[0, 1]} // As many stops as you want
+                                    colors={['aquamarine', 'hotpink']} // Colors need to match the number of stops
+                                    size={1024} // Size is optional, default = 1024
+                                    />
+                                </meshBasicMaterial>
+                            </Text>
+                            {/* <Section /> */}
+
+                        </Trail>
+
+                        </Billboard>
                     </Float>
                     <Float
                         position={[ width, 2, -4 ]}
