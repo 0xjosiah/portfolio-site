@@ -57,7 +57,7 @@ export default function Ocean() {
                 rotation={ rotation }
                 position={ pos }
             >
-                <oceanMaterial ref={ oceanMat } />
+                <oceanMaterial ref={ oceanMat } side={THREE.DoubleSide} />
             </mesh>
         </>
     )

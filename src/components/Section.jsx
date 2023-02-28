@@ -1,4 +1,4 @@
-import { ContactShadows, GizmoHelper, MeshTransmissionMaterial, OrbitControls, PivotControls, SpotLight, Text, useHelper } from '@react-three/drei'
+import { ContactShadows, GizmoHelper, Html, MeshTransmissionMaterial, OrbitControls, PivotControls, SpotLight, Text, useHelper } from '@react-three/drei'
 import { useControls } from 'leva'
 import { useRef } from 'react'
 import * as THREE from 'three'
@@ -77,10 +77,15 @@ export default function Section({ }) {
                 receiveShadow
                 position={[ 0, 0, -0.2 ]}
             >
-                <planeGeometry args={[ 4, 4]} />
+                <planeGeometry args={[ 4, 2 ]} />
                 {/* <meshStandardMaterial color={ sectionBkgdColor } side={THREE.DoubleSide}/> */}
                 <MeshTransmissionMaterial {...config} />
             </mesh>
+            {/* <Html
+            >
+                <h3>Josiah Webb</h3>
+                <p>I'm good at my job</p>
+            </Html> */}
         </>
     )
 }

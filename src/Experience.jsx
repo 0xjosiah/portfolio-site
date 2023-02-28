@@ -1,4 +1,4 @@
-import { Float, OrbitControls, Scroll, ScrollControls, Sky, Text } from '@react-three/drei'
+import { Float, Html, OrbitControls, Scroll, ScrollControls, Sky, Text } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import { useControls } from 'leva'
 import { Perf } from 'r3f-perf'
@@ -31,7 +31,7 @@ export default function Experience() {
                     <Float
                         position={[ width * 0.6, 2, 2 ]}
                     >
-                        <Fish rotation-y={Math.PI * 0.5} position-x={-2} />
+                        {/* <Fish rotation-y={Math.PI * 0.5} position-x={-2} /> */}
                         <Text color='black' castShadow>
                             About
                         </Text>
@@ -40,7 +40,7 @@ export default function Experience() {
                     <Float
                         position={[ width, 2, -4 ]}
                     >
-                        <Fish rotation-y={Math.PI * 0.5} position-x={-2} />
+                        {/* <Fish rotation-y={Math.PI * 0.5} position-x={-2} /> */}
                         <Text color='black'>
                             Experience
                         </Text>
@@ -55,7 +55,7 @@ export default function Experience() {
                     <Float
                         position={[ width*1.7, 2, 1 ]}
                     >
-                        <Fish rotation-y={Math.PI * 0.5} position-x={-2} />
+                        {/* <Fish rotation-y={Math.PI * 0.5} position-x={-2} /> */}
                         <Text color='black'>
                             Projects
                         </Text>
