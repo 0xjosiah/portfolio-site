@@ -1,14 +1,15 @@
-import { ContactShadows, GizmoHelper, Html, MeshTransmissionMaterial, OrbitControls, PivotControls, SpotLight, Text, useHelper } from '@react-three/drei'
+import { ContactShadows, GizmoHelper, Html, Mask, MeshTransmissionMaterial, OrbitControls, PivotControls, SpotLight, Text, Torus, useHelper, useMask } from '@react-three/drei'
 import { useControls } from 'leva'
 import { useRef } from 'react'
 import * as THREE from 'three'
 
-export default function Section({ }) {
-    const { sectionBkgdColor, textPos, textRotation, textColor } = useControls({
+export default function Section(props) {
+    const { sectionBkgdColor, textPos, textRotation, textColor, invert } = useControls({
         sectionBkgdColor: '#f5d5d5',
         textPos: [ -0.9, 2, 0.5],
         textRotation: [ -Math.PI * .5 , 0, 0 ],
         textColor: { r: 0, g: 0, b: 0 },
+        invert: false
     })
     const light = useRef(null)
     useHelper(light, THREE.DirectionalLightHelper, 1)
@@ -35,10 +36,12 @@ export default function Section({ }) {
     //     color: '#ffffff',
     //   })
 
+    const stencil = useMask(1, invert)
+
     return (
         <>
             {/* Directional Light */}
-            <PivotControls
+            {/* <PivotControls
                 // anchor={[ 0, 0, 0 ]}
             >
                 <directionalLight
@@ -54,7 +57,7 @@ export default function Section({ }) {
                     shadow-camera-bottom={ - 20 }
                     shadow-camera-left={ - 20 }
                 />
-            </PivotControls>
+            </PivotControls> */}
 
             {/* Section Title */}
             {/* <PivotControls
@@ -73,19 +76,32 @@ export default function Section({ }) {
             {/* </PivotControls> */}
 
             {/* Section Board */}
-            <mesh
-                receiveShadow
-                position={[ 0, 0, -0.2 ]}
+            <PivotControls
+                anchor={[ 0, 0, 0 ]}
+                scale={ .2 }
             >
-                <planeGeometry args={[ 4, 2 ]} />
-                <meshToonMaterial color={ sectionBkgdColor } side={THREE.DoubleSide} />
-                {/* <MeshTransmissionMaterial {...config} /> */}
+                {/* <Mask
+                    id={1}
+                    {...props}
+                > */}
+                    {/* <planeGeometry /> */}
+                    {/* <meshBasicMaterial /> */}
+                <mesh
+                    {...props}
+                >
+                    <planeGeometry args={[ 1, 2 ]} />
+                    <meshBasicMaterial color={ sectionBkgdColor } />
+                    {/* <MeshTransmissionMaterial {...config} /> */}
+                </mesh>
+                {/* </Mask> */}
+            </PivotControls>
+
+            {/* test shapes */}
+            <mesh>
+                <torusGeometry />
+                <meshBasicMaterial {...stencil} />
             </mesh>
-            {/* <Html
-            >
-                <h3>Josiah Webb</h3>
-                <p>I'm good at my job</p>
-            </Html> */}
+
         </>
     )
 }

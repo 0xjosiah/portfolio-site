@@ -15,10 +15,7 @@ export default function Experience() {
     const { position, rotation, invert } = useControls({
         position: [ 0, 0, 0 ],
         rotation: [ 0, 0, 0 ],
-        invert: false
     })
-
-    const stencil = useMask(1, invert)
 
     const {x, y, z} = useThree((state) => state.camera.position)
     // console.log(camPos)
@@ -28,20 +25,17 @@ export default function Experience() {
             {/* <OrbitControls makeDefault /> */}
             {/* <Perf position='top-left' /> */}
             
-            <Ocean {...stencil} />
-            <SiteTitle text='0xJosiah' position={ [ -0.35, -0.2, 4.5 ] } rotation={ [ 0, 1, 0.09 ] } {...stencil} />
+            <Ocean />
+            <SiteTitle text='0xJosiah' position={ [ -0.35, -0.2, 4.5 ] } rotation={ [ 0, 1, 0.09 ] } />
             
-            {/* <Section /> */}
-            <Mask id={1} invert={false}>
+            <Section position={[ 3.5, 0.5, 6.5 ]} />
+            {/* <Mask id={1} invert={false}>
                 <mesh
                     position={[ 3.5, 0.5, 6.5 ]}
                 >
                     <planeGeometry />
-                    {/* <meshBasicMaterial */}
-                        {/* // color='red' */}
-                    {/* /> */}
                 </mesh>
-            </Mask>
+            </Mask> */}
 
 
             <ScrollControls pages={6} infinite horizontal>
