@@ -55,33 +55,9 @@ export default function Experience() {
             <ScrollControls pages={6} infinite horizontal>
                 <Scroll>
 
-                    {/* <Float
-                        position={[ width * 0.6, 2, 2 ]}
-                    >
-                        <Billboard follow={ false } >
-                            <Text3D {...textOptions} font={'./fonts/dosis/Dosis_Regular.json'}>
-                                ABOUT
-                                <meshMatcapMaterial matcap={chrome} />
-                            </Text3D>
-                        </Billboard>
-                    </Float> */}
                     <SectionTitle text={'ABOUT'} position={[width * 0.6, 2, 2]} />
-
-                    <Float
-                        position={[ width, 2, -4 ]}
-                    >
-                        <Text color='black'>
-                            Experience
-                        </Text>
-                    </Float>
-
-                    <Float
-                        position={[ width*1.7, 2, 1 ]}
-                    >
-                        <Text color='black'>
-                            Projects
-                        </Text>
-                    </Float>
+                    <SectionTitle text={'EXPERIENCE'} position={[width, 2, -4]} />
+                    <SectionTitle text={'PROJECTS'} position={[width * 1.7, 2, 1]} />
 
                 </Scroll>
             </ScrollControls>
