@@ -12,7 +12,9 @@ const camConfig = {
     position: [ 4.25, .6, 7.75 ]
 }
 
+
 export default function App(props) {
+
     return (
         <>
             <Canvas shadows camera={{...camConfig}}>
@@ -20,7 +22,7 @@ export default function App(props) {
             </Canvas>
 
             <Routes>
-                {/* <Route exact path='/' element={ <TODO /> } /> */}
+                {/* <Route exact path='/' element={ <Scene /> } /> */}
                 <Route path='/about' element={ <About /> } />
                 <Route path='/experience' element={ <Experience /> } />
                 <Route path='/projects' element={ <Projects /> } />

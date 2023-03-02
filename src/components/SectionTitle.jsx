@@ -11,11 +11,8 @@ export default function SectionTitle({ text, linkTo, position }) {
     }
 
     return (
-        // <Link to={linkTo}>
-            <Float position={position} onClick={clickNav}>
-                <SiteTitle text={text} linkTo={linkTo}/>
-            </Float>
-        // </Link>
-        /* maybe add link in html tag in SiteTitle */
+        <Float position={position} onClick={clickNav}>
+            <SiteTitle text={text} linkTo={linkTo}/>
+        </Float>
     )
 }
