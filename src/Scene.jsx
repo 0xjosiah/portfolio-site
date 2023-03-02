@@ -6,7 +6,7 @@ import Ocean from './components/Ocean'
 import SectionTitle from './components/SectionTitle'
 import SiteTitle from './components/SiteTitle'
 
-export default function Experience() {
+export default function Scene() {
 
     const { width, height } = useThree((state) => state.viewport)
 

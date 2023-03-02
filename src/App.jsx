@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 import { Route, Routes } from 'react-router-dom'
-import Experience from './Experience'
+import Scene from './Scene'
 
 const camConfig = {
     fov: 45,
@@ -13,7 +13,7 @@ export default function App(props) {
     return (
         <>
             <Canvas shadows camera={{...camConfig}}>
-                <Experience />
+                <Scene />
             </Canvas>
 
             {/* <Routes>
