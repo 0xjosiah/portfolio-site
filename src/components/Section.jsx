@@ -1,6 +1,6 @@
 import { ContactShadows, GizmoHelper, Html, Mask, MeshTransmissionMaterial, OrbitControls, PivotControls, SpotLight, Text, Torus, useHelper, useMask } from '@react-three/drei'
 import { useControls } from 'leva'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 
 export default function Section(props) {
@@ -35,6 +35,15 @@ export default function Section(props) {
     //     attenuationColor: '#ffffff',
     //     color: '#ffffff',
     //   })
+
+    const html = useRef(null)
+    console.log(html.current)
+
+    // useEffect(() => {
+    //     const stopScroll = html.current.onscroll((event) => event.preventDefault())
+        
+    //     return () => stopScroll()
+    // })
 
     const stencil = useMask(1, invert)
 
@@ -80,20 +89,20 @@ export default function Section(props) {
                 anchor={[ 0, 0, 0 ]}
                 scale={ .2 }
             >
-                {/* <Mask
+                <Mask
                     id={1}
                     {...props}
-                > */}
+                >
                     {/* <planeGeometry /> */}
                     {/* <meshBasicMaterial /> */}
-                <mesh
+                {/* <mesh
                     {...props}
-                >
-                    <planeGeometry args={[ 1, 2 ]} />
+                > */}
+                    <planeGeometry args={[ .5, .5 ]} />
                     <meshBasicMaterial color={ sectionBkgdColor } />
                     {/* <MeshTransmissionMaterial {...config} /> */}
-                </mesh>
-                {/* </Mask> */}
+                {/* </mesh> */}
+                </Mask>
             </PivotControls>
 
             {/* test shapes */}
@@ -101,6 +110,7 @@ export default function Section(props) {
                 <torusGeometry />
                 <meshBasicMaterial {...stencil} />
             </mesh>
+
 
         </>
     )
