@@ -10,10 +10,11 @@ export default function Experience() {
 
     const { width, height } = useThree((state) => state.viewport)
 
-    const { position, rotation } = useControls({
-        position: [ 0, 0, 0 ],
-        rotation: [ 0, 0, 0 ],
-    })
+    /* General purpose controls, attach to whatever for adjustment */
+    // const { position, rotation } = useControls({
+    //     position: [ 0, 0, 0 ],
+    //     rotation: [ 0, 0, 0 ],
+    // })
 
     const {x, y, z} = useThree((state) => state.camera.position)
     // console.log(camPos)
