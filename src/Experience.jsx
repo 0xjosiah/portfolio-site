@@ -16,32 +16,9 @@ export default function Experience() {
     //     rotation: [ 0, 0, 0 ],
     // })
 
-    const {x, y, z} = useThree((state) => state.camera.position)
+    /* Camera position if needed */
+    // const {x, y, z} = useThree((state) => state.camera.position)
     // console.log(camPos)
-
-    // TODO: clean up when decide texture
-    const [ chrome, colorShift, gore, limeGreenToon, skin, slate, sunSet, tan ] = useTexture([
-        './textures/matcaps/chrome.png',
-        './textures/matcaps/colorShift.png',
-        './textures/matcaps/gore.png',
-        './textures/matcaps/limeGreenToon.png',
-        './textures/matcaps/skin.png',
-        './textures/matcaps/slate.png',
-        './textures/matcaps/sunSet.png',
-        './textures/matcaps/tan.png',
-
-    ])
-
-    const textOptions = {
-        size: .5,
-        height: .2,
-        curveSegments: 5,
-        bevelEnabled: true,
-        bevelThickness: 0.03,
-        bevelSize: .02,
-        bevelOffset: 0,
-        bevelSegments: 4
-    }
 
     return (
         <>
