@@ -1,25 +1,22 @@
-import { Canvas } from '@react-three/fiber'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Experience from './Experience'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import App from './App'
 import './index.css'
+
+const router = createBrowserRouter([
+  {
+    path: '*',
+    element: <App />
+  }
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
   // <React.StrictMode>
   <>
-    <Canvas
-      shadows
-      camera={{
-        fov: 45,
-        near: 0.1,
-        far: 200,
-        position: [ 4.25, .6, 7.75 ]
-      }}
-    >
-      <Experience />
-    </Canvas>
+    <RouterProvider router={router} />
   </>
   // </React.StrictMode>,
 )
