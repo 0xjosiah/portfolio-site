@@ -10,5 +10,6 @@ export default function SectionTitle({ text, linkTo, position }) {
                 <SiteTitle text={text} />
             </Float>
         // </Link>
+        /* maybe add link in html tag in SiteTitle */
     )
 }

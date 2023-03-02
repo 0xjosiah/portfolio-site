@@ -30,6 +30,7 @@ export default function SiteTitle(props) {
         <Text3D font={'./fonts/dosis/Dosis_Regular.json'} {...textOptions} {...props}>
             {text}
             <meshMatcapMaterial matcap={ chrome } />
+            {/* maybe add link here TODO */}
         </Text3D>
     )
 }
