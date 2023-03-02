@@ -1,13 +1,14 @@
 import { Float } from "@react-three/drei"
+import { Link } from "react-router-dom"
 import SiteTitle from "./SiteTitle"
 
-export default function SectionTitle(props) {
-
-    const text = props.text
+export default function SectionTitle({ text, linkTo, position }) {
 
     return (
-        <Float {...props}>
-            <SiteTitle text={text} />
-        </Float>
+        // <Link to={linkTo}>
+            <Float position={position}>
+                <SiteTitle text={text} />
+            </Float>
+        // </Link>
     )
 }

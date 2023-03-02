@@ -1,5 +1,8 @@
 import { Canvas } from '@react-three/fiber'
 import { Route, Routes } from 'react-router-dom'
+import About from './pages/About'
+import Experience from './pages/Experience'
+import Projects from './pages/Projects'
 import Scene from './Scene'
 
 const camConfig = {
@@ -16,12 +19,12 @@ export default function App(props) {
                 <Scene />
             </Canvas>
 
-            {/* <Routes>
-                <Route exact path='/' element={ <TODO /> } />
-                <Route path='/TODO' element={ <TODO /> } />
-                <Route path='/TODO' element={ <TODO /> } />
-                <Route path='/TODO' element={ <TODO /> } />
-            </Routes> */}
+            <Routes>
+                {/* <Route exact path='/' element={ <TODO /> } /> */}
+                <Route path='/about' element={ <About /> } />
+                <Route path='/experience' element={ <Experience /> } />
+                <Route path='/projects' element={ <Projects /> } />
+            </Routes>
         </>
     )
 }
