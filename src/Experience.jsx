@@ -3,6 +3,7 @@ import { useThree } from '@react-three/fiber'
 import { useControls } from 'leva'
 import { Perf } from 'r3f-perf'
 import Ocean from './components/Ocean'
+import SectionTitle from './components/SectionTitle'
 import SiteTitle from './components/SiteTitle'
 
 export default function Experience() {
@@ -54,7 +55,7 @@ export default function Experience() {
             <ScrollControls pages={6} infinite horizontal>
                 <Scroll>
 
-                    <Float
+                    {/* <Float
                         position={[ width * 0.6, 2, 2 ]}
                     >
                         <Billboard follow={ false } >
@@ -63,7 +64,8 @@ export default function Experience() {
                                 <meshMatcapMaterial matcap={chrome} />
                             </Text3D>
                         </Billboard>
-                    </Float>
+                    </Float> */}
+                    <SectionTitle text={'ABOUT'} position={[width * 0.6, 2, 2]} />
 
                     <Float
                         position={[ width, 2, -4 ]}
