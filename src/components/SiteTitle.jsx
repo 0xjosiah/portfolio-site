@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom'
 
 export default function SiteTitle({ text='Title', position=[ 0, 0, 0 ], rotation=[ 0, 0, 0 ], navTo='/' }) {
 
-    const nav = (navTo) => useNavigate(navTo)
+    const nav = useNavigate()
+    const clickNav = () => nav(navTo)
     
     const textOptions = {
         size: .5,
@@ -34,11 +35,11 @@ export default function SiteTitle({ text='Title', position=[ 0, 0, 0 ], rotation
             font={'./fonts/dosis/Dosis_Regular.json'}
             position={position}
             rotation={rotation}
-            onClick={nav}
+            onClick={clickNav}
             {...textOptions}
         >
             {text}
-            <meshMatcapMaterial matcap={ chrome } />
+            <meshMatcapMaterial matcap={chrome} />
         </Text3D>
     )
 }
