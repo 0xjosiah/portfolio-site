@@ -8,8 +8,14 @@ export default function Contact() {
         /* TODO */
     }
 
+    const styles = {
+        position: 'absolute',
+        top: 5,
+        left: 5
+    }
+
     return (
-        <form ref={form} onSubmit={sendEmail}>
+        <form ref={form} onSubmit={sendEmail} style={{...styles}}>
             <label>Name</label>
             <input autoFocus required type='text' />
             <label>Email</label>

@@ -17,8 +17,8 @@ export default function Scene() {
     // })
 
     /* Camera position if needed */
-    // const {x, y, z} = useThree((state) => state.camera.position)
-    // console.log(camPos)
+    // const { position } = useThree((state) => state.camera)
+    // console.log('camPos', position)
 
     return (
         <>
