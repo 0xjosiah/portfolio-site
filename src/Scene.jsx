@@ -1,4 +1,4 @@
-import { Billboard, Float, Scroll, ScrollControls, Text, Text3D, useTexture } from '@react-three/drei'
+import { Scroll, ScrollControls } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import { useControls } from 'leva'
 import { Perf } from 'r3f-perf'
@@ -33,9 +33,9 @@ export default function Scene() {
             <ScrollControls pages={6} infinite horizontal>
                 <Scroll>
 
-                    <SectionTitle text={'ABOUT'} navTo='/about' position={[width * 0.6, 2, 2]} />
-                    <SectionTitle text={'EXPERIENCE'} navTo='/experience' position={[width, 2, -4]} />
-                    <SectionTitle text={'PROJECTS'} navTo='/projects' position={[width * 1.7, 2, 1]} />
+                    <SectionTitle text={'ABOUT'} navTo='/about' position={[ width * 0.6, 2, 2 ]} />
+                    <SectionTitle text={'EXPERIENCE'} navTo='/experience' position={[ width, 2, -4 ]} />
+                    <SectionTitle text={'PROJECTS'} navTo='/projects' position={[ width * 1.7, 2, 1 ]} />
 
                 </Scroll>
             </ScrollControls>
