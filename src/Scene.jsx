@@ -26,7 +26,7 @@ export default function Scene() {
             {/* <Perf position='top-left' /> */}
             
             <Ocean />
-            <SiteTitle text='0xJosiah' position={ [ -0.35, -0.2, 4.5 ] } rotation={ [ 0, 1, 0.09 ] } />
+            <SiteTitle text='0xJosiah' position={[ -0.35, -0.2, 4.5 ]} rotation={[ 0, 1, 0.09 ]} />
             
             {/* <Section position={[ 3.5, 0.5, 6.5 ]} /> */}
 
