@@ -1,5 +1,5 @@
-import { Text3D, useTexture } from '@react-three/drei'
-import { useNavigate } from 'react-router-dom'
+import { Text3D, useTexture } from "@react-three/drei"
+import { useNavigate } from "react-router-dom"
 
 export default function SiteTitle({ text='Title', position=[ 0, 0, 0 ], rotation=[ 0, 0, 0 ], navTo='/' }) {
 
