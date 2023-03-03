@@ -1,7 +1,7 @@
 import { Text3D, useTexture } from '@react-three/drei'
 
 export default function SiteTitle({ text='Title', position=[ 0, 0, 0 ], rotation=[ 0, 0, 0 ] }) {
-    // const text = props.text
+    
     const textOptions = {
         size: .5,
         height: .2,
@@ -30,7 +30,6 @@ export default function SiteTitle({ text='Title', position=[ 0, 0, 0 ], rotation
         <Text3D font={'./fonts/dosis/Dosis_Regular.json'} {...textOptions} position={position} rotation={rotation}>
             {text}
             <meshMatcapMaterial matcap={ chrome } />
-            {/* maybe add link here TODO */}
         </Text3D>
     )
 }
