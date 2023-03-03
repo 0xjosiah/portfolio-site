@@ -1,6 +1,9 @@
 import { Text3D, useTexture } from '@react-three/drei'
+import { useNavigate } from 'react-router-dom'
 
-export default function SiteTitle({ text='Title', position=[ 0, 0, 0 ], rotation=[ 0, 0, 0 ] }) {
+export default function SiteTitle({ text='Title', position=[ 0, 0, 0 ], rotation=[ 0, 0, 0 ], navTo='/' }) {
+
+    const nav = (navTo) => useNavigate(navTo)
     
     const textOptions = {
         size: .5,
@@ -27,7 +30,13 @@ export default function SiteTitle({ text='Title', position=[ 0, 0, 0 ], rotation
     ])
 
     return (
-        <Text3D font={'./fonts/dosis/Dosis_Regular.json'} {...textOptions} position={position} rotation={rotation}>
+        <Text3D
+            font={'./fonts/dosis/Dosis_Regular.json'}
+            position={position}
+            rotation={rotation}
+            onClick={nav}
+            {...textOptions}
+        >
             {text}
             <meshMatcapMaterial matcap={ chrome } />
         </Text3D>

@@ -2,7 +2,7 @@ import { Float } from "@react-three/drei"
 import { Link, useNavigate } from "react-router-dom"
 import SiteTitle from "./SiteTitle"
 
-export default function SectionTitle({ text, linkTo, position }) {
+export default function SectionTitle({ text, navTo, position }) {
 
     const navigate = useNavigate()
 
@@ -11,8 +11,8 @@ export default function SectionTitle({ text, linkTo, position }) {
     }
 
     return (
-        <Float position={position} onClick={clickNav}>
-            <SiteTitle text={text} linkTo={linkTo}/>
+        <Float position={position}>
+            <SiteTitle text={text} navTo={navTo} />
         </Float>
     )
 }
