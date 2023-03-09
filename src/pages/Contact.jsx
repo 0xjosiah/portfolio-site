@@ -14,6 +14,7 @@ export default function Contact() {
     const sendEmail = (e) => {
         e.preventDefault()
         /* TODO */
+        // add more than log for success/failure message
         /* post method */
         emailjs.sendForm('service_l3trb9g', 'template_biop15h', form.current)
             .then((result) => {
