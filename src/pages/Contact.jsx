@@ -1,16 +1,22 @@
 import { useRef, useState } from "react"
 
+const emptyFormData = {
+    name: '',
+    email: '',
+    message: ''
+}
+
 export default function Contact() {
     const form = useRef(null)
-    const [ formData, setFormData ] = useState({
-        name: '',
-        email: '',
-        message: ''
-    })
+    const [ formData, setFormData ] = useState(emptyFormData)
 
     const sendEmail = (e) => {
         e.preventDefault()
         /* TODO */
+        /* post method */
+        console.log('success', formData)
+        /* clear form */
+        setFormData(emptyFormData)
     }
 
     const updateFormData = (e) => {
@@ -19,7 +25,6 @@ export default function Contact() {
             ...prevData,
             [name]: value
         }))
-        console.log(formData)
     }
 
     const styles = {
