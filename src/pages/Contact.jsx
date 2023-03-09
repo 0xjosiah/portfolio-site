@@ -36,6 +36,8 @@ export default function Contact() {
                 required
                 type='text'
                 name='name'
+                value={formData.name}
+                placeholder='Name'
                 onChange={updateFormData}
             />
             <label>Email</label>
@@ -43,12 +45,16 @@ export default function Contact() {
                 required
                 type='email'
                 name='email'
+                value={formData.email}
+                placeholder='Email'
                 onChange={updateFormData}
             />
             <label>Message</label>
             <textarea
                 required
                 name='message'
+                value={formData.message}
+                placeholder='Say hey!'
                 onChange={updateFormData} 
             />
             <button>Send</button>
