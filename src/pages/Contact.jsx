@@ -30,7 +30,7 @@ export default function Contact() {
 
     return (
         <form ref={form} onSubmit={sendEmail} className='contact-form' >
-            <label>Name</label>
+            {/* <label>Name</label> */}
             <input
                 autoFocus
                 required
@@ -40,7 +40,7 @@ export default function Contact() {
                 placeholder='Name'
                 onChange={updateFormData}
             />
-            <label>Email</label>
+            {/* <label>Email</label> */}
             <input
                 required
                 type='email'
@@ -49,7 +49,7 @@ export default function Contact() {
                 placeholder='Email'
                 onChange={updateFormData}
             />
-            <label>Message</label>
+            {/* <label>Message</label> */}
             <textarea
                 required
                 name='message'
