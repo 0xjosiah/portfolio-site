@@ -15,9 +15,14 @@ export default function Contact() {
         e.preventDefault()
         /* TODO */
         /* post method */
-        console.log('success', formData)
-        /* clear form */
-        setFormData(emptyFormData)
+        emailjs.sendForm('service_l3trb9g', 'template_biop15h', form.current)
+            .then((result) => {
+                console.log('SUCCESS!', result.status, result.text)
+            }, (error) => {
+                console.log('ERROR', error.text)
+            })
+            /* clear form */
+            .then(() => setFormData(emptyFormData))
     }
 
     const updateFormData = (e) => {
