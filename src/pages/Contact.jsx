@@ -1,3 +1,4 @@
+import { useThree } from "@react-three/fiber"
 import { useRef, useState } from "react"
 
 const emptyFormData = {
@@ -27,14 +28,8 @@ export default function Contact() {
         }))
     }
 
-    const styles = {
-        position: 'absolute',
-        top: 5,
-        left: 5
-    }
-
     return (
-        <form ref={form} onSubmit={sendEmail} style={{...styles}}>
+        <form ref={form} onSubmit={sendEmail} className='contact-form' >
             <label>Name</label>
             <input
                 autoFocus
