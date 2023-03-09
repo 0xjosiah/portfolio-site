@@ -15,6 +15,7 @@ export default function Contact() {
         e.preventDefault()
         /* TODO */
         // add more than log for success/failure message
+        // enable captcha??
         /* post method */
         emailjs.sendForm('service_l3trb9g', 'template_biop15h', form.current)
             .then((result) => {
