@@ -60,11 +60,13 @@ body,
 
 /* Form Submit Button */
 .contact-form button[type="submit"] {
-  background-color: #3498db;
+  background-color: #000000b4;
   color: #fff;
   font-size: 16px;
   font-weight: bold;
-  padding: 10px 20px;
+  width: 17.5rem;
+  padding: .75em 2em;
+  margin: 0 auto;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -73,7 +75,7 @@ body,
 /* Form Submit Button Hover */
 .contact-form button[type="submit"]:hover,
 .contact-form button[type="submit"]:focus {
-  background-color: #2980b9;
+  background-color: #000000df;
 }
 
 /* Form Success Message */
@@ -88,4 +90,25 @@ body,
   color: #e74c3c;
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+/* Form Socials Section */
+.contact-form div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form a {
+  margin: 1rem 1rem 0 1rem;
+}
+
+.icon-link {
+  color: #000000b4;
+  font-size: 3rem;
+}
+
+.icon-link:hover,
+.icon-link:focus {
+  color: #000000df;
 }

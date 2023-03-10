@@ -38,10 +38,6 @@ export default function Scene() {
         './textures/matcaps/tan.png',
 
     ])
-    const instaTexture = useTexture({
-        map: './images/icons8-instagram-240.png'
-        // map: './images/DevDAO3025_cropped.png'
-    })
     
     return (
         <>

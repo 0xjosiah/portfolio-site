@@ -1,5 +1,7 @@
 import { useThree } from "@react-three/fiber"
 import { useRef, useState } from "react"
+import { FaLinkedin, FaInstagramSquare, FaGithubSquare, FaTwitterSquare } from "react-icons/fa"
+import { Link } from "react-router-dom"
 
 const emptyFormData = {
     name: '',
@@ -64,7 +66,21 @@ export default function Contact() {
                 placeholder='Say hey!'
                 onChange={updateFormData} 
             />
-            <button>Send</button>
+            <button type='submit' >Send</button>
+            <div>
+                <a target='_blank' href='https://www.linkedin.com/in/josiahwebb/' rel='external'>
+                    <FaLinkedin  className='icon-link'/>
+                </a>
+                <a target='_blank' href='https://www.instagram.com/0xjosiah/' rel='external'>
+                    <FaInstagramSquare className='icon-link' />
+                </a>
+                <a target='_blank' href='https://twitter.com/0xjosiah' rel='external'>
+                    <FaTwitterSquare className='icon-link' />
+                </a>
+                <a target='_blank' href='https://github.com/0xjosiah' rel='external'>
+                    <FaGithubSquare className='icon-link' />
+                </a>
+            </div>
         </form>
     )
 }
