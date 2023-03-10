@@ -1,4 +1,4 @@
-import { Html, PivotControls, RoundedBox, Scroll, ScrollControls } from '@react-three/drei'
+import { Box, FirstPersonControls, Html, PivotControls, RoundedBox, Scroll, ScrollControls, Svg, useTexture } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import { useControls } from 'leva'
 import { Perf } from 'r3f-perf'
@@ -22,28 +22,52 @@ export default function Scene() {
     // const { camera } = useThree((state) => state)
     // console.log('camPos', position)
 
-    const contactStagePos = [ 3.50, -0.25, 6 ]
 
+    /* Contact stuff attempt */
+    //TODO likely delete this
+    const contactStagePos = [ 3.50, -0.25, 6 ]
+    // TODO: clean up when decide texture
+    const [ chrome, colorShift, gore, limeGreenToon, skin, slate, sunSet, tan ] = useTexture([
+        './textures/matcaps/chrome.png',
+        './textures/matcaps/colorShift.png',
+        './textures/matcaps/gore.png',
+        './textures/matcaps/limeGreenToon.png',
+        './textures/matcaps/skin.png',
+        './textures/matcaps/slate.png',
+        './textures/matcaps/sunSet.png',
+        './textures/matcaps/tan.png',
+
+    ])
+    const instaTexture = useTexture({
+        map: './images/icons8-instagram-240.png'
+        // map: './images/DevDAO3025_cropped.png'
+    })
+    
     return (
         <>
             {/* <OrbitControls makeDefault /> */}
             {/* <Perf position='top-left' /> */}
-            
+            {/* <FirstPersonControls
+                constrainVertical={true}
+                // verticalMax={Math.PI * .5}
+                // verticalMin={0}
+            /> */}
+
             <Ocean />
             <SiteTitle text='0xJosiah' navTo='/' position={[ -0.35, -0.2, 4.5 ]} rotation={[ 0, 1, 0.09 ]} />
             {/* <PivotControls
                 anchor={[ 0, 1, 0 ]}
-            > */}
+            >
                 <RoundedBox
                     args={[1, 1, 1]} // Width, height, depth. Default is [1, 1, 1]
                     radius={0.05} // Radius of the rounded corners. Default is 0.05
-                    smoothness={4} // The number of curve segments. Default is 4
+                    smoothness={10} // The number of curve segments. Default is 4
                     position={contactStagePos}
                 >
-                    <meshBasicMaterial color="#f3f3f3" />
+                    <meshBasicMaterial {...instaTexture} />
                 </RoundedBox>
 
-            {/* </PivotControls> */}
+            </PivotControls> */}
             
             {/* <Section position={[ 3.5, 0.5, 6.5 ]} /> */}
 
