@@ -24,26 +24,26 @@ body,
   display: flex;
   flex-direction: column;
   background-color: #f2f2f229;
-  padding: 20px;
+  padding: 1.75rem;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Form Labels */
 .contact-form label {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 1.5rem;
 }
 
 /* Form Inputs */
 .contact-form input,
 .contact-form textarea {
   font-size: 16px;
-  padding: 10px;
+  padding: .75rem;
   border-radius: 5px;
   border: none;
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
   background-color: #ffffffae;
 }
 
@@ -100,7 +100,7 @@ body,
 }
 
 .contact-form a {
-  margin: 1rem 1rem 0 1rem;
+  margin: 1.5rem .7rem 0;
 }
 
 .icon-link {
