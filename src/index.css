@@ -24,10 +24,12 @@ body,
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  background-color: #f2f2f229;
+  /* background-color: #f2f2f229; */
+  background-color: #6b6b6b00;
   padding: 1.75rem;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  /* border: 3px solid #00000082; */
+  box-shadow: 0px 0px 10px 5px #00000033;
 }
 
 /* Form Labels */
@@ -51,6 +53,7 @@ body,
 
 .contact-form textarea {
   height: 25vh;
+  resize: none;
 }
 
 /* Form Input Focus */
@@ -64,7 +67,7 @@ body,
 /* Form Submit Button */
 .contact-form button[type="submit"] {
   background-color: #000000b4;
-  color: #fff;
+  color: #ffffffae;
   font-size: 1.1rem;
   font-weight: bold;
   width: 17.5rem;
@@ -82,6 +85,8 @@ body,
 .contact-form button[type="submit"]:hover,
 .contact-form button[type="submit"]:focus {
   background-color: #000000df;
+  color: #fff;
+  box-shadow: 0px 0px 1px 3px #ffffffae;
 }
 
 /* Form Success Message */
@@ -117,6 +122,8 @@ body,
 .icon-link:hover,
 .icon-link:focus {
   color: #000000df;
+  background-color: #ffffffae;
+  border-radius: 5px;
 }
 
 
