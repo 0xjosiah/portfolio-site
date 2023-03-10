@@ -41,35 +41,40 @@ export default function Contact() {
     }
 
     return (
-        <form ref={form} onSubmit={sendEmail} className='contact-form' >
-            {/* <label>Name</label> */}
-            <input
-                autoFocus
-                required
-                type='text'
-                name='name'
-                value={formData.name}
-                placeholder='Name'
-                onChange={updateFormData}
-            />
-            {/* <label>Email</label> */}
-            <input
-                required
-                type='email'
-                name='email'
-                value={formData.email}
-                placeholder='Email'
-                onChange={updateFormData}
-            />
-            {/* <label>Message</label> */}
-            <textarea
-                required
-                name='message'
-                value={formData.message}
-                placeholder='Say hey!'
-                onChange={updateFormData} 
-            />
-            <button type='submit' >Send</button>
+        <div className='contact-form'>
+            {/* unsent form state */}
+            { formStatus === 'unsent' &&
+                <form ref={form} onSubmit={sendEmail}>
+                    {/* <label>Name</label> */}
+                    <input
+                        autoFocus
+                        required
+                        type='text'
+                        name='name'
+                        value={formData.name}
+                        placeholder='Name'
+                        onChange={updateFormData}
+                    />
+                    {/* <label>Email</label> */}
+                    <input
+                        required
+                        type='email'
+                        name='email'
+                        value={formData.email}
+                        placeholder='Email'
+                        onChange={updateFormData}
+                    />
+                    {/* <label>Message</label> */}
+                    <textarea
+                        required
+                        name='message'
+                        value={formData.message}
+                        placeholder='Say hey!'
+                        onChange={updateFormData} 
+                    />
+                    <button type='submit' >Send</button>
+                </form>
+            }
             <div>
                 <a target='_blank' href='https://www.linkedin.com/in/josiahwebb/' rel='external'>
                     <FaLinkedin  className='icon-link'/>
@@ -84,6 +89,6 @@ export default function Contact() {
                     <FaGithubSquare className='icon-link' />
                 </a>
             </div>
-        </form>
+        </div>
     )
 }
