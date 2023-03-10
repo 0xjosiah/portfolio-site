@@ -1,10 +1,14 @@
-import { Text3D, useTexture } from "@react-three/drei"
+import { Text3D, useCursor, useTexture } from "@react-three/drei"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export default function SiteTitle({ text='Title', position=[ 0, 0, 0 ], rotation=[ 0, 0, 0 ], navTo='/' }) {
 
     const nav = useNavigate()
     const clickNav = () => nav(navTo)
+
+    const [hovered, setHovered] = useState(false)
+    useCursor(hovered)
     
     const textOptions = {
         size: .5,
@@ -36,6 +40,8 @@ export default function SiteTitle({ text='Title', position=[ 0, 0, 0 ], rotation
             position={position}
             rotation={rotation}
             onClick={clickNav}
+            onPointerOver={() => setHovered(true)}
+            onPointerOut={() => setHovered(false)}
             {...textOptions}
         >
             {text}
