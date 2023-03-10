@@ -117,3 +117,15 @@ body,
 .icon-link:focus {
   color: #000000df;
 }
+
+
+/**
+* Other Pages
+*/
+.page-title {
+  font-family: 'Lato', sans-serif;
+}
+
+.page-content {
+  font-family: 'Sono', sans-serif;
+}

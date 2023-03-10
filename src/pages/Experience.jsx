@@ -6,7 +6,12 @@ export default function Experience() {
     }
     return (
         <div style={{...styles}}>
-            Experience
+            <h2 className="page-title">
+                Experience
+            </h2>
+            <p className="page-content">
+                This page is alll about my experience!
+            </p>
         </div>
     )
 }

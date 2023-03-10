@@ -6,7 +6,12 @@ export default function About() {
     }
     return (
         <div style={{...styles}}>
-            About me
+            <h2 className="page-title">
+                About me
+            </h2>
+            <p className="page-content">
+                This page is alll about me!
+            </p>
         </div>
     )
 }
