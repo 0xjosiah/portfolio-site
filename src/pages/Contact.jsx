@@ -12,6 +12,8 @@ const emptyFormData = {
 export default function Contact() {
     const form = useRef(null)
     const [ formData, setFormData ] = useState(emptyFormData)
+    // can be 'unsent', 'success', 'failure'
+    const [ formStatus, setFormStatus ] = useState('unsent')
 
     const sendEmail = (e) => {
         e.preventDefault()
@@ -21,12 +23,15 @@ export default function Contact() {
         /* post method */
         emailjs.sendForm('service_l3trb9g', 'template_biop15h', form.current)
             .then((result) => {
-                console.log('SUCCESS!', result.status, result.text)
+                // update form status state
+                setFormStatus('success')
+                // clear form
+                setFormData(emptyFormData)
+                console.log('SUCCESS!', result.status, result.text, formStatus)
             }, (error) => {
-                console.log('ERROR', error.text)
+                setFormStatus('failure')
+                console.log('ERROR', error.text, formStatus)
             })
-            /* clear form */
-            .then(() => setFormData(emptyFormData))
     }
 
     const updateFormData = (e) => {
