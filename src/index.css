@@ -25,11 +25,13 @@ body,
   /* display: flex; */
   /* flex-direction: column; */
   /* background-color: #f2f2f229; */
-  background-color: #6b6b6b00;
+  /* background-color: #6b6b6b7a; */
+  background-color: #430F0F7a;
   padding: 1.75rem;
   border-radius: 10px;
   /* border: 3px solid #00000082; */
-  box-shadow: 0px 0px 10px 5px #00000033;
+  /* box-shadow: 0px 0px 10px 5px #00000033; */
+  box-shadow: 0px 0px 10px #430F0F;
 }
 
 /* Form */
@@ -73,7 +75,7 @@ body,
 /* Form Submit Button */
 .contact-form button[type="submit"] {
   background-color: #000000b4;
-  color: #ffffffae;
+  color: #ffffff;
   font-size: 1.1rem;
   font-weight: bold;
   width: 17.5rem;
@@ -92,7 +94,7 @@ body,
 .contact-form button[type="submit"]:focus {
   background-color: #000000df;
   color: #fff;
-  box-shadow: 0px 0px 1px 3px #ffffffae;
+  box-shadow: 0px 0px 1px 3px #ffffff;
 }
 
 /* Form Success Message */
@@ -127,14 +129,14 @@ body,
 }
 
 .icon-link {
-  color: #000000b4;
+  color: #ffffff;
   font-size: 3rem;
-  background-color: #ffffffae;
-  border-radius: 5px;
 }
 
 .icon-link:hover,
 .icon-link:focus {
+  border-radius: 5px;
+  background-color: #ffffff;
   color: #000000df;
 }
 

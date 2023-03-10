@@ -11,7 +11,7 @@ export default function Contact() {
     const form = useRef(null)
     const [ formData, setFormData ] = useState(emptyFormData)
     // can be 'unsent', 'success', 'error'
-    const [ formStatus, setFormStatus ] = useState('error')
+    const [ formStatus, setFormStatus ] = useState('unsent')
 
     const sendEmail = (e) => {
         e.preventDefault()
