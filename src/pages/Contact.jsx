@@ -1,7 +1,5 @@
-import { useThree } from "@react-three/fiber"
 import { useRef, useState } from "react"
 import { FaLinkedin, FaInstagramSquare, FaGithubSquare, FaTwitterSquare } from "react-icons/fa"
-import { Link } from "react-router-dom"
 
 const emptyFormData = {
     name: '',
