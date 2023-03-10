@@ -96,10 +96,15 @@ body,
 }
 
 /* Form Success Message */
-.contact-form .success-message {
-  color: #2ecc71;
+.contact-form .success-message,
+.contact-form .error-message {
+  color: #000000b4;
+  background-color: #ffffffae;
+  padding: .75em 2em;
+  border-radius: 5px;
   font-weight: bold;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 /* Form Error Message */
@@ -114,6 +119,7 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-color: #ffffffae; */
 }
 
 .contact-form a {
@@ -123,13 +129,13 @@ body,
 .icon-link {
   color: #000000b4;
   font-size: 3rem;
+  background-color: #ffffffae;
+  border-radius: 5px;
 }
 
 .icon-link:hover,
 .icon-link:focus {
   color: #000000df;
-  background-color: #ffffffae;
-  border-radius: 5px;
 }
 
 

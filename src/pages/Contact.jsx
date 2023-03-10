@@ -10,8 +10,8 @@ const emptyFormData = {
 export default function Contact() {
     const form = useRef(null)
     const [ formData, setFormData ] = useState(emptyFormData)
-    // can be 'unsent', 'success', 'failure'
-    const [ formStatus, setFormStatus ] = useState('unsent')
+    // can be 'unsent', 'success', 'error'
+    const [ formStatus, setFormStatus ] = useState('error')
 
     const sendEmail = (e) => {
         e.preventDefault()
@@ -27,7 +27,7 @@ export default function Contact() {
                 setFormData(emptyFormData)
                 console.log('SUCCESS!', result.status, result.text, formStatus)
             }, (error) => {
-                setFormStatus('failure')
+                setFormStatus('error')
                 console.log('ERROR', error.text, formStatus)
             })
     }
@@ -75,6 +75,26 @@ export default function Contact() {
                     <button type='submit' >Send</button>
                 </form>
             }
+
+            {/* success form state */}
+            { formStatus === 'success' &&
+                <h2 className='success-message'>
+                    Thanks for reaching out! <br/>
+                    Check out my other stuff below <br/>
+                    {/* <br/> In the meantime, checkout my work at the links below. */}
+                </h2>
+            }
+
+            {/* error form state */}
+            { formStatus === 'error' &&
+                <h2 className='error-message'>
+                    Oops, something went wrong. <br/>
+                    Try again or email me directly: <br/>
+                    <br/> hello@josiahwebb.com
+                </h2>
+            }
+
+            {/* Contact links, visible regardless of form state */}
             <div>
                 <a target='_blank' href='https://www.linkedin.com/in/josiahwebb/' rel='external'>
                     <FaLinkedin  className='icon-link'/>
