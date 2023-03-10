@@ -2,7 +2,21 @@ import { Text3D, useCursor, useTexture } from "@react-three/drei"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-export default function SiteTitle({ text='Title', position=[ 0, 0, 0 ], rotation=[ 0, 0, 0 ], navTo='/' }) {
+export default function SiteTitle({
+    text='Title',
+    position=[ 0, 0, 0 ],
+    rotation=[ 0, 0, 0 ],
+    navTo='/',
+    size=.5,
+    height=.2,
+    curveSegments=5,
+    bevelEnabled=true,
+    bevelThickness=0.03,
+    bevelSize=.02,
+    bevelOffset=0,
+    bevelSegments=4.,
+    letterSpacing=0
+}) {
 
     const nav = useNavigate()
     const clickNav = () => nav(navTo)
@@ -11,14 +25,15 @@ export default function SiteTitle({ text='Title', position=[ 0, 0, 0 ], rotation
     useCursor(hovered)
     
     const textOptions = {
-        size: .5,
-        height: .2,
-        curveSegments: 5,
-        bevelEnabled: true,
-        bevelThickness: 0.03,
-        bevelSize: .02,
-        bevelOffset: 0,
-        bevelSegments: 4
+        size,
+        height,
+        curveSegments,
+        bevelEnabled,
+        bevelThickness,
+        bevelSize,
+        bevelOffset,
+        bevelSegments,
+        letterSpacing
     }
 
     // TODO: clean up when decide texture
