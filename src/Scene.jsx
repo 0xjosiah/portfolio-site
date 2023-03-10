@@ -12,10 +12,10 @@ export default function Scene() {
     const { width, height } = useThree((state) => state.viewport)
 
     /* General purpose controls, attach to whatever for adjustment */
-    const { position, rotation } = useControls({
-        position: [ 0, 0, 0 ],
-        rotation: [ 0, 0, 0 ],
-    })
+    // const { position, rotation } = useControls({
+    //     position: [ 0, 0, 0 ],
+    //     rotation: [ 0, 0, 0 ],
+    // })
 
     /* Camera position if needed */
     // const { position } = useThree((state) => state.camera)
@@ -51,7 +51,7 @@ export default function Scene() {
 
             <Ocean />
             <SiteTitle text='0xJosiah' navTo='/' position={[ -0.35, -0.2, 4.5 ]} rotation={[ 0, 1, 0.09 ]} />
-            <SiteTitle text='CONTACT' navTo='/contact' position={[ 3.6, 0.15, 6.5 ]} rotation={rotation} size={.05} height={.03} bevelThickness={0.007} bevelSize={.004} letterSpacing={.006} />
+            <SiteTitle text='CONTACT' navTo='/contact' position={[ 3.6, 0.15, 6.5 ]} size={.05} height={.03} bevelThickness={0.005} bevelSize={.003} letterSpacing={.006} />
             {/* <PivotControls
                 anchor={[ 0, 1, 0 ]}
             >
