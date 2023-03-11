@@ -85,10 +85,15 @@ export default function Contact() {
 
             {/* success form state */}
             { formStatus === 'success' &&
-                <h2 className='success-message'>
-                    Thanks for reaching out! <br/>
-                    Check out my other stuff below <br/>
-                </h2>
+                <p className='page-content'>
+                    <span className="keyword-callout">
+                        Thanks
+                    </span> for reaching out! <br/>
+                    Check out my other stuff <span className="keyword-callout">
+                            below
+                        </span>
+                    <br/>
+                </p>
             }
 
             {/* error form state */}
@@ -102,17 +107,25 @@ export default function Contact() {
 
             {/* Contact links, visible regardless of form state */}
             <div>
-                <a target='_blank' href='https://www.linkedin.com/in/josiahwebb/' rel='external'>
-                    <FaLinkedin  className='icon-link'/>
+                <a target='_blank' href='https://www.linkedin.com/in/josiahwebb/' rel='external'
+                    className='icon-link'
+                >
+                    <FaLinkedin  className='icon' />
                 </a>
-                <a target='_blank' href='https://www.instagram.com/0xjosiah/' rel='external'>
-                    <FaInstagramSquare className='icon-link' />
+                <a target='_blank' href='https://www.instagram.com/0xjosiah/' rel='external'
+                    className='icon-link'
+                >
+                    <FaInstagramSquare className='icon' />
                 </a>
-                <a target='_blank' href='https://twitter.com/0xjosiah' rel='external'>
-                    <FaTwitterSquare className='icon-link' />
+                <a target='_blank' href='https://twitter.com/0xjosiah' rel='external'
+                    className='icon-link'
+                >
+                    <FaTwitterSquare className='icon' />
                 </a>
-                <a target='_blank' href='https://github.com/0xjosiah' rel='external'>
-                    <FaGithubSquare className='icon-link' />
+                <a target='_blank' href='https://github.com/0xjosiah' rel='external'
+                    className='icon-link'
+                >
+                    <FaGithubSquare className='icon' />
                 </a>
             </div>
         </div>
