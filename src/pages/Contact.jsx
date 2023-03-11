@@ -81,7 +81,6 @@ export default function Contact() {
                 <h2 className='success-message'>
                     Thanks for reaching out! <br/>
                     Check out my other stuff below <br/>
-                    {/* <br/> In the meantime, checkout my work at the links below. */}
                 </h2>
             }
 

@@ -150,4 +150,7 @@ body,
 
 .page-content {
   font-family: 'Sono', sans-serif;
+  background-color: #430f0f;
+  padding: 1em;
+  border-radius: 5px;
 }
