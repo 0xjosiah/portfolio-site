@@ -1,4 +1,4 @@
-import { Box, FirstPersonControls, Html, PivotControls, RoundedBox, Scroll, ScrollControls, Svg, useTexture } from '@react-three/drei'
+import { Box, Cylinder, FirstPersonControls, Html, PivotControls, RoundedBox, Scroll, ScrollControls, Svg, useTexture } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import { useControls } from 'leva'
 import { Perf } from 'r3f-perf'
@@ -52,6 +52,7 @@ export default function Scene() {
             <Ocean />
             <SiteTitle text='0xJosiah' navTo='/' position={[ -0.35, -0.2, 4.5 ]} rotation={[ 0, 1, 0.09 ]} />
             <SiteTitle text='CONTACT' navTo='/contact' position={[ 3.6, 0.15, 6.5 ]} size={.05} height={.03} bevelThickness={0.005} bevelSize={.003} letterSpacing={.005} />
+            {/* <Cylinder position={[ 3.6, 0.15, 6.5 ]} /> */}
             {/* <PivotControls
                 anchor={[ 0, 1, 0 ]}
             >
