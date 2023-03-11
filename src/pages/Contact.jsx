@@ -1,5 +1,6 @@
 import { useRef, useState } from "react"
 import { FaLinkedin, FaInstagramSquare, FaGithubSquare, FaTwitterSquare } from "react-icons/fa"
+import { BiSend } from "react-icons/bi"
 
 const emptyFormData = {
     name: '',
@@ -25,10 +26,10 @@ export default function Contact() {
                 setFormStatus('success')
                 // clear form
                 setFormData(emptyFormData)
-                console.log('SUCCESS!', result.status, result.text, formStatus)
+                console.log('SUCCESS!', result.status, result.text)
             }, (error) => {
                 setFormStatus('error')
-                console.log('ERROR', error.text, formStatus)
+                console.log('ERROR', error.text)
             })
     }
 
@@ -72,7 +73,12 @@ export default function Contact() {
                         placeholder='Say hey!'
                         onChange={updateFormData} 
                     />
-                    <button type='submit' >Send</button>
+                    <button type='submit' >
+                        Send
+                        <span className='send-btn-icon'>
+                            <BiSend />
+                        </span>
+                    </button>
                 </form>
             }
 

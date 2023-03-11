@@ -97,6 +97,13 @@ body,
   box-shadow: 0px 0px 1px 3px #ffffff;
 }
 
+/* Form Submit Button Icon */
+.send-btn-icon {
+  display: inline-block;
+  margin-left: .25em;
+  vertical-align: middle;
+}
+
 /* Form Success Message */
 .contact-form .success-message,
 .contact-form .error-message {
