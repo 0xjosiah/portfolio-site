@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
 import { FaLinkedin, FaInstagramSquare, FaGithubSquare, FaTwitterSquare } from "react-icons/fa"
 import { BiSend } from "react-icons/bi"
+import { RiMailSendLine } from "react-icons/ri"
 
 const emptyFormData = {
     name: '',
@@ -76,7 +77,7 @@ export default function Contact() {
                     <button type='submit' >
                         Send
                         <span className='send-btn-icon'>
-                            <BiSend />
+                            <RiMailSendLine />
                         </span>
                     </button>
                 </form>
