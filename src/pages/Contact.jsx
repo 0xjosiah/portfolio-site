@@ -74,7 +74,7 @@ export default function Contact() {
                         placeholder='Say hey!'
                         onChange={updateFormData} 
                     />
-                    <button type='submit' >
+                    <button className='btn' type='submit' >
                         Send
                         <span className='send-btn-icon'>
                             <RiMailSendLine />
