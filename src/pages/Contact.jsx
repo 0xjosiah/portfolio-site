@@ -2,6 +2,7 @@ import { useRef, useState } from "react"
 import { FaDev, FaLinkedin, FaInstagramSquare, FaGithubSquare, FaTwitterSquare } from "react-icons/fa"
 import { BiSend } from "react-icons/bi"
 import { RiMailSendLine } from "react-icons/ri"
+import Socials from "../components/Socials"
 
 const emptyFormData = {
     name: '',
@@ -106,7 +107,7 @@ export default function Contact() {
             }
 
             {/* Contact links, visible regardless of form state */}
-            <div className='socials-links'>
+            {/* <div className='socials-links'>
                 <a target='_blank' href='https://www.linkedin.com/in/josiahwebb/' rel='external'
                     className='icon-link'
                 >
@@ -132,7 +133,8 @@ export default function Contact() {
                 >
                     <FaDev className='icon' />
                 </a>
-            </div>
+            </div> */}
+            <Socials />
         </div>
     )
 }
