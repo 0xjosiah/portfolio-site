@@ -1,11 +1,9 @@
+import PageScaffold from "../components/PageScaffold"
+
 export default function About() {
-    const styles = {
-        color: 'white'
-    }
+   
     return (
-        <div className="contact-form" 
-            // style={{...styles}}
-        >
+        <PageScaffold>
             <h2 className="page-title">
                 About me
             </h2>
@@ -42,6 +40,6 @@ export default function About() {
                 I am the shit, plain and simple. <br/>
                 You'd be an absolute nob not to hire me. <br/>
             </p> */}
-        </div>
+        </PageScaffold>
     )
 }

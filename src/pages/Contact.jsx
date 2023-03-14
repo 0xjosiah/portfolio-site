@@ -1,7 +1,6 @@
 import { useRef, useState } from "react"
-import { FaDev, FaLinkedin, FaInstagramSquare, FaGithubSquare, FaTwitterSquare } from "react-icons/fa"
-import { BiSend } from "react-icons/bi"
 import { RiMailSendLine } from "react-icons/ri"
+import PageScaffold from "../components/PageScaffold"
 import Socials from "../components/Socials"
 
 const emptyFormData = {
@@ -44,7 +43,7 @@ export default function Contact() {
     }
 
     return (
-        <div className='page-scaffold'>
+        <PageScaffold>
             {/* unsent form state */}
             { formStatus === 'unsent' &&
                 <form ref={form} onSubmit={sendEmail} className='contact-form'>
@@ -107,34 +106,7 @@ export default function Contact() {
             }
 
             {/* Contact links, visible regardless of form state */}
-            {/* <div className='socials-links'>
-                <a target='_blank' href='https://www.linkedin.com/in/josiahwebb/' rel='external'
-                    className='icon-link'
-                >
-                    <FaLinkedin  className='icon' />
-                </a>
-                <a target='_blank' href='https://www.instagram.com/0xjosiah/' rel='external'
-                    className='icon-link'
-                >
-                    <FaInstagramSquare className='icon' />
-                </a>
-                <a target='_blank' href='https://twitter.com/0xjosiah' rel='external'
-                    className='icon-link'
-                >
-                    <FaTwitterSquare className='icon' />
-                </a>
-                <a target='_blank' href='https://github.com/0xjosiah' rel='external'
-                    className='icon-link'
-                >
-                    <FaGithubSquare className='icon' />
-                </a>
-                <a target='_blank' href='https://dev.to/0xjosiah' rel='external'
-                    className='icon-link'
-                >
-                    <FaDev className='icon' />
-                </a>
-            </div> */}
             <Socials />
-        </div>
+        </PageScaffold>
     )
 }
