@@ -14,7 +14,7 @@ body,
 * Contact Page 
 */
 /* Form Container */
-.contact-form {
+.page-scaffold {
   position: absolute;
   top: 30%;
   left: 50%;
@@ -37,7 +37,7 @@ body,
 }
 
 /* Form */
-.contact-form form {
+.contact-form {
   display: flex;
   flex-direction: column;
 }
@@ -139,13 +139,13 @@ body,
 }
 
 /* Form Socials Section */
-.contact-form div {
+.socials-links {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.contact-form a {
+.icon-link {
   margin: 1.5rem .7rem 0;
 }
 

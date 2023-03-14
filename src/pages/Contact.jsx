@@ -43,10 +43,10 @@ export default function Contact() {
     }
 
     return (
-        <div className='contact-form'>
+        <div className='page-scaffold'>
             {/* unsent form state */}
             { formStatus === 'unsent' &&
-                <form ref={form} onSubmit={sendEmail}>
+                <form ref={form} onSubmit={sendEmail} className='contact-form'>
                     {/* <label>Name</label> */}
                     <input
                         autoFocus
@@ -106,7 +106,7 @@ export default function Contact() {
             }
 
             {/* Contact links, visible regardless of form state */}
-            <div>
+            <div className='socials-links'>
                 <a target='_blank' href='https://www.linkedin.com/in/josiahwebb/' rel='external'
                     className='icon-link'
                 >
