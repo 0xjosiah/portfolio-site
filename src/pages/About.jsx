@@ -3,10 +3,7 @@ import PageScaffold from "../components/PageScaffold"
 export default function About() {
    
     return (
-        <PageScaffold>
-            <h2 className="page-title">
-                About me
-            </h2>
+        <PageScaffold title="About me">
             <p className="page-content">
                 This page is alll about me! <br/>
                 I am the <span className="keyword-callout">
