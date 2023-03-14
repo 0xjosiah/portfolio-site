@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import { FaLinkedin, FaInstagramSquare, FaGithubSquare, FaTwitterSquare } from "react-icons/fa"
+import { FaDev, FaLinkedin, FaInstagramSquare, FaGithubSquare, FaTwitterSquare } from "react-icons/fa"
 import { BiSend } from "react-icons/bi"
 import { RiMailSendLine } from "react-icons/ri"
 
@@ -126,6 +126,11 @@ export default function Contact() {
                     className='icon-link'
                 >
                     <FaGithubSquare className='icon' />
+                </a>
+                <a target='_blank' href='https://dev.to/0xjosiah' rel='external'
+                    className='icon-link'
+                >
+                    <FaDev className='icon' />
                 </a>
             </div>
         </div>
