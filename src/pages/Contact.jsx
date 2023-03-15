@@ -76,7 +76,7 @@ export default function Contact() {
                     />
                     <button className='btn' type='submit' >
                         Send
-                        <span className='send-btn-icon'>
+                        <span className='inline-icon'>
                             <RiMailSendLine />
                         </span>
                     </button>
