@@ -23,7 +23,6 @@ export default function App(props) {
             </Canvas>
 
             <Routes>
-                {/* <Route exact path='/' element={ <Scene /> } /> */}
                 <Route path='/about' element={ <About /> } />
                 <Route path='/experience' element={ <Experience /> } />
                 <Route path='/projects' element={ <Projects /> } />
