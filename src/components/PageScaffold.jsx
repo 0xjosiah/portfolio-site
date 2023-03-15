@@ -10,7 +10,10 @@ export default function PageScaffold({ children, title }) {
                 <BsArrowDownLeftSquareFill className="home-btn"/>
             </Link>
             <h2 className="page-title">
-                {title}
+                {/* the callout looks kinda nice */}
+                {/* <span className="keyword-callout"> */}
+                    {title}
+                {/* </span> */}
             </h2>
             {children}
         </div>
