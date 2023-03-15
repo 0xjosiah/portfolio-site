@@ -36,18 +36,7 @@ export default function SiteTitle({
         letterSpacing
     }
 
-    // TODO: clean up when decide texture
-    const [ chrome, colorShift, gore, limeGreenToon, skin, slate, sunSet, tan ] = useTexture([
-        './textures/matcaps/chrome.png',
-        './textures/matcaps/colorShift.png',
-        './textures/matcaps/gore.png',
-        './textures/matcaps/limeGreenToon.png',
-        './textures/matcaps/skin.png',
-        './textures/matcaps/slate.png',
-        './textures/matcaps/sunSet.png',
-        './textures/matcaps/tan.png',
-
-    ])
+    const chrome = useTexture('./textures/matcaps/chrome.png')
 
     return (
         <Text3D

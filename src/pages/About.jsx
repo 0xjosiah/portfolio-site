@@ -1,5 +1,3 @@
-import { GrDocumentDownload } from "react-icons/gr"
-import { RiFileDownloadLine } from "react-icons/ri"
 import { HiOutlineDownload } from "react-icons/hi"
 import PageScaffold from "../components/PageScaffold"
 import Socials from "../components/Socials"
