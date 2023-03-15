@@ -92,6 +92,11 @@ body,
   margin: 0;
 }
 
+.resume {
+  cursor: pointer;
+  color: #fff;
+}
+
 /* Keyword highlighting */
 .keyword-callout {
   display: inline-block;
