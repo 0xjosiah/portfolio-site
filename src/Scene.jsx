@@ -6,6 +6,7 @@ import Ocean from './components/Ocean'
 import SectionTitle from './components/SectionTitle'
 import SiteTitle from './components/SiteTitle'
 import Contact from './pages/Contact'
+import ContactSign from './components/ContactSign'
 
 export default function Scene() {
 
@@ -23,8 +24,6 @@ export default function Scene() {
     // console.log('camPos', position)
 
 
-    const chrome = useTexture('./textures/matcaps/chrome.png')
-    
     return (
         <>
             {/* <OrbitControls makeDefault /> */}
@@ -32,13 +31,7 @@ export default function Scene() {
 
             <Ocean />
             <SiteTitle text='0xJosiah' navTo='/' position={[ -0.35, -0.2, 4.5 ]} rotation={[ 0, 1, 0.09 ]} />
-            <SiteTitle text='CONTACT' navTo='/contact' position={[ 3.6, 0.15, 6.5 ]} size={.05} height={.03} bevelThickness={0.005} bevelSize={.003} letterSpacing={.005} />
-            <RoundedBox position={[ 3.746, 0.029, 6.515 ]} args={[ .0095, 0.25, 0.035 ]}
-                radius={0.0025} // Radius of the rounded corners. Default is 0.05
-                smoothness={4}
-            >
-                <meshMatcapMaterial matcap={chrome} />
-            </RoundedBox>
+            <ContactSign />
 
             <ScrollControls pages={6} infinite horizontal>
                 <Scroll>
