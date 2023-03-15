@@ -27,12 +27,12 @@ body,
   /* background-color: #f2f2f229; */
   /* background-color: #6b6b6b7a; */
   background-color: #430F0F7a;
-  padding: 1.75rem;
+  padding: 2.5rem;
   border-radius: 10px;
 
   /* TODO: choose between these two */
-  /* box-shadow: 0px 0px 10px #430F0F; */
-  box-shadow: 0px 0px 10px 1px #430f0f5b;
+  box-shadow: 0px 0px 10px #430F0F;
+  /* box-shadow: 0px 0px 10px 1px #430f0f5b; */
 
 }
 
@@ -119,8 +119,8 @@ body,
 
 /* TODO: change these to match btns */
 /* Form Success Message */
-.contact-form .success-message,
-.contact-form .error-message {
+.success-message,
+.error-message {
   color: #000000b4;
   background-color: #ffffffbc;
   box-shadow: 0px 0px 10px 1px #430f0f5b;
@@ -132,7 +132,7 @@ body,
 }
 
 /* Form Error Message */
-.contact-form .error-message {
+.error-message {
   color: #e74c3c;
   font-weight: bold;
   margin-bottom: 10px;
@@ -176,6 +176,10 @@ body,
 .page-title {
   font-family: 'Lato', sans-serif;
   color: #fff;
+  margin: 0;
+  padding: 0;
+  /* border-bottom: 1px solid white; */
+  text-transform: capitalize;
 }
 
 .page-content {
@@ -207,10 +211,13 @@ body,
   top: 0em;
   right: 0em;
   font-size: 1.5rem;
+  border-radius: 5px 10px 5px 10px;
   border-radius: 0 10px 0 0;
+  /* border-radius: 10px; */
 }
 
 .home-btn:focus,
 .home-btn:hover {
+  /* border-radius: 0px 10px 0px 0px; */
   color: #0000008e;
 }
