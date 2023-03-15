@@ -1,12 +1,11 @@
-import { RoundedBox, Scroll, ScrollControls, useTexture } from '@react-three/drei'
+import { Scroll, ScrollControls } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import { useControls } from 'leva'
 import { Perf } from 'r3f-perf'
 import Ocean from './components/Ocean'
 import SectionTitle from './components/SectionTitle'
 import SiteTitle from './components/SiteTitle'
-import Contact from './pages/Contact'
-import ContactSign from './components/ContactSign'
+import Sign from './components/Sign'
 
 export default function Scene() {
 
@@ -23,7 +22,6 @@ export default function Scene() {
     // const { camera } = useThree((state) => state)
     // console.log('camPos', position)
 
-
     return (
         <>
             {/* <OrbitControls makeDefault /> */}
@@ -31,7 +29,7 @@ export default function Scene() {
 
             <Ocean />
             <SiteTitle text='0xJosiah' navTo='/' position={[ -0.35, -0.2, 4.5 ]} rotation={[ 0, 1, 0.09 ]} />
-            <ContactSign />
+            <Sign text='CONTACT' navTo='/contact' />
 
             <ScrollControls pages={6} infinite horizontal>
                 <Scroll>
