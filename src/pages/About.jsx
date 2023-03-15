@@ -1,4 +1,5 @@
 import PageScaffold from "../components/PageScaffold"
+import Socials from "../components/Socials"
 
 export default function About() {
    
@@ -34,6 +35,7 @@ export default function About() {
                 I am the shit, plain and simple. <br/>
                 You'd be an absolute nob not to hire me. <br/>
             </p> */}
+            <Socials />
         </PageScaffold>
     )
 }
