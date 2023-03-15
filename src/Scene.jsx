@@ -1,4 +1,4 @@
-import { Box, Cylinder, FirstPersonControls, Html, OrbitControls, PivotControls, RoundedBox, Scroll, ScrollControls, Svg, useTexture } from '@react-three/drei'
+import { RoundedBox, Scroll, ScrollControls, useTexture } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import { useControls } from 'leva'
 import { Perf } from 'r3f-perf'
@@ -23,21 +23,12 @@ export default function Scene() {
     // console.log('camPos', position)
 
 
-    /* Contact stuff attempt */
-    //TODO likely delete this
-    const contactStagePos = [ 3.50, -0.25, 6 ]
-    
     const chrome = useTexture('./textures/matcaps/chrome.png')
     
     return (
         <>
             {/* <OrbitControls makeDefault /> */}
             {/* <Perf position='top-left' /> */}
-            {/* <FirstPersonControls
-                constrainVertical={true}
-                // verticalMax={Math.PI * .5}
-                // verticalMin={0}
-            /> */}
 
             <Ocean />
             <SiteTitle text='0xJosiah' navTo='/' position={[ -0.35, -0.2, 4.5 ]} rotation={[ 0, 1, 0.09 ]} />
@@ -48,21 +39,6 @@ export default function Scene() {
             >
                 <meshMatcapMaterial matcap={chrome} />
             </RoundedBox>
-            {/* <PivotControls
-                anchor={[ 0, 1, 0 ]}
-            >
-                <RoundedBox
-                    args={[1, 1, 1]} // Width, height, depth. Default is [1, 1, 1]
-                    radius={0.05} // Radius of the rounded corners. Default is 0.05
-                    smoothness={10} // The number of curve segments. Default is 4
-                    position={contactStagePos}
-                >
-                    <meshBasicMaterial {...instaTexture} />
-                </RoundedBox>
-
-            </PivotControls> */}
-            
-            {/* <Section position={[ 3.5, 0.5, 6.5 ]} /> */}
 
             <ScrollControls pages={6} infinite horizontal>
                 <Scroll>
