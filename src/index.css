@@ -60,7 +60,7 @@ body,
   color: #fff;
   margin: 0;
   padding: 0;
-  padding-left: .7em;
+  /* padding-left: .7em; */
   /* border-bottom: 1px solid white; */
   text-transform: capitalize;
 }
@@ -69,13 +69,23 @@ body,
   font-family: 'Sono', sans-serif;
   background-color: #430f0f;
   background-color: #430f0feb;
-  padding: 1em;
+  padding: 1em 1.5em;
   border-radius: 5px;
   line-height: 1.5em;
   /* box-shadow: 0px 0px 10px #430f0f87; */
   box-shadow: 0px 0px 10px 1px #430f0f5b;
   color: #fff;
 
+}
+
+.page-content p {
+  margin: 0;
+  margin-bottom: 1em;
+  padding: 0;
+}
+
+.page-content p:last-child {
+  margin: 0;
 }
 
 /* Keyword highlighting */
