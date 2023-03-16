@@ -128,7 +128,7 @@ body,
   /* color: #430F0F; */
   box-shadow: inset -1px -3px 3px 1.5px #0000008e;
   /* box-shadow: inset -1px -3px 3px 1.5px #365187; */
-  /* box-shadow: inset -1px -3px 3px 1.5px #f5d5d5; */
+  box-shadow: inset -1px -3px 5px 1.5px #f5d5d5;
   /* box-shadow: inset -1px -3px 3px 1.5px #430F0F5b; */
   /* border: .5px solid #0000008e; */
 }
