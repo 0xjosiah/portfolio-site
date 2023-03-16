@@ -65,6 +65,7 @@ body,
   margin: 0;
   padding: 0;
   /* padding-left: .7em; */
+  padding-bottom: .5em;
   /* border-bottom: 1px solid white; */
   text-transform: capitalize;
 }
@@ -105,7 +106,7 @@ body,
   /* margin: .1em .1em; */
   border-radius: 7px;
   /* background-color: #430f0f5b; */
-  /* background-color: #f5d5d5; */
+  background-color: #f5d5d56b;
   /* color: #000000; */
   /* color: #430F0F; */
   box-shadow: inset -1px -3px 3px 1.5px #0000008e;
