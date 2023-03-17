@@ -5,35 +5,26 @@ import { jobs } from "../content/jobs"
 export default function Experience() {
     const [activeJobId, setActiveJobId] = useState(0)
     const [jobShown, setJobShown] = useState(jobs[0])
-    const btnRefs = useRef([])
+    const tabRefs = useRef([])
 
-    /* creates the buttons used to view different experience listings */
+    /* creates the tabs used to view different experience listings */
     const companiesList = jobs.map(i => i.company)
-    const buttons = companiesList.map((company, index) => {
-        if(index == 0) {
-            return (
-                <button
-                    key={index}
-                    ref={(element) => {btnRefs.current[index] = element}}
-                    className="job-btn job-callout"
-                    onClick={e => changeJobDisplay(e)}
-                >
-                    {company}
-                </button>
+    const tabs = companiesList.map((company, index) => (
+        <button
+            key={index}
+            ref={(element) => {tabRefs.current[index] = element}}
+            className="job-tab"
+            onClick={e => changeJobDisplay(e)}
+        >
+            {company}
+        </button>
+    ))
 
-            )
-        }
-        return (
-            <button
-                key={index}
-                ref={(element) => {btnRefs.current[index] = element}}
-                className="job-btn"
-                onClick={e => changeJobDisplay(e)}
-            >
-                {company}
-            </button>
-        )
-    })
+    const highlightTab = () => {
+        // this will change the highlighted tab
+    }
+
+    useEffect(() => highlightTab(), [jobShown])
 
     /* function changes the job displayed */
     const changeJobDisplay = (e) => {
@@ -41,7 +32,7 @@ export default function Experience() {
         for(const i of jobs) {
             if(i.company === company) {
                 setJobShown(i)
-                console.log(btnRefs.current);
+                console.log(tabRefs.current);
             }
         }
     }
@@ -53,8 +44,8 @@ export default function Experience() {
                     A little about my experience and how it can help any team...
                 </p>
             </div>
-            <div className="job-btn-container">
-                {buttons}
+            <div className="job-tab-container">
+                {tabs}
             </div>
             <div className="page-content">
                 <div>

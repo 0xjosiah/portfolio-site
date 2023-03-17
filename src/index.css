@@ -245,7 +245,7 @@ body,
 /**
 * Experience Page Styling
 */
-.job-btn {
+.job-tab {
   font: inherit;
   color: #fff;
   padding: .75em 2em;
@@ -256,12 +256,12 @@ body,
   cursor: pointer;
 }
 
-.job-btn:hover {
+.job-tab:hover {
   background-color: #0000008e;
   border-radius: 7px;
 }
 
-.job-btn-container {
+.job-tab-container {
   display: flex;
   justify-content: flex-start;
   padding: 1em 0;
@@ -270,7 +270,7 @@ body,
   overflow-y: auto;
 }
 
-.job-callout {
+.tab-callout {
   display: inline-block;
   padding: .75em 2em;
   /* padding: .06em .4em; */
