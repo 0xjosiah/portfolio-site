@@ -3,6 +3,7 @@ import PageScaffold from "../components/PageScaffold"
 import { jobs } from "../content/jobs"
 
 export default function Experience() {
+    const [activeJobId, setActiveJobId] = useState(0)
     const [jobShown, setJobShown] = useState(jobs[0])
     const btnRefs = useRef([])
 
@@ -22,7 +23,6 @@ export default function Experience() {
 
             )
         }
-
         return (
             <button
                 key={index}
