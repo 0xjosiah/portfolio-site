@@ -38,30 +38,9 @@ export default function Experience() {
             </div>
             <div className="job-btn-container">
                 {buttons}
-                {/* <div>
-                    <span className="job-callout">
-                        Job 1
-                    </span><br/>
-                </div>
-                <div>
-                    Job 2
-                </div>
-                <div>
-                    Job 3
-                </div>
-                <div>
-                    Job 4
-                </div>
-                <div>
-                    Job 5
-                </div>
-                <div>
-                    Job 6
-                </div> */}
             </div>
             <div className="page-content">
                 <div>
-                    {/* <span className="keyword-callout">Job 1</span><br/> */}
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <p>{jobShown.title} @ <a>{jobShown.company}</a></p>
                         <p>{jobShown.dates}</p>
