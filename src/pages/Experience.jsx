@@ -1,10 +1,14 @@
+import { useEffect, useState } from "react"
 import PageScaffold from "../components/PageScaffold"
 import { jobs } from "../content/jobs"
 
 export default function Experience() {
+    const [selection, setSelection] = useState(0)
+    const [jobShown, setJobShown] = useState(jobs[0])
+
     const companiesList = jobs.map(i => i.company)
     const buttons = companiesList.map((company, index) => {
-        if(index == 0) {
+        if(index == selection) {
             return (
                 <button className="job-btn job-callout">
                     {company}
@@ -12,6 +16,7 @@ export default function Experience() {
 
             )
         }
+
         return (
             <button className="job-btn">
                 {company}
@@ -19,7 +24,10 @@ export default function Experience() {
         )
     })
 
-    console.log(buttons)
+    useEffect(() => {
+        
+    }, [ selection ])
+
 
     return (
         <PageScaffold title="Experience">
@@ -55,13 +63,11 @@ export default function Experience() {
                 <div>
                     {/* <span className="keyword-callout">Job 1</span><br/> */}
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <p>Job Title @ <a>Company</a></p>
-                        <p>Date - 2009</p>
+                        <p>{jobShown.title} @ <a>{jobShown.company}</a></p>
+                        <p>{jobShown.dates}</p>
                     </div>
                     <ul>
-                        <li>this, that, and the other</li>
-                        <li>this, that, and the other</li>
-                        <li>this, that, and the other</li>
+                        {jobShown.duties.map(i => (<li>{i}</li>))}
                     </ul>
                 </div>
             </div>
