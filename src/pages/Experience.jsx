@@ -13,7 +13,7 @@ export default function Experience() {
         <button
             key={index}
             ref={(element) => {tabRefs.current[index] = element}}
-            className="job-tab"
+            className={activeJobId === index ? "tab-callout job-tab" : "job-tab"}
             onClick={e => changeJobDisplay(e)}
         >
             {company}
@@ -21,9 +21,9 @@ export default function Experience() {
     ))
 
     const highlightTab = () => {
-        // this will change the highlighted tab
-        // add one class and remove another
-        console.log('tab change')
+        tabRefs.current[activeJobId].className = "job-tab"
+        setActiveJobId(companiesList.indexOf(jobShown.company))
+        tabRefs.current[activeJobId].className = "tab-callout job-tab"
     }
 
     useEffect(() => highlightTab(), [jobShown])
