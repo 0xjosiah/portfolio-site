@@ -52,6 +52,7 @@ export default function Experience() {
                 <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <p>{jobShown.title} @ <a
+                                style={{color: 'inherit'}}
                                 href={jobShown.url}
                                 target="_blank"
                                 rel="external"
