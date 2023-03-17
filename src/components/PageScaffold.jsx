@@ -8,26 +8,34 @@ export default function PageScaffold({ children, title, socials }) {
             <div
                 style={{
                     // overflow: 'auto',
-                    // position: 'fixed'
+                    // position: 'absolute',
+                    // top: 0,
+                    // left: 0,
+                    // width: '100%'
                 }}
             >
                 <Link to="/" className="home-btn">
                     <BsArrowDownLeftSquareFill />
                 </Link>
-                <h2 className="page-title">
-                    {/* the callout looks kinda nice */}
-                    {/* <span className="keyword-callout"> */}
-                        {title}
-                    {/* </span> */}
-                </h2>
+                {/* {title && */}
+                    <h2 className="page-title">
+                        {/* the callout looks kinda nice */}
+                        {/* <span className="keyword-callout"> */}
+                            {title}
+                        {/* </span> */}
+                    </h2>
+                {/* } */}
             </div>
 
             <div
                 style={{
-                    // overflow: 'auto',
-                    // position: 'relative'
-                    maxHeight: '75vh',
-                    maxWidth: '75vw'
+                    overflow: 'auto',
+                    // position: 'relative',
+                    // display: 'block',
+                    // height: '100px',
+                    maxHeight: '90%',
+                    // width: '100px',
+                    // maxWidth: '75vw'
                 }}
             >
                 {children}
