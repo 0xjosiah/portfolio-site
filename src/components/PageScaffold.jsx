@@ -4,8 +4,8 @@ import { Link } from "react-router-dom"
 export default function PageScaffold({ children, title }) {
     return (
         <div className="page-scaffold">
-            <Link to="/">
-                <BsArrowDownLeftSquareFill className="home-btn"/>
+            <Link to="/" className="home-btn">
+                <BsArrowDownLeftSquareFill />
             </Link>
             <h2 className="page-title">
                 {/* the callout looks kinda nice */}
