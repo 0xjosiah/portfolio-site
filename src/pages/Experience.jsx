@@ -22,6 +22,8 @@ export default function Experience() {
 
     const highlightTab = () => {
         // this will change the highlighted tab
+        // add one class and remove another
+        console.log('tab change')
     }
 
     useEffect(() => highlightTab(), [jobShown])
@@ -32,7 +34,6 @@ export default function Experience() {
         for(const i of jobs) {
             if(i.company === company) {
                 setJobShown(i)
-                console.log(tabRefs.current);
             }
         }
     }
