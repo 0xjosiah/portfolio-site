@@ -10,7 +10,7 @@ export default function Experience() {
     const buttons = companiesList.map((company, index) => {
         if(index == 0) {
             return (
-                <button className="job-btn job-callout" onClick={e => changeJobDisplay(e)}>
+                <button key={index} className="job-btn job-callout" onClick={e => changeJobDisplay(e)}>
                     {company}
                 </button>
 
@@ -18,7 +18,7 @@ export default function Experience() {
         }
 
         return (
-            <button className="job-btn" onClick={e => changeJobDisplay(e)}>
+            <button key={index} className="job-btn" onClick={e => changeJobDisplay(e)}>
                 {company}
             </button>
         )
@@ -51,7 +51,7 @@ export default function Experience() {
                         <p>{jobShown.dates}</p>
                     </div>
                     <ul>
-                        {jobShown.duties.map(i => (<li>{i}</li>))}
+                        {jobShown.duties.map((i, index) => (<li key={`duty${index}`}>{i}</li>))}
                     </ul>
                 </div>
             </div>
