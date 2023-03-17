@@ -3,13 +3,21 @@ import { jobs } from "../content/jobs"
 
 export default function Experience() {
     const companiesList = jobs.map(i => i.company)
-    const buttons = companiesList.map(i => (
-        <button className="job-btn">
-            <span className="job-callout">
-                {i}
-            </span>
-        </button>
-    ))
+    const buttons = companiesList.map((company, index) => {
+        if(index == 0) {
+            return (
+                <button className="job-btn job-callout">
+                    {company}
+                </button>
+
+            )
+        }
+        return (
+            <button className="job-btn">
+                {company}
+            </button>
+        )
+    })
 
     console.log(buttons)
 
@@ -20,37 +28,28 @@ export default function Experience() {
                     A little about my experience and how it can help any team...
                 </p>
             </div>
-            <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', fontWeight: 'normal', borderBottom: '0px solid white', padding: '1em', alignItems: 'center', color: '#fff'}}>
-                <div>
+            <div className="job-btn-container">
+                {buttons}
+                {/* <div>
                     <span className="job-callout">
                         Job 1
                     </span><br/>
                 </div>
                 <div>
-                    {/* <span className="keyword-callout"> */}
-                        Job 2
-                    {/* </span> */}
+                    Job 2
                 </div>
                 <div>
-                    {/* <span className="keyword-callout"> */}
-                        Job 3
-                    {/* </span> */}
+                    Job 3
                 </div>
                 <div>
-                    {/* <span className="keyword-callout"> */}
-                        Job 4
-                    {/* </span> */}
+                    Job 4
                 </div>
                 <div>
-                    {/* <span className="keyword-callout"> */}
-                        Job 5
-                    {/* </span> */}
+                    Job 5
                 </div>
                 <div>
-                    {/* <span className="keyword-callout"> */}
-                        Job 6
-                    {/* </span> */}
-                </div>
+                    Job 6
+                </div> */}
             </div>
             <div className="page-content">
                 <div>
