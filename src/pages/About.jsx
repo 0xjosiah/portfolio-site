@@ -1,11 +1,10 @@
 import { HiOutlineDownload } from "react-icons/hi"
 import PageScaffold from "../components/PageScaffold"
-import Socials from "../components/Socials"
 
 export default function About() {
    
     return (
-        <PageScaffold title="About me">
+        <PageScaffold title="About me" socials={true}>
             <div className="page-content">
                 <p>
                     Hi, my name is <span className="keyword-callout">Josiah Webb</span>
@@ -32,7 +31,6 @@ export default function About() {
                     </a> or check out my other profiles below.
                 </p>
             </div>
-            <Socials />
         </PageScaffold>
     )
 }

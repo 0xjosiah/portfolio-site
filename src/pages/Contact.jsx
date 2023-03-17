@@ -1,7 +1,6 @@
 import { useRef, useState } from "react"
 import { RiMailSendLine } from "react-icons/ri"
 import PageScaffold from "../components/PageScaffold"
-import Socials from "../components/Socials"
 
 const emptyFormData = {
     name: '',
@@ -43,7 +42,7 @@ export default function Contact() {
     }
 
     return (
-        <PageScaffold>
+        <PageScaffold socials={true}>
             {/* unsent form state */}
             { formStatus === 'unsent' &&
                 <form ref={form} onSubmit={sendEmail} className='contact-form'>
@@ -104,9 +103,6 @@ export default function Contact() {
                     <br/> hello@josiahwebb.com
                 </h2>
             }
-
-            {/* Contact links, visible regardless of form state */}
-            <Socials />
         </PageScaffold>
     )
 }
