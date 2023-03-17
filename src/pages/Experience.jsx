@@ -10,7 +10,7 @@ export default function Experience() {
     const buttons = companiesList.map((company, index) => {
         if(index == selection) {
             return (
-                <button className="job-btn job-callout">
+                <button className="job-btn job-callout" onClick={e => changeJobDisplay(e)}>
                     {company}
                 </button>
 
@@ -18,16 +18,16 @@ export default function Experience() {
         }
 
         return (
-            <button className="job-btn">
+            <button className="job-btn" onClick={e => changeJobDisplay(e)}>
                 {company}
             </button>
         )
     })
 
-    useEffect(() => {
-        
-    }, [ selection ])
-
+    const changeJobDisplay = (e) => {
+        const job = e.target.innerHTML
+        console.log(job)
+    }
 
     return (
         <PageScaffold title="Experience">
