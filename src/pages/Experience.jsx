@@ -3,7 +3,7 @@ import PageScaffold from "../components/PageScaffold"
 import { jobs } from "../content/jobs"
 
 export default function Experience() {
-    const [activeJobId, setActiveJobId] = useState(0)
+    const [activeJobIndex, setActiveJobIndex] = useState(0)
     const [jobShown, setJobShown] = useState(jobs[0])
     const tabRefs = useRef([])
 
@@ -13,19 +13,21 @@ export default function Experience() {
         <button
             key={index}
             ref={(element) => {tabRefs.current[index] = element}}
-            className={activeJobId === index ? "tab-callout job-tab" : "job-tab"}
+            className={activeJobIndex === index ? "tab-callout job-tab" : "job-tab"}
             onClick={e => changeJobDisplay(e)}
         >
             {company}
         </button>
     ))
 
+    /* fn runs when new tab is clicked */
     const highlightTab = () => {
-        tabRefs.current[activeJobId].className = "job-tab"
-        setActiveJobId(companiesList.indexOf(jobShown.company))
-        tabRefs.current[activeJobId].className = "tab-callout job-tab"
+        tabRefs.current[activeJobIndex].className = "job-tab"
+        setActiveJobIndex(companiesList.indexOf(jobShown.company))
+        tabRefs.current[activeJobIndex].className = "tab-callout job-tab"
     }
 
+    /* when jobShown changes via tab click, the highlighted tab changes accordingly */
     useEffect(() => highlightTab(), [jobShown])
 
     /* function changes the job displayed */
