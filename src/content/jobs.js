@@ -1,7 +1,7 @@
 export const jobs = [
     {
         company: 'Company',
-        title: 'Job Title',
+        title: 'Software Developer',
         dates: '2008 - 2009',
         duties: [
             'this, that, and the other',
@@ -11,21 +11,21 @@ export const jobs = [
     },
     {
         company: 'Company 2',
-        title: 'Job Title',
-        dates: '2008 - 2009',
+        title: 'Financial Advisor',
+        dates: '2009 - 2010',
         duties: [
-            'this, that, and the other',
+            'thay, that, and the other',
             'this, that, and the other',
             'this, that, and the other',
         ]
     },
     {
         company: 'Company 3',
-        title: 'Job Title',
-        dates: '2008 - 2009',
+        title: 'A Title',
+        dates: '2108 - 2009',
         duties: [
             'this, that, and the other',
-            'this, that, and the other',
+            'this, that, & the other',
             'this, that, and the other',
         ]
     },
