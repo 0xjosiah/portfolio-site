@@ -3,12 +3,12 @@ import PageScaffold from "../components/PageScaffold"
 import { jobs } from "../content/jobs"
 
 export default function Experience() {
-    const [selection, setSelection] = useState(0)
     const [jobShown, setJobShown] = useState(jobs[0])
 
+    /* creates the buttons used to view different experience listings */
     const companiesList = jobs.map(i => i.company)
     const buttons = companiesList.map((company, index) => {
-        if(index == selection) {
+        if(index == 0) {
             return (
                 <button className="job-btn job-callout" onClick={e => changeJobDisplay(e)}>
                     {company}
@@ -24,6 +24,7 @@ export default function Experience() {
         )
     })
 
+    /* function changes the job displayed */
     const changeJobDisplay = (e) => {
         const company = e.target.innerHTML
         for(const i of jobs) {
