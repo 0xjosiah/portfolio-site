@@ -21,14 +21,18 @@ export default function PageScaffold({ children, title, socials }) {
                     {/* </span> */}
                 </h2>
             </div>
+
             <div
                 style={{
                     // overflow: 'auto',
                     // position: 'relative'
+                    maxHeight: '75vh',
+                    maxWidth: '75vw'
                 }}
             >
                 {children}
             </div>
+
             {socials &&
                 <Socials />
             }
