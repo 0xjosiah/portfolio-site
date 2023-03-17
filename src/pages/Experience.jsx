@@ -26,6 +26,11 @@ export default function Experience() {
 
     const changeJobDisplay = (e) => {
         const job = e.target.innerHTML
+        for(const i of companiesList) {
+            if(i.company === job) {
+                setJobShown(i)
+            }
+        }
         console.log(job)
     }
 
