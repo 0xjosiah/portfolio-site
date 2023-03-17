@@ -51,7 +51,14 @@ export default function Experience() {
             <div className="page-content">
                 <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <p>{jobShown.title} @ <a>{jobShown.company}</a></p>
+                        <p>{jobShown.title} @ <a
+                                href={jobShown.url}
+                                target="_blank"
+                                rel="external"
+                            >
+                                {jobShown.company}
+                            </a>
+                        </p>
                         <p>{jobShown.dates}</p>
                     </div>
                     <ul>
