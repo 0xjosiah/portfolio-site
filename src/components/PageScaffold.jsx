@@ -13,7 +13,8 @@ export default function PageScaffold({ children, title = 'page title', socials =
             <h2 className="page-title">
                 {/* the callout looks kinda nice */}
                 {/* <span className="keyword-callout"> */}
-                    {title}
+                    {/* This allows for providing either title or noTitle prop */}
+                    {!noTitle && title}
                 {/* </span> */}
             </h2>
 
