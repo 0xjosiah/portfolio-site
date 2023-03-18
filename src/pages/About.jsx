@@ -5,7 +5,7 @@ export default function About() {
    
     return (
         <PageScaffold title="About me" socials={true}>
-            <div className="page-content">
+            <div className="page-section-primary">
                 <p>
                     Hi, my name is <span className="keyword-callout">Josiah Webb</span>
                 </p>

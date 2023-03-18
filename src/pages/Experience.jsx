@@ -42,7 +42,7 @@ export default function Experience() {
 
     return (
         <PageScaffold title="Experience">
-            <div className="page-content">
+            <div className="page-section-primary">
                 <p>
                     A little about my experience and how it can help any team...
                 </p>
@@ -50,7 +50,7 @@ export default function Experience() {
             <div className="job-tab-container">
                 {tabs}
             </div>
-            <div className="page-content">
+            <div className="page-section-primary">
                 <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <p>{jobShown.title} @ <a

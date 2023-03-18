@@ -4,7 +4,7 @@ export default function Projects() {
     
     return (
         <PageScaffold title="Projects">
-            <div className="page-content">
+            <div className="page-section-primary">
                 <span className="keyword-callout">Project 1</span><br/>
                 <p>
                     A nice proj description.

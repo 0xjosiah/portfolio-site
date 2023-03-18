@@ -29,11 +29,11 @@ export default function PageScaffold({ children, title, socials }) {
 
             <div
                 style={{
-                    overflow: 'auto',
+                    // overflow: 'auto',
                     // position: 'relative',
                     // display: 'block',
                     // height: '100px',
-                    maxHeight: '90%',
+                    // maxHeight: '90%',
                     // width: '100px',
                     // maxWidth: '75vw'
                 }}

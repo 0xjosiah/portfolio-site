@@ -72,9 +72,8 @@ body,
   text-transform: capitalize;
 }
 
-.page-content {
-  font-family: 'Sono', sans-serif;
-  background-color: #430f0f;
+.page-section-primary {
+  /* background-color: #430f0f; */
   background-color: #430f0feb;
   padding: 1em 1.5em;
   border-radius: 5px;
@@ -89,13 +88,13 @@ body,
 
 }
 
-.page-content p {
+.page-section-primary p {
   margin: 0;
   margin-bottom: 1em;
   padding: 0;
 }
 
-.page-content p:last-child {
+.page-section-primary p:last-child {
   margin: 0;
 }
 
