@@ -20,7 +20,7 @@ body,
   transform: translateX(-50%);
   width: 75vw;
   max-width: 800px;
-  max-height: 90vh;
+  max-height: 75vh;
   background-color: #430F0F7a;
   /* background-color: #f2f2f229; */
   /* background-color: #6b6b6b7a; */
@@ -41,7 +41,7 @@ body,
     bottom: 5vh;
     padding: 1.5rem;
     /* margin: 0 .5em; */
-    /* max-height: 75vh; */
+    max-height: 85vh;
   }
 }
 
