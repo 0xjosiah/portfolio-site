@@ -46,21 +46,6 @@ body,
   padding-top: 2.5rem;
 }
 
-@media (max-width: 480px) {
-  .page-scaffold {
-    top: 5vh;
-    bottom: 5vh;
-    padding: 2rem;
-    padding-top: 4.5rem;
-    /* margin: 0 .5em; */
-    max-height: 85vh;
-    justify-content: space-between;
-  }
-  .no-title {
-    padding-top: 2rem;
-  }
-}
-
 /* Home Button */
 .home-btn {
   position: absolute;
@@ -319,4 +304,25 @@ body,
   box-shadow: inset -1px -3px 5px 1.5px #f5d5d5;
   /* box-shadow: inset -1px -3px 3px 1.5px #430F0F5b; */
   /* border: .5px solid #0000008e; */
+}
+
+@media (max-width: 480px) {
+  .page-scaffold {
+    top: 5vh;
+    bottom: 5vh;
+    padding: 2rem;
+    padding-top: 4.5rem;
+    /* margin: 0 .5em; */
+    max-height: 85vh;
+    justify-content: space-between;
+  }
+  .no-title {
+    padding-top: 2rem;
+  }
+  .icon {
+    font-size: 2.25rem;
+  }
+  .icon-link {
+    margin: 1.5rem .5rem 0;
+  }
 }
