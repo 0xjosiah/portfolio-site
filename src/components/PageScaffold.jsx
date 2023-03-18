@@ -2,19 +2,22 @@ import { BsArrowDownLeftSquareFill } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import Socials from "./Socials"
 
-export default function PageScaffold({ children, title, socials }) {
+export default function PageScaffold({ children, title, socials, noTitle }) {
     return (
-        <div className="page-scaffold">
-            <div
+        <div
+            className={noTitle ? "page-scaffold no-title" : "page-scaffold"}
+        >
+            {/* <div
                 style={{
                     // overflow: 'auto',
                     // position: 'absolute',
                     // top: 0,
                     // left: 0,
                     // width: '100%'
-                    maxHeight: '2.5rem'
+                    // maxHeight: '2.5rem'
+                    // flex: '1',
                 }}
-            >
+            > */}
                 <Link to="/" className="home-btn">
                     <BsArrowDownLeftSquareFill />
                 </Link>
@@ -26,21 +29,11 @@ export default function PageScaffold({ children, title, socials }) {
                         {/* </span> */}
                     </h2>
                 {/* } */}
-            </div>
+            {/* </div> */}
 
-            <div
-                style={{
-                    // overflow: 'auto',
-                    // position: 'relative',
-                    // display: 'block',
-                    // height: '100px',
-                    // maxHeight: '90%',
-                    // width: '100px',
-                    // maxWidth: '75vw'
-                }}
-            >
+            <>
                 {children}
-            </div>
+            </>
 
             {socials &&
                 <Socials />

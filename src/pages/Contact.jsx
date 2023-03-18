@@ -42,7 +42,7 @@ export default function Contact() {
     }
 
     return (
-        <PageScaffold socials={true}>
+        <PageScaffold socials={true} noTitle={true}>
             {/* unsent form state */}
             { formStatus === 'unsent' &&
                 <form ref={form} onSubmit={sendEmail} className='contact-form'>
