@@ -12,6 +12,7 @@ export default function PageScaffold({ children, title, socials }) {
                     // top: 0,
                     // left: 0,
                     // width: '100%'
+                    maxHeight: '2.5rem'
                 }}
             >
                 <Link to="/" className="home-btn">

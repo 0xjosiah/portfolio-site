@@ -21,6 +21,11 @@ body,
   width: 75vw;
   max-width: 800px;
   max-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  /* box-sizing: border-box; */
+  
+  /* justify-content: space-between; */
   background-color: #430F0F7a;
   /* background-color: #f2f2f229; */
   /* background-color: #6b6b6b7a; */
@@ -68,6 +73,7 @@ body,
   padding: 0;
   /* padding-left: .7em; */
   padding-bottom: .5em;
+  font-size: 1.5rem;
   /* border-bottom: 1px solid white; */
   text-transform: capitalize;
 }
@@ -78,6 +84,7 @@ body,
   padding: 1em 1.5em;
   border-radius: 5px;
   line-height: 1.5em;
+  /* height: 100%; */
   /* max-height: 300px; */
   /* max-height: 50%; */
   overflow: auto;
@@ -218,10 +225,12 @@ body,
 /**
 * Socials Links Section
 */
-.socials-links {
+.socials-links-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  max-height: fit-content;
+  height: fit-content;
 }
 
 .icon-link {

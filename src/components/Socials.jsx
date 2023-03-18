@@ -2,7 +2,7 @@ import { FaDev, FaLinkedin, FaInstagramSquare, FaGithubSquare, FaTwitterSquare }
 
 export default function Socials() {
     return (
-        <div className='socials-links'>
+        <div className='socials-links-container'>
             <a target='_blank' href='https://www.linkedin.com/in/josiahwebb/' rel='external'
                 className='icon-link'
             >
