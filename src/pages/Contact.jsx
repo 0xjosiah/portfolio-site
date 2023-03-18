@@ -11,7 +11,7 @@ const emptyFormData = {
 export default function Contact() {
     const form = useRef(null)
     const [ formData, setFormData ] = useState(emptyFormData)
-    // can be 'unsent', 'success', 'error'
+    /* can be 'unsent', 'success', 'error' */
     const [ formStatus, setFormStatus ] = useState('unsent')
 
     const sendEmail = (e) => {
@@ -46,7 +46,6 @@ export default function Contact() {
             {/* unsent form state */}
             { formStatus === 'unsent' &&
                 <form ref={form} onSubmit={sendEmail} className='contact-form'>
-                    {/* <label>Name</label> */}
                     <input
                         autoFocus
                         required
@@ -56,7 +55,6 @@ export default function Contact() {
                         placeholder='Name'
                         onChange={updateFormData}
                     />
-                    {/* <label>Email</label> */}
                     <input
                         required
                         type='email'
@@ -65,7 +63,6 @@ export default function Contact() {
                         placeholder='Email'
                         onChange={updateFormData}
                     />
-                    {/* <label>Message</label> */}
                     <textarea
                         required
                         name='message'
