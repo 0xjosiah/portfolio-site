@@ -6,6 +6,7 @@ export default function Experience() {
     const [activeJobIndex, setActiveJobIndex] = useState(0)
     const [jobShown, setJobShown] = useState(jobs[0])
     const tabRefs = useRef([])
+    const jobTabContainer = useRef(null)
 
     /* creates the tabs used to view different experience listings */
     const companiesList = jobs.map(i => i.company)
@@ -20,15 +21,21 @@ export default function Experience() {
         </button>
     ))
 
-    /* fn runs when new tab is clicked */
+    /* fn runs when new tab is clicked, changes highlighted job tab */
     const highlightTab = () => {
         tabRefs.current[activeJobIndex].className = "job-tab"
         setActiveJobIndex(companiesList.indexOf(jobShown.company))
         tabRefs.current[activeJobIndex].className = "tab-callout job-tab"
     }
 
-    const setScrollPosition = () => {
-        console.log(window.innerWidth);
+    /* fn runs when job tab container is scrolled, changes the box shadow */
+    const setScrollPosition = (e) => {
+        const scrollPos = jobTabContainer.current.scrollLeft
+        const scrollMax = jobTabContainer.current.scrollWidth - jobTabContainer.current.clientWidth
+        /* this calcs the offset based on scroll pos */
+        /* and sets range bounds from -10 to 10 */
+        const shadowOffset = (((scrollPos - scrollMax) / scrollMax) + .5) * 20
+        jobTabContainer.current.style.setProperty('--shadow-offset', shadowOffset + 'px')
     }
 
     /* when jobShown changes via tab click, the highlighted tab changes accordingly */
@@ -51,7 +58,7 @@ export default function Experience() {
                     A little about my experience and how it can help any team...
                 </p>
             </div>
-            <div className="job-tab-container" onScroll={setScrollPosition}>
+            <div ref={jobTabContainer} className="job-tab-container" onScroll={(e) => setScrollPosition(e)}>
                 {tabs}
             </div>
             <div className="page-section-primary">
