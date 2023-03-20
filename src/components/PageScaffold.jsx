@@ -8,7 +8,7 @@ export default function PageScaffold({ children, title = 'page title', socials =
             className={noTitle ? "page-scaffold no-title" : "page-scaffold"}
         >
             <Link to="/" className="home-btn">
-                <BsArrowDownLeftSquareFill />
+                <BsArrowDownLeftSquareFill style={{ borderRadius: '0 10px 0 0' }}/>
             </Link>
             <h2 className="page-title">
                 {/* the callout looks kinda nice */}
