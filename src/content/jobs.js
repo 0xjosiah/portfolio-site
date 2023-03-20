@@ -1,6 +1,6 @@
 export const jobs = [
     {
-        company: 'Company',
+        company: 'Three JS Journey',
         url: 'https://google.com',
         title: 'Software Developer',
         dates: '2008 - 2009',
@@ -11,7 +11,7 @@ export const jobs = [
         ]
     },
     {
-        company: 'Company 2',
+        company: 'Scrimba',
         url: 'https://google.com',
         title: 'Financial Advisor',
         dates: '2009 - 2010',
@@ -22,7 +22,7 @@ export const jobs = [
         ]
     },
     {
-        company: 'Company 3',
+        company: 'TIAA',
         url: 'https://google.com',
         title: 'A Title',
         dates: '2108 - 2009',
@@ -33,7 +33,7 @@ export const jobs = [
         ]
     },
     {
-        company: 'Company 4',
+        company: 'Janus Henderson Investors',
         url: 'https://google.com',
         title: 'Job Title',
         dates: '2008 - 2009',
@@ -44,7 +44,7 @@ export const jobs = [
         ]
     },
     {
-        company: 'Company 5',
+        company: 'North Star Resource Group',
         url: 'https://google.com',
         title: 'Job Title',
         dates: '2008 - 2009',

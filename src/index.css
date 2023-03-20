@@ -248,6 +248,7 @@ body,
   cursor: pointer;
   padding: .75em 2em;
   border: none;
+  white-space: nowrap;
 }
 
 .job-tab:hover {
