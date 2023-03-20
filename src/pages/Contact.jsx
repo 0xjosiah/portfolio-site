@@ -81,7 +81,7 @@ export default function Contact() {
 
             {/* success form state */}
             { formStatus === 'success' &&
-                <p className='page-content'>
+                <p className='page-section-primary'>
                     <span className="keyword-callout">
                         Thanks
                     </span> for reaching out! <br/>

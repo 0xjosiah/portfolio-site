@@ -191,12 +191,12 @@ body,
 /* Form Inputs */
 .contact-form input,
 .contact-form textarea {
-  font-size: 16px;
+  font-size: 1rem;
   padding: .75rem;
   border-radius: var(--radius-sm);
   border: none;
   margin-bottom: 1.5rem;
-  background-color: #ffffffae;
+  background-color: var(--white-alpha);
   font-family: var(--ff-main);
   box-shadow: 0px 0px 10px 1px var(--accent-alpha-light);
 }
@@ -246,25 +246,13 @@ body,
   vertical-align: middle;
 }
 
-/* TODO: change these to match btns */
 /* Form Status Message */
-.success-message,
 .error-message {
-  color: #000000b4;
   background-color: var(--white-alpha);
   box-shadow: 0px 0px 10px 1px var(--accent-alpha-light);
   padding: .75em 2em;
-  border-radius: var(--radius-sm);
-  font-weight: bold;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-/* Form Error Message */
-.error-message {
+  border-radius: var(--radius-md);
   color: #e74c3c;
-  font-weight: bold;
-  margin-bottom: 10px;
 }
 
 /**
