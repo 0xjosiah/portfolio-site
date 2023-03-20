@@ -263,6 +263,8 @@ body,
   align-items: center;
   padding: 1em 0;
   overflow-y: auto;
+  box-shadow: inset -10px 0px 15px -10px var(--accent-alpha-dark);
+  border-radius: var(--radius-lg);
 }
 
 .tab-callout {
