@@ -27,6 +27,10 @@ export default function Experience() {
         tabRefs.current[activeJobIndex].className = "tab-callout job-tab"
     }
 
+    const setScrollPosition = () => {
+        console.log(window.innerWidth);
+    }
+
     /* when jobShown changes via tab click, the highlighted tab changes accordingly */
     useEffect(() => highlightTab(), [jobShown])
 
@@ -47,7 +51,7 @@ export default function Experience() {
                     A little about my experience and how it can help any team...
                 </p>
             </div>
-            <div className="job-tab-container">
+            <div className="job-tab-container" onScroll={setScrollPosition}>
                 {tabs}
             </div>
             <div className="page-section-primary">
