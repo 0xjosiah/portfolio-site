@@ -1,4 +1,3 @@
-import { HiOutlineDownload } from "react-icons/hi"
 import PageScaffold from "../components/PageScaffold"
 import ResumeCallout from "../components/ResumeCallout"
 
