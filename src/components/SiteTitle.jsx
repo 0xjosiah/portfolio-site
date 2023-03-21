@@ -3,6 +3,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export default function SiteTitle({
+    /* prop defaults */
     text='Title',
     position=[ 0, 0, 0 ],
     rotation=[ 0, 0, 0 ],
