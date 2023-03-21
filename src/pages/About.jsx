@@ -1,5 +1,6 @@
 import { HiOutlineDownload } from "react-icons/hi"
 import PageScaffold from "../components/PageScaffold"
+import ResumeCallout from "../components/ResumeCallout"
 
 export default function About() {
    
@@ -21,15 +22,7 @@ export default function About() {
                 <p>
                     Now, a few years on, I've found a passion for creation on the web. I have a fire I haven't felt in years and I'm excited to learn more. I look forward to bringing my former experience to a new role and contributing in any way that I can.
                 </p>
-                <p>
-                    {/* TODO: update resume and replace here */}
-                    Download my <a href="./images/Josiah_Webb_Resume.pdf" download="Josiah Webb Resume" className="resume">
-                        <span className="keyword-callout">
-                            Resume
-                            <HiOutlineDownload className="inline-icon"/>
-                        </span>
-                    </a> or check out my other profiles below.
-                </p>
+                <ResumeCallout />
             </div>
         </PageScaffold>
     )

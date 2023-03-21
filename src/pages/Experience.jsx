@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import PageScaffold from "../components/PageScaffold"
+import ResumeCallout from "../components/ResumeCallout"
 import { jobs } from "../content/jobs"
 
 export default function Experience() {
@@ -81,7 +82,7 @@ export default function Experience() {
                 </div>
             </div>
             <div className="page-section-primary" style={{ marginTop: '1em'}}>
-            
+                <ResumeCallout />
             </div>
         </PageScaffold>
     )
