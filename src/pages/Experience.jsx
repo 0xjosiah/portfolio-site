@@ -52,7 +52,7 @@ export default function Experience() {
     }
 
     return (
-        <PageScaffold title="Experience">
+        <PageScaffold title="Experience" socials={true}>
             <div className="page-section-primary">
                 <p>
                     A little about my experience and how it can help any team...
@@ -79,6 +79,9 @@ export default function Experience() {
                         {jobShown.duties.map((i, index) => (<li key={`duty${index}`}>{i}</li>))}
                     </ul>
                 </div>
+            </div>
+            <div className="page-section-primary" style={{ marginTop: '1em'}}>
+            
             </div>
         </PageScaffold>
     )
