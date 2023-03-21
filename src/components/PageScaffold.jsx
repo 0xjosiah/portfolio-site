@@ -1,8 +1,23 @@
+import { useEffect } from "react"
 import { BsArrowDownLeftSquareFill } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import Socials from "./Socials"
 
 export default function PageScaffold({ children, title = 'page title', socials = false, noTitle = false }) {
+    /* fn to return home */
+    const returnHome = (event) => {
+        if(event.key === 'Escape') {
+            // code to return home
+        }
+    }
+
+    /* Adds listener that allows a return home with ESC key press */
+    useEffect(() => {
+        document.addEventListener('keydown', (e) => returnHome(e))
+
+        return document.removeEventListener('keydown', (e) => returnHome(e))
+    }, [])
+
     return (
         <div
             className={noTitle ? "page-scaffold no-title" : "page-scaffold"}
