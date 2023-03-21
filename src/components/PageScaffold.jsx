@@ -1,13 +1,16 @@
 import { useEffect } from "react"
 import { BsArrowDownLeftSquareFill } from "react-icons/bs"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Socials from "./Socials"
 
 export default function PageScaffold({ children, title = 'page title', socials = false, noTitle = false }) {
+    const navigate = useNavigate()
+
     /* fn to return home */
     const returnHome = (event) => {
         if(event.key === 'Escape') {
             // code to return home
+            navigate('/')
         }
     }
 
