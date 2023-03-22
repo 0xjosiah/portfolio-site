@@ -19,7 +19,7 @@ export default function Projects() {
                 }}
             />
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: 'center' }}>
-                <div style={{ display: 'inherit', alignItems: 'center', maxWidth: '55%', flexWrap: 'wrap' }}>
+                <div style={{ display: 'inherit', alignItems: 'center', maxWidth: '85%', flexWrap: 'wrap' }}>
                     <p
                         style={{
                             // margin: '0',
