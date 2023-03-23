@@ -296,6 +296,7 @@ body,
   margin-top: .5rem;
   border-radius: var(--radius-sm);
   color: var(--white-alpha);
+  display: block;
 }
 
 .project-icon:hover,

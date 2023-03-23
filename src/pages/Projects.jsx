@@ -18,13 +18,12 @@ export default function Projects() {
                     zIndex: -1,
                 }}
             />
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: 'center' }}>
-                <div style={{ display: 'inherit', alignItems: 'center', maxWidth: '85%', flexWrap: 'wrap' }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: 'start' }}>
+                <div style={{ display: 'inherit', maxWidth: '65%', flexWrap: 'wrap' }}>
                     <p
                         style={{
-                            // margin: '0',
+                            margin: '1rem .5rem 0 0',
                             color: 'white',
-                            marginRight: '.5rem'
 
                         }}
                     >
@@ -32,42 +31,38 @@ export default function Projects() {
                     </p>
                     <p
                         style={{
-                            // margin: '0 auto'
+                            margin: '1rem .5rem 0 0',
                             color: 'white',
-                            marginRight: '.5rem'
                         }}
                     >
                         <span className="keyword-callout">React 3 Fiber</span><br/>
                     </p>
                     <p
                         style={{
-                            // margin: '0 auto'
+                            margin: '1rem .5rem 0 0',
                             color: 'white',
-                            marginRight: '.5rem'
                         }}
                     >
                         <span className="keyword-callout">Cannon js</span><br/>
                     </p>
                     <p
                         style={{
-                            // margin: '0 auto'
+                            margin: '1rem .5rem 0 0',
                             color: 'white',
-                            marginRight: '.5rem'
                         }}
                     >
                         <span className="keyword-callout">CSS</span><br/>
                     </p>
                     <p
                         style={{
-                            // margin: '0 auto'
+                            margin: '1rem .5rem 0 0',
                             color: 'white',
-                            marginRight: '.5rem'
                         }}
                     >
                         <span className="keyword-callout">SuperCool</span><br/>
                     </p>
                 </div>
-                <div>
+                <div style={{ display: "flex" }}>
                     <a href="https://github.com" alt="link to project code" target="_blank">
                         <HiOutlineCode className="project-icon" />
                     </a>
