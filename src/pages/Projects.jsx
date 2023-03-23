@@ -68,8 +68,12 @@ export default function Projects() {
                     </p>
                 </div>
                 <div>
-                    <HiOutlineCode className="project-icon" />
-                    <HiOutlineExternalLink className="project-icon" />
+                    <a href="https://github.com" alt="link to project code" target="_blank">
+                        <HiOutlineCode className="project-icon" />
+                    </a>
+                    <a href="https://google.com" alt="link to project demo" target="_blank">
+                        <HiOutlineExternalLink className="project-icon" />
+                    </a>
                 </div>
             </div>
         </PageScaffold>
