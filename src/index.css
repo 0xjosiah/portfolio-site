@@ -128,11 +128,11 @@ body,
   margin: 2.5rem auto 0;
 }
 
-.icon-link {
+.social-icon-link {
   margin: 1.5rem .7rem 0;
 }
 
-.icon {
+.social-icon {
   color: var(--black);
   background-color: var(--white-alpha);
   font-size: 2.5rem;
@@ -141,8 +141,8 @@ body,
   box-shadow: inset 0px -10px 10px 1px var(--accent-color);
 }
 
-.icon:hover,
-.icon:focus {
+.social-icon:hover,
+.social-icon:focus {
   color: var(--white);
   background-color: var(--black);
 }

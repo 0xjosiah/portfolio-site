@@ -4,29 +4,29 @@ export default function Socials() {
     return (
         <div className='socials-links-container'>
             <a target='_blank' href='https://www.linkedin.com/in/josiahwebb/' rel='external'
-                className='icon-link'
+                className='social-icon-link'
             >
-                <FaLinkedin  className='icon' />
+                <FaLinkedin  className='social-icon' />
             </a>
             <a target='_blank' href='https://www.instagram.com/0xjosiah/' rel='external'
-                className='icon-link'
+                className='social-icon-link'
             >
-                <FaInstagramSquare className='icon' />
+                <FaInstagramSquare className='social-icon' />
             </a>
             <a target='_blank' href='https://twitter.com/0xjosiah' rel='external'
-                className='icon-link'
+                className='social-icon-link'
             >
-                <FaTwitterSquare className='icon' />
+                <FaTwitterSquare className='social-icon' />
             </a>
             <a target='_blank' href='https://github.com/0xjosiah' rel='external'
-                className='icon-link'
+                className='social-icon-link'
             >
-                <FaGithubSquare className='icon' />
+                <FaGithubSquare className='social-icon' />
             </a>
             <a target='_blank' href='https://dev.to/0xjosiah' rel='external'
-                className='icon-link'
+                className='social-icon-link'
             >
-                <FaDev className='icon' />
+                <FaDev className='social-icon' />
             </a>
         </div>
     )
