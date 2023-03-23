@@ -30,7 +30,7 @@
 }
 
 /**
-* General Styling
+* General Styles
 */
 html,
 body,
@@ -46,7 +46,7 @@ body,
 
 
 /**
-* Universal Page Styling
+* Universal Page Styles
 */
 .page-scaffold {
   position: absolute;
@@ -122,7 +122,7 @@ body,
 }
 
 /**
-* Socials Links Section
+* Socials Links Component
 */
 .socials-links-container {
   margin: 2.5rem auto 0;
@@ -164,7 +164,7 @@ body,
 }
 
 /**
-* Contact Page Styling
+* Contact Page Styles
 */
 .contact-form {
   display: flex;
@@ -239,7 +239,7 @@ body,
 }
 
 /**
-* Experience Page Styling
+* Experience Page Styles
 */
 .job-tab {
   color: var(--white);
@@ -285,6 +285,27 @@ body,
   box-shadow: inset -1px -3px 5px 1.5px var(--bkgd-color);
   /* box-shadow: inset -1px -3px 3px 1.5px #430F0F5b; */
   /* border: .5px solid #0000008e; */
+}
+
+/**
+* Projects Page Styles
+*/
+.project-icon {
+  font-size: 2.5rem;
+  margin-right: .5rem;
+  margin-top: .5rem;
+  border-radius: var(--radius-sm);
+  color: var(--white-alpha);
+}
+
+.project-icon:hover,
+.project-icon:focus {
+  color: var(--white);
+  cursor: pointer;
+}
+
+.project-icon-link {
+
 }
 
 @media (max-width: 480px) {

@@ -68,8 +68,8 @@ export default function Projects() {
                     </p>
                 </div>
                 <div>
-                    <HiOutlineCode size={'2.5rem'} style={{ marginRight: '.5rem', marginTop: '.5rem', borderRadius: '5px', color: '#ffffff90' }} />
-                    <HiOutlineExternalLink color="white" size={'2.5rem'} style={{ marginRight: '.5rem', marginTop: '.5rem', borderRadius: '5px', color: '#ffffff90' }}/>
+                    <HiOutlineCode className="project-icon" />
+                    <HiOutlineExternalLink className="project-icon" />
                 </div>
             </div>
         </PageScaffold>
