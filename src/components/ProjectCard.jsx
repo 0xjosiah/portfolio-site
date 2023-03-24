@@ -1,8 +1,9 @@
 import { HiOutlineCode, HiOutlineExternalLink } from "react-icons/hi"
 import { useHover } from "../hooks/useHover"
+import ProjectLinks from "./ProjectLinks"
 import ProjectTag from "./ProjectTag"
 
-export default function ProjectCard({ img, tags }) {
+export default function ProjectCard({ links, img, tags }) {
     const [hoverRef, isHovered] = useHover()
 
     /* TODO: delete this */
@@ -43,14 +44,7 @@ export default function ProjectCard({ img, tags }) {
                 <div style={{ display: 'inherit', maxWidth: '65%', flexWrap: 'wrap' }}>
                     {tags.map(tag => <ProjectTag tag={tag} />)}
                 </div>
-                <div style={{ display: "flex" }}>
-                    <a href="https://github.com" alt="link to project code" target="_blank">
-                        <HiOutlineCode className="project-card-icon" />
-                    </a>
-                    <a href="https://google.com" alt="link to project demo" target="_blank">
-                        <HiOutlineExternalLink className="project-card-icon" />
-                    </a>
-                </div>
+                <ProjectLinks links={links} />
             </div>
         </>
     )
