@@ -1,3 +1,9 @@
+/* Usage */
+/*
+    const [hoverRef, isHovered] = useHover()
+    <Example ref={ hoverRef } isHovered={ isHovered } />
+*/
+
 const useHover = () => {
     const [value, setValue] = useState(false)
     const ref = useRef(null)
@@ -17,7 +23,7 @@ const useHover = () => {
         }
       }, [ref.current] // Only if ref changes
     )
-    
+
     return [ref, value]
   }
 
