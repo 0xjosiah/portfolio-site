@@ -17,11 +17,7 @@ export default function ProjectCard({ img }) {
                     backgroundImage: img,
                 }}
             >
-                <div
-                    style={{ margin: '0'}}
-                >
-                    <h3 style={{margin: '0', borderBottom: '1px solid black', padding: '1rem', background: 'white', borderRadius: '10px'}}>Super Dope Project</h3>
-                </div>
+                <h3 style={{margin: '0', borderBottom: '1px solid black', padding: '1rem', background: 'white', borderRadius: '10px'}}>Super Dope Project</h3>
                 <div
                     style={{
                         background: 'white',
@@ -47,7 +43,6 @@ export default function ProjectCard({ img }) {
                         style={{
                             margin: '1rem .5rem 0 0',
                             color: 'white',
-
                         }}
                     >
                         <span className="keyword-callout">React</span><br/>
