@@ -20,21 +20,22 @@ export default function ProjectCard({ links, img, tags }) {
                     backgroundImage: img,
                 }}
             >
-                <h3 style={{margin: '0', borderBottom: '1px solid black', padding: '1rem', background: 'white', borderRadius: '10px'}}>Super Dope Project</h3>
+                <h3 className="project-card-title">Super Dope Project</h3>
                 <div
                     style={{
-                        background: 'white',
                         display: `${isHovered ? 'block' : 'none'}`
                     }}
+                    className="project-card-description"
                 >
                     <p>
-                        Description:
+                        Description: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam dolores rem veniam molestiae! Nesciunt cum beatae, saepe molestias labore voluptatum vero repellat accusantium magnam, voluptatem sunt, officia ipsum ea ullam.
                     </p>
                     <p>
-                        Problem:
+                        Problem: Lorem ipsum dolor sit amet consectetur adipisicing elit. In saepe ipsam ea, doloribus atque, facilis vitae officia voluptate assumenda commodi natus beatae unde ex, velit fuga quasi quo. Debitis, voluptate.
                     </p>
                     <p>
                         Solution:
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum reiciendis ullam ipsam impedit possimus officia a quisquam pariatur quaerat, voluptatem quasi error inventore perferendis necessitatibus delectus veritatis rerum excepturi numquam!
                     </p>
                 </div>
             </div>
