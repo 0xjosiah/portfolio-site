@@ -3,11 +3,12 @@ import { useHover } from "../hooks/useHover"
 
 export default function ProjectCard({  }) {
     const [hoverRef, isHovered] = useHover()
-    
+
     return (
         <>
             {/* Project pic and info, Card body */}
             <div
+                ref={hoverRef}
                 style={{
                     backgroundImage: 'url("../images/Screenshot_test2.png")',
                     borderRadius: '10px',
@@ -36,7 +37,12 @@ export default function ProjectCard({  }) {
                 >
                     <h3 style={{margin: '0', borderBottom: '1px solid black', padding: '1rem', background: 'white', borderRadius: '10px'}}>Super Dope Project</h3>
                 </div>
-                <div style={{background: 'white'}}>
+                <div
+                    style={{
+                        background: 'white',
+                        display: `${isHovered ? 'block' : 'none'}`
+                    }}
+                >
                     <p>
                         Description:
                     </p>
