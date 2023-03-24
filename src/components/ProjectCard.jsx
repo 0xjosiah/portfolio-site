@@ -1,37 +1,22 @@
 import { HiOutlineCode, HiOutlineExternalLink } from "react-icons/hi"
 import { useHover } from "../hooks/useHover"
 
-export default function ProjectCard({  }) {
+export default function ProjectCard({ img }) {
     const [hoverRef, isHovered] = useHover()
+
+    /* TODO: delete this */
+    img = 'url("../images/Screenshot_test2.png")'
 
     return (
         <>
             {/* Card body - Project pic and info */}
             <div
                 ref={hoverRef}
+                className="project-card-container"
                 style={{
-                    backgroundImage: 'url("../images/Screenshot_test2.png")',
-                    borderRadius: '10px',
-                    height: '62vh',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'end'
-
+                    backgroundImage: img,
                 }}
             >
-                {/* <img
-                    src="../images/Screenshot_test2.png"
-                    alt="test photo"
-                    style={{
-                        width: '100%',
-                        padding: 0,
-                        margin: 0,
-                        borderRadius: '10px',
-                        // opacity: .75,
-                        // position: 'absolute',
-                        zIndex: -1,
-                    }}
-                /> */}
                 <div
                     style={{ margin: '0'}}
                 >
