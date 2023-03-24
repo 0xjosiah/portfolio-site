@@ -45,10 +45,10 @@ export default function ProjectCard({ img, tags }) {
                 </div>
                 <div style={{ display: "flex" }}>
                     <a href="https://github.com" alt="link to project code" target="_blank">
-                        <HiOutlineCode className="project-icon" />
+                        <HiOutlineCode className="project-card-icon" />
                     </a>
                     <a href="https://google.com" alt="link to project demo" target="_blank">
-                        <HiOutlineExternalLink className="project-icon" />
+                        <HiOutlineExternalLink className="project-card-icon" />
                     </a>
                 </div>
             </div>

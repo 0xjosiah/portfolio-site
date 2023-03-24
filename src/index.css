@@ -300,7 +300,7 @@ body,
   background-position: center;
 }
 
-.project-icon {
+.project-card-icon {
   font-size: 2.5rem;
   margin-right: .5rem;
   margin-top: .5rem;
@@ -309,13 +309,13 @@ body,
   display: block;
 }
 
-.project-icon:hover,
-.project-icon:focus {
+.project-card-icon:hover,
+.project-card-icon:focus {
   color: var(--white);
   cursor: pointer;
 }
 
-.project-icon-link {
+.project-card-icon-link {
 /* TODO: this used?? not right now */
 }
 
