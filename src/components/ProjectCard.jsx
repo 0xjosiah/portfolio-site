@@ -42,7 +42,7 @@ export default function ProjectCard({ links, img, tags }) {
             {/* Card footer - Keywords and Links */}
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: 'start' }}>
                 <div style={{ display: 'inherit', maxWidth: '65%', flexWrap: 'wrap' }}>
-                    {tags.map(tag => <ProjectTag tag={tag} />)}
+                    {tags.map((tag, index) => <ProjectTag tag={tag} key={index} />)}
                 </div>
                 <ProjectLinks links={links} />
             </div>
