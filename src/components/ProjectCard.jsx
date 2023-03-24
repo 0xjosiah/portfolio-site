@@ -1,6 +1,9 @@
 import { HiOutlineCode, HiOutlineExternalLink } from "react-icons/hi"
+import { useHover } from "../hooks/useHover"
 
 export default function ProjectCard({  }) {
+    const [hoverRef, isHovered] = useHover()
+    
     return (
         <>
             {/* Project pic and info, Card body */}
