@@ -6,7 +6,7 @@ export default function ProjectCard({  }) {
 
     return (
         <>
-            {/* Project pic and info, Card body */}
+            {/* Card body - Project pic and info */}
             <div
                 ref={hoverRef}
                 style={{
@@ -55,7 +55,7 @@ export default function ProjectCard({  }) {
                 </div>
             </div>
 
-            {/* Keyword and Links, Card footer */}
+            {/* Card footer - Keywords and Links */}
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: 'start' }}>
                 <div style={{ display: 'inherit', maxWidth: '65%', flexWrap: 'wrap' }}>
                     <p
