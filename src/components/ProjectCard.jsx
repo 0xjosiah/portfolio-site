@@ -16,7 +16,7 @@ export default function ProjectCard({ description, links, img, problem, solution
     solution = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum reiciendis ullam ipsam impedit possimus officia a quisquam pariatur quaerat, voluptatem quasi error inventore perferendis necessitatibus delectus veritatis rerum excepturi numquam!`
 
     return (
-        <>
+        <div>
             {/* Card body - Project pic and info */}
             <div
                 ref={hoverRef}
@@ -53,6 +53,6 @@ export default function ProjectCard({ description, links, img, problem, solution
                 </div>
                 <ProjectLinks links={links} />
             </div>
-        </>
+        </div>
     )
 }
