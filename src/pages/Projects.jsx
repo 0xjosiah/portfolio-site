@@ -17,20 +17,24 @@ export default function Projects() {
     
     return (
         <PageScaffold title="Projects" style={{ maxWidth: "75vw" }}>
-            <div style={{ display: "flex", alignItems: "center", }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+
                 <button
-                    style={{ padding: "0", margin: "0", background: "none", border: "none", }}
+                    style={{ padding: "0", margin: "1.5rem", background: "none", border: "none", cursor: "pointer" }}
                     onClick={(e) => handleBtnClick(e)}
                 >
-                    <BsArrowLeftCircleFill className="social-icon" style={{ borderRadius: "30px", padding: "2.5px", margin: "2.5rem", cursor: "pointer" }} />
+                    <BsArrowLeftCircleFill className="social-icon" style={{ borderRadius: "30px", padding: "2.5px" }} />
                 </button>
+
                 <ProjectCard />
+
                 <button
-                    style={{ padding: "0", margin: "0", background: "none", border: "none", }}
+                    style={{ padding: "0", margin: "1.5rem", background: "none", border: "none", cursor: "pointer" }}
                     onClick={(e) => handleBtnClick(e)}
                 >
-                    <BsArrowRightCircleFill className="social-icon" style={{ borderRadius: "30px", padding: "2.5px", margin: "2.5rem", cursor: "pointer" }} />
+                    <BsArrowRightCircleFill className="social-icon" style={{ borderRadius: "30px", padding: "2.5px" }} />
                 </button>
+
             </div>
         </PageScaffold>
     )

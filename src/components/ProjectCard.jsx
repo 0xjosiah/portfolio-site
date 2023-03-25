@@ -30,7 +30,8 @@ export default function ProjectCard({ description, links, img, problem, solution
                 </h3>
                 <div
                     style={{
-                        display: `${isHovered ? 'block' : 'none'}`
+                        // display: `${isHovered ? 'block' : 'none'}`,
+                        height: `${isHovered ? '100%' : '0'}`
                     }}
                     className="project-card-description"
                 >
