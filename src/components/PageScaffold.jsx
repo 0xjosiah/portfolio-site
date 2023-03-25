@@ -3,7 +3,7 @@ import { BsArrowDownLeftSquareFill } from "react-icons/bs"
 import { Link, useNavigate } from "react-router-dom"
 import Socials from "./Socials"
 
-export default function PageScaffold({ children, title = 'page title', socials = false, noTitle = false }) {
+export default function PageScaffold({ children, title = 'page title', socials = false, noTitle = false, style }) {
     const navigate = useNavigate()
 
     /* fn to return home */
@@ -24,6 +24,7 @@ export default function PageScaffold({ children, title = 'page title', socials =
     return (
         <div
             className={noTitle ? "page-scaffold no-title" : "page-scaffold"}
+            style={{...style}}
         >
             <Link to="/" className="home-btn">
                 <BsArrowDownLeftSquareFill style={{ borderRadius: '0 10px 0 0' }}/>

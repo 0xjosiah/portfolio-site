@@ -16,8 +16,8 @@ export default function Projects() {
     }
     
     return (
-        <PageScaffold title="Projects">
-            <div style={{ display: "flex", alignItems: "center" }}>
+        <PageScaffold title="Projects" style={{ maxWidth: "75vw" }}>
+            <div style={{ display: "flex", alignItems: "center", }}>
                 <button
                     style={{ padding: "0", margin: "0", background: "none", border: "none", }}
                     onClick={(e) => handleBtnClick(e)}
