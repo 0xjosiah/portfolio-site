@@ -304,16 +304,33 @@ body,
   margin: 0;
   padding: 2rem 1rem 1rem;
   background: var(--black-alpha);
-  background: linear-gradient(0deg, var(--black) 10%, var(--black-alpha) 60%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(0deg, var(--black) 5%, var(--black-alpha) 55%, #00000000 100%);
   color: var(--white);
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  /* box-shadow: inset 0px 10px 10px -5px var(--white-alpha); */
   /* overflow: hidden; */
+  /* border-bottom: 1px solid red; */
+}
+
+.no-br {
+  border-radius: 0;
 }
 
 .project-card-description {
+  padding: 0 1.5rem 1rem;
   background: var(--black);
   color: var(--white);
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.project-card-description > p {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.project-card-description > p:last-child {
+  /* margin: 0; */
 }
 
 .project-card-icon {
