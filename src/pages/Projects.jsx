@@ -4,6 +4,8 @@ import ProjectCard from "../components/ProjectCard"
 
 export default function Projects() {
 
+
+    /* TODO: make this functional */
     const handleBtnClick = (event) => {
         if(event.target == "left") {
             // cycle jobs left
