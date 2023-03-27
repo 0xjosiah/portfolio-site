@@ -9,6 +9,7 @@ export default function Projects() {
     const dotsRefs = useRef([])
     const leftBtn = useRef(null)
     const rightBtn = useRef(null)
+    const cardsRefs = useRef([])
 
     /* produces carousel dot elements */
     const carouselDots = projects.map((proj, index) => {
@@ -29,7 +30,6 @@ export default function Projects() {
         }
     }
 
-
     /* TODO: make this functional */
     const handleBtnClick = (event) => {
         dotsRefs.current[projShownIndex].className = "project-carousel-dot"
@@ -37,6 +37,10 @@ export default function Projects() {
         if(event.currentTarget == rightBtn.current) cycleProjects('right')
         dotsRefs.current[projShownIndex].className = "project-carousel-dot active"
     }
+
+    const projCards = projects.map((proj, index) => {
+        
+    })
     
     return (
         <PageScaffold title="Projects" style={{ maxWidth: "75vw" }}>
