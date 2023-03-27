@@ -2,18 +2,19 @@ import { useHover } from "../hooks/useHover"
 import ProjectLinks from "./ProjectLinks"
 import ProjectTag from "./ProjectTag"
 
-export default function ProjectCard({ description, links, img, problem, solution, tags }) {
+export default function ProjectCard({ description, img, links, problem, solution, tags, title }) {
     const [hoverRef, isHovered] = useHover()
 
     /* TODO: delete this */
+    title = "Super Dope Project"
     img = "../images/Screenshot_test2.png"
     tags = ['react', 'react 3 fiber', 'css', 'cannon js', 'supercool']
 
-    description = `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam dolores rem veniam molestiae! Nesciunt cum beatae, saepe molestias labore voluptatum vero repellat accusantium magnam, voluptatem sunt, officia ipsum ea ullam.`
+    description = ``
 
-    problem = `Lorem ipsum dolor sit amet consectetur adipisicing elit. In saepe ipsam ea, doloribus atque, facilis vitae officia voluptate assumenda commodi natus beatae unde ex, velit fuga quasi quo. Debitis, voluptate.`
+    problem = ``
 
-    solution = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum reiciendis ullam ipsam impedit possimus officia a quisquam pariatur quaerat, voluptatem quasi error inventore perferendis necessitatibus delectus veritatis rerum excepturi numquam!`
+    solution = ``
 
     return (
         <div>
@@ -26,7 +27,7 @@ export default function ProjectCard({ description, links, img, problem, solution
                 }}
             >
                 <h3 className={`${isHovered ? 'project-card-title hover' : 'project-card-title'}`}>
-                    Super Dope Project
+                    {title}
                 </h3>
                 <div
                     style={{
