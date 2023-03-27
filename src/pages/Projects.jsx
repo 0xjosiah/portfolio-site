@@ -4,10 +4,12 @@ import ProjectCard from "../components/ProjectCard"
 import { projects } from "../content/projects"
 
 export default function Projects() {
+
+    /* produces carousel dot elements */
     const carouselDots = projects.map((proj, index) => {
-        if(index == 0) return (<span className="project-carousel-dot active"></span>)
+        if(index == 0) return (<span key={index} className="project-carousel-dot active"></span>)
         return (
-            <span className="project-carousel-dot"></span>
+            <span key={index} className="project-carousel-dot"></span>
         )
     })
 
