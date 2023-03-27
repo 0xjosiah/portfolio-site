@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs"
 import PageScaffold from "../components/PageScaffold"
 import ProjectCard from "../components/ProjectCard"
@@ -21,23 +21,39 @@ export default function Projects() {
 
     /* conditionally changes highlighted dot depending on direction of btn press */
     const cycleProjects = (direction) => {
+        dotsRefs.current[projShownIndex].className = "project-carousel-dot"
+
         if(direction === 'left') {
             if(projShownIndex > 0) { setProjShownIndex(prev => prev -= 1) }
             else { setProjShownIndex(projects.length - 1) }
         }
+        
         if(direction === 'right') {
             if(projShownIndex === projects.length - 1) { setProjShownIndex(0) }
             else { setProjShownIndex(prev => prev += 1) }
         }
+
+        dotsRefs.current[projShownIndex].className = "project-carousel-dot active"
     }
 
     /* removes/adds classNames to dot refs, fires cycleProjects fn with direction passed as arg */
     const handleBtnClick = (event) => {
-        dotsRefs.current[projShownIndex].className = "project-carousel-dot"
         if(event.currentTarget == leftBtn.current) cycleProjects('left')
         if(event.currentTarget == rightBtn.current) cycleProjects('right')
-        dotsRefs.current[projShownIndex].className = "project-carousel-dot active"
     }
+
+    /* Adds listener that allows cycling of proj with arrow key press */
+    useEffect(() => {
+        document.addEventListener('keydown', (e) => {
+            if(e.key == 'ArrowLeft') cycleProjects('left')
+            if(e.key == 'ArrowRight') cycleProjects('right')
+        })
+
+        return document.removeEventListener('keydown', (e) => {
+            if(e.key == 'ArrowLeft') cycleProjects('left')
+            if(e.key == 'ArrowRight') cycleProjects('right')
+        })
+    }, [])
 
     /* produces proj card elements */
     const projCards = projects.map((proj, index) => {
