@@ -2,7 +2,7 @@ import { HiOutlineCode, HiOutlineExternalLink } from "react-icons/hi"
 
 export default function ProjectLinks({
     links = {
-        codeLink: 'https://github.com',
+        codeLink: 'https://github.com/0xjosiah',
         demoLink: 'https://google.com'
     } 
 }) {
