@@ -19,6 +19,7 @@ export default function Projects() {
         )
     })
 
+    /* conditionally changes highlighted dot depending on direction of btn press */
     const cycleProjects = (direction) => {
         if(direction === 'left') {
             if(projShownIndex > 0) { setProjShownIndex(prev => prev -= 1) }
@@ -30,7 +31,7 @@ export default function Projects() {
         }
     }
 
-    /* TODO: make this functional */
+    /* removes/adds classNames to dot refs, fires cycleProjects fn with direction passed as arg */
     const handleBtnClick = (event) => {
         dotsRefs.current[projShownIndex].className = "project-carousel-dot"
         if(event.currentTarget == leftBtn.current) cycleProjects('left')
@@ -38,6 +39,7 @@ export default function Projects() {
         dotsRefs.current[projShownIndex].className = "project-carousel-dot active"
     }
 
+    /* produces proj card elements */
     const projCards = projects.map((proj, index) => {
         if(index == projShownIndex) {
             return (
