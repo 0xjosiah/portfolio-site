@@ -290,14 +290,14 @@ body,
 /**
 * Projects Page Styles
 */
-.carousel-position {
+.project-carousel-position {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
 }
 
-.carousel-dot {
+.project-carousel-dot {
   height: 8px;
   width: 8px;
   border-radius: 50%;
@@ -305,7 +305,7 @@ body,
   border: 1px solid var(--white-alpha);
 }
 
-.carousel-dot.active {
+.project-carousel-dot.active {
   background-color: var(--white);
 }
 
