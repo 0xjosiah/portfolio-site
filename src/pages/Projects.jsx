@@ -42,7 +42,7 @@ export default function Projects() {
         if(index == projShownIndex) {
             return (
                 <ProjectCard
-                    ref={(element) => {cardsRefs.current[index] = element}}
+                    // ref={(element) => {cardsRefs.current[index] = element}}
                     style={{ display: 'block' }}
                     {...proj}
                 />
@@ -50,7 +50,7 @@ export default function Projects() {
         }
         return (
                 <ProjectCard
-                    ref={(element) => {cardsRefs.current[index] = element}}
+                    // ref={(element) => {cardsRefs.current[index] = element}}
                     style={{ display: 'none' }}
                     {...proj}
                 />
