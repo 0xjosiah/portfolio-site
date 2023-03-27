@@ -2,22 +2,22 @@ import { useHover } from "../hooks/useHover"
 import ProjectLinks from "./ProjectLinks"
 import ProjectTag from "./ProjectTag"
 
-export default function ProjectCard({ description, img, links, problem, solution, tags, title }) {
+export default function ProjectCard({ description, img, links, problem, solution, style, tags, title }) {
     const [hoverRef, isHovered] = useHover()
 
     /* TODO: delete this */
-    title = "Super Dope Project"
-    img = "../images/Screenshot_test2.png"
-    tags = ['react', 'react 3 fiber', 'css', 'cannon js', 'supercool']
+    // title = "Super Dope Project"
+    // img = "../images/Screenshot_test2.png"
+    // tags = ['react', 'react 3 fiber', 'css', 'cannon js', 'supercool']
 
-    description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptas sapiente accusantium saepe quibusdam aliquam blanditiis, perferendis explicabo, voluptatem nobis ea libero dignissimos cupiditate totam assumenda id reiciendis facilis voluptatum.'
+    // description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptas sapiente accusantium saepe quibusdam aliquam blanditiis, perferendis explicabo, voluptatem nobis ea libero dignissimos cupiditate totam assumenda id reiciendis facilis voluptatum.'
 
-    problem = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptas sapiente accusantium saepe quibusdam aliquam blanditiis, perferendis explicabo, voluptatem nobis ea libero dignissimos cupiditate totam assumenda id reiciendis facilis voluptatum.`
+    // problem = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptas sapiente accusantium saepe quibusdam aliquam blanditiis, perferendis explicabo, voluptatem nobis ea libero dignissimos cupiditate totam assumenda id reiciendis facilis voluptatum.`
 
-    solution = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptas sapiente accusantium saepe quibusdam aliquam blanditiis, perferendis explicabo, voluptatem nobis ea libero dignissimos cupiditate totam assumenda id reiciendis facilis voluptatum.`
+    // solution = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptas sapiente accusantium saepe quibusdam aliquam blanditiis, perferendis explicabo, voluptatem nobis ea libero dignissimos cupiditate totam assumenda id reiciendis facilis voluptatum.`
 
     return (
-        <div>
+        <div style={{...style}}>
             {/* Card body - Project pic and info */}
             <div
                 ref={hoverRef}

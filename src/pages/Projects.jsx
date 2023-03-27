@@ -39,7 +39,22 @@ export default function Projects() {
     }
 
     const projCards = projects.map((proj, index) => {
-        
+        if(index == projShownIndex) {
+            return (
+                <ProjectCard
+                    ref={(element) => {cardsRefs.current[index] = element}}
+                    style={{ display: 'block' }}
+                    {...proj}
+                />
+            )
+        }
+        return (
+                <ProjectCard
+                    ref={(element) => {cardsRefs.current[index] = element}}
+                    style={{ display: 'none' }}
+                    {...proj}
+                />
+        )
     })
     
     return (
@@ -58,7 +73,7 @@ export default function Projects() {
                     <BsArrowLeftCircleFill id="left" className="social-icon" style={{ borderRadius: "30px", padding: "2.5px" }} />
                 </button>
 
-                <ProjectCard />
+                {projCards}
 
                 <button
                     style={{ padding: "0", margin: "1.5rem", background: "none", border: "none", cursor: "pointer" }}
