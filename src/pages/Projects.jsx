@@ -17,6 +17,13 @@ export default function Projects() {
     
     return (
         <PageScaffold title="Projects" style={{ maxWidth: "75vw" }}>
+            <div className="carousel-position">
+                <span className="carousel-dot active"></span>
+                <span className="carousel-dot"></span>
+                <span className="carousel-dot"></span>
+                <span className="carousel-dot"></span>
+            </div>
+
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
 
                 <button
