@@ -1,8 +1,15 @@
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs"
 import PageScaffold from "../components/PageScaffold"
 import ProjectCard from "../components/ProjectCard"
+import { projects } from "../content/projects"
 
 export default function Projects() {
+    const carouselDots = projects.map((proj, index) => {
+        if(index == 0) return (<span className="project-carousel-dot active"></span>)
+        return (
+            <span className="project-carousel-dot"></span>
+        )
+    })
 
 
     /* TODO: make this functional */
@@ -18,10 +25,7 @@ export default function Projects() {
     return (
         <PageScaffold title="Projects" style={{ maxWidth: "75vw" }}>
             <div className="project-carousel-position">
-                <span className="project-carousel-dot active"></span>
-                <span className="project-carousel-dot"></span>
-                <span className="project-carousel-dot"></span>
-                <span className="project-carousel-dot"></span>
+                {carouselDots}
             </div>
 
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>

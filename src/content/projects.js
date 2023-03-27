@@ -36,3 +36,5 @@ const projects = [
         },
     }
 ]
+
+export { projects }

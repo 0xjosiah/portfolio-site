@@ -10,11 +10,11 @@ export default function ProjectCard({ description, img, links, problem, solution
     img = "../images/Screenshot_test2.png"
     tags = ['react', 'react 3 fiber', 'css', 'cannon js', 'supercool']
 
-    description = ``
+    description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptas sapiente accusantium saepe quibusdam aliquam blanditiis, perferendis explicabo, voluptatem nobis ea libero dignissimos cupiditate totam assumenda id reiciendis facilis voluptatum.'
 
-    problem = ``
+    problem = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptas sapiente accusantium saepe quibusdam aliquam blanditiis, perferendis explicabo, voluptatem nobis ea libero dignissimos cupiditate totam assumenda id reiciendis facilis voluptatum.`
 
-    solution = ``
+    solution = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptas sapiente accusantium saepe quibusdam aliquam blanditiis, perferendis explicabo, voluptatem nobis ea libero dignissimos cupiditate totam assumenda id reiciendis facilis voluptatum.`
 
     return (
         <div>
