@@ -20,28 +20,22 @@ export default function Projects() {
 
     const cycleProjects = (direction) => {
         if(direction === 'left') {
-            if(projShownIndex > 0) setProjShownIndex(prev => prev -= 1)
-            else setProjShownIndex(projects.length - 1)
+            if(projShownIndex > 0) { setProjShownIndex(prev => prev -= 1) }
+            else { setProjShownIndex(projects.length - 1) }
         }
         if(direction === 'right') {
-            if(projShownIndex === projects.length - 1) setProjShownIndex(0)
-            else setProjShownIndex(prev => prev += 1)
+            if(projShownIndex === projects.length - 1) { setProjShownIndex(0) }
+            else { setProjShownIndex(prev => prev += 1) }
         }
     }
 
 
     /* TODO: make this functional */
     const handleBtnClick = (event) => {
-        if(event.currentTarget == leftBtn.current) {
-            dotsRefs.current[projShownIndex].className = "project-carousel-dot"
-            cycleProjects('left')
-            dotsRefs.current[projShownIndex].className = "project-carousel-dot active"
-        }
-        if(event.currentTarget == rightBtn.current) {
-            dotsRefs.current[projShownIndex].className = "project-carousel-dot"
-            cycleProjects('right')
-            dotsRefs.current[projShownIndex].className = "project-carousel-dot active"
-        }
+        dotsRefs.current[projShownIndex].className = "project-carousel-dot"
+        if(event.currentTarget == leftBtn.current) cycleProjects('left')
+        if(event.currentTarget == rightBtn.current) cycleProjects('right')
+        dotsRefs.current[projShownIndex].className = "project-carousel-dot active"
     }
     
     return (
