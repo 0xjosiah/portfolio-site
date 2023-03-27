@@ -7,6 +7,8 @@ import { projects } from "../content/projects"
 export default function Projects() {
     const [projShownIndex, setProjShownIndex] = useState(0)
     const dotsRefs = useRef([])
+    const leftBtn = useRef(null)
+    const rightBtn = useRef(null)
 
     /* produces carousel dot elements */
     const carouselDots = projects.map((proj, index) => {
@@ -19,10 +21,13 @@ export default function Projects() {
 
     /* TODO: make this functional */
     const handleBtnClick = (event) => {
-        if(event.target == "left") {
+        if(event.currentTarget == leftBtn.current) {
             // cycle jobs left
+            console.log('left')
         }
-        if(event.target == "right") {
+        if(event.currentTarget == rightBtn.current) {
+            // console.log(event.target)
+            console.log('right')
             // cycle jobs right
         }
     }
@@ -38,8 +43,9 @@ export default function Projects() {
                 <button
                     style={{ padding: "0", margin: "1.5rem", background: "none", border: "none", cursor: "pointer" }}
                     onClick={(e) => handleBtnClick(e)}
+                    ref={leftBtn}
                 >
-                    <BsArrowLeftCircleFill className="social-icon" style={{ borderRadius: "30px", padding: "2.5px" }} />
+                    <BsArrowLeftCircleFill id="left" className="social-icon" style={{ borderRadius: "30px", padding: "2.5px" }} />
                 </button>
 
                 <ProjectCard />
@@ -47,6 +53,7 @@ export default function Projects() {
                 <button
                     style={{ padding: "0", margin: "1.5rem", background: "none", border: "none", cursor: "pointer" }}
                     onClick={(e) => handleBtnClick(e)}
+                    ref={rightBtn}
                 >
                     <BsArrowRightCircleFill className="social-icon" style={{ borderRadius: "30px", padding: "2.5px" }} />
                 </button>
