@@ -1,15 +1,18 @@
+import { useRef, useState } from "react"
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs"
 import PageScaffold from "../components/PageScaffold"
 import ProjectCard from "../components/ProjectCard"
 import { projects } from "../content/projects"
 
 export default function Projects() {
+    const [projShownIndex, setProjShownIndex] = useState(0)
+    const dotsRefs = useRef([])
 
     /* produces carousel dot elements */
     const carouselDots = projects.map((proj, index) => {
-        if(index == 0) return (<span key={index} className="project-carousel-dot active"></span>)
+        if(index == projShownIndex) return (<span key={index} ref={(element) => {dotsRefs.current[index] = element}} className="project-carousel-dot active"></span>)
         return (
-            <span key={index} className="project-carousel-dot"></span>
+            <span key={index} ref={(element) => {dotsRefs.current[index] = element}} className="project-carousel-dot"></span>
         )
     })
 
