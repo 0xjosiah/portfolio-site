@@ -18,17 +18,29 @@ export default function Projects() {
         )
     })
 
+    const cycleProjects = (direction) => {
+        if(direction === 'left') {
+            if(projShownIndex > 0) setProjShownIndex(prev => prev -= 1)
+            else setProjShownIndex(projects.length - 1)
+        }
+        if(direction === 'right') {
+            if(projShownIndex === projects.length - 1) setProjShownIndex(0)
+            else setProjShownIndex(prev => prev += 1)
+        }
+    }
+
 
     /* TODO: make this functional */
     const handleBtnClick = (event) => {
         if(event.currentTarget == leftBtn.current) {
-            // cycle jobs left
-            console.log('left')
+            dotsRefs.current[projShownIndex].className = "project-carousel-dot"
+            cycleProjects('left')
+            dotsRefs.current[projShownIndex].className = "project-carousel-dot active"
         }
         if(event.currentTarget == rightBtn.current) {
-            // console.log(event.target)
-            console.log('right')
-            // cycle jobs right
+            dotsRefs.current[projShownIndex].className = "project-carousel-dot"
+            cycleProjects('right')
+            dotsRefs.current[projShownIndex].className = "project-carousel-dot active"
         }
     }
     
