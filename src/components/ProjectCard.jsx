@@ -25,13 +25,14 @@ export default function ProjectCard({ description, links, img, problem, solution
                     backgroundImage: `url(${img})`,
                 }}
             >
-                <h3 className={`${isHovered ? 'project-card-title no-br' : 'project-card-title'}`}>
+                <h3 className={`${isHovered ? 'project-card-title hover' : 'project-card-title'}`}>
                     Super Dope Project
                 </h3>
                 <div
                     style={{
                         // display: `${isHovered ? 'block' : 'none'}`,
-                        height: `${isHovered ? '100%' : '0'}`
+                        height: `${isHovered ? '' : '0'}`,
+                        visibility: `${isHovered ? '' : 'hidden'}`
                     }}
                     className="project-card-description"
                 >
