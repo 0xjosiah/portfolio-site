@@ -9,7 +9,7 @@ export default function Projects() {
     const dotsRefs = useRef([])
     const leftBtn = useRef(null)
     const rightBtn = useRef(null)
-    const cardsRefs = useRef([])
+    // const cardsRefs = useRef([])
 
     /* produces carousel dot elements */
     const carouselDots = projects.map((proj, index) => {
@@ -43,6 +43,7 @@ export default function Projects() {
             return (
                 <ProjectCard
                     // ref={(element) => {cardsRefs.current[index] = element}}
+                    key={`proj${index}`}
                     style={{ display: 'block' }}
                     {...proj}
                 />
@@ -51,6 +52,7 @@ export default function Projects() {
         return (
                 <ProjectCard
                     // ref={(element) => {cardsRefs.current[index] = element}}
+                    key={`proj${index}`}
                     style={{ display: 'none' }}
                     {...proj}
                 />
