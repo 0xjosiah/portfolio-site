@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs"
 import PageScaffold from "../components/PageScaffold"
 import ProjectCard from "../components/ProjectCard"
-import { projects } from "../content/projects"
+import { projects } from "../content/projectsInfo"
 
 export default function Projects() {
     const [projShownIndex, setProjShownIndex] = useState(0)
