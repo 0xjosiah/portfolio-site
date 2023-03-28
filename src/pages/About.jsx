@@ -7,19 +7,22 @@ export default function About() {
         <PageScaffold title="About me" socials={true}>
             <div className="page-section-primary">
                 <p>
-                    Hi, my name is <span className="keyword-callout">Josiah Webb</span>
+                    Hi, my name is <span className="keyword-callout">Josiah Webb</span>.
                 </p>
                 <p>
-                    I am a <span className="keyword-callout">Front-End Developer</span> who is passionate about <span className="keyword-callout">design</span> especially when it comes to <span className="keyword-callout">3D</span>.
+                    I am a self-taught <span className="keyword-callout">Front-End Developer</span> with a passion for <span className="keyword-callout">design</span>, <span className="keyword-callout">problem-solving</span>, and <span className="keyword-callout">3D</span> experiences.
                 </p>
                 <p>
-                    I am proficient in various technologies including <span className="keyword-callout">JavaScript</span>, <span className="keyword-callout">CSS</span>, <span className="keyword-callout">React</span>, <span className="keyword-callout">React Three Fiber</span>, and <span className="keyword-callout">Three.js</span>.
+                    I am proficient in various technologies including <span className="keyword-callout">JavaScript</span>, <span className="keyword-callout">CSS</span>, <span className="keyword-callout">GLSL</span>, <span className="keyword-callout">React</span>, <span className="keyword-callout">React Three Fiber</span> and <span className="keyword-callout">Three.js</span>.
                 </p>
                 <p>
-                    I started my career as a financial advisor. Having grown up financially strained, I was drawn to helping people avoid financial pitfalls and grow wealth. I worked in various roles in the sector ranging from advice and consulting to data analysis. However, I had this nagging feeling that I needed to be creative. I love solving problems and the problems I was tasked with were few and typically less than compelling. Ultimately, as the pandemic set in, I found it difficult to reconcile my need to create and solve with the repetitive tasks I was completing that lacked any real substance. And so, I quit...
+                    Before diving into the world of software development, I started my career as a financial advisor. I was driven by a desire to help people avoid financial pitfalls and grow their wealth. Despite finding success in various roles in the sector, I couldn't shake the feeling that I needed to be more creative and solve more compelling problems. With the pandemic only exacerbating this feeling, I ultimately decided to pivot and pursue another path.
                 </p>
                 <p>
-                    Now, a few years on, I've found a passion for creation on the web. I have a fire I haven't felt in years and I'm excited to learn more. I look forward to bringing my former experience to a new role and contributing in any way that I can.
+                    Now, with years of experience under my belt, I have a fire and excitement for my work that I haven't felt in years. I am eager to continue learning and growing as a developer while leveraging my former experiences to contribute meaningfully to my next role.
+                </p>
+                <p>
+                    Outside of my professional life, you can find me mountain biking, skiing, or enjoying live music.
                 </p>
                 <ResumeCallout />
             </div>
