@@ -48,27 +48,30 @@ export default function Contact() {
                 <form ref={form} onSubmit={sendEmail} className='contact-form'>
                     <input
                         autoFocus
-                        required
                         type='text'
                         name='name'
                         value={formData.name}
                         placeholder='Name'
                         onChange={updateFormData}
+                        aria-label='full name'
+                        required
                     />
                     <input
-                        required
                         type='email'
                         name='email'
                         value={formData.email}
                         placeholder='Email'
                         onChange={updateFormData}
+                        aria-label='email address'
+                        required
                     />
                     <textarea
-                        required
                         name='message'
                         value={formData.message}
                         placeholder='Say hey!'
                         onChange={updateFormData} 
+                        aria-label='your message to me'
+                        required
                     />
                     <button className='btn' type='submit' >
                         Send
