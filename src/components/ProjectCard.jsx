@@ -20,7 +20,7 @@ export default function ProjectCard({ description, img, links, problem, solution
                 </h3>
                 <div
                     style={{
-                        // display: `${isHovered ? 'block' : 'none'}`,
+                        // hides proj info when not card is not being hovered
                         height: `${isHovered ? '' : '0'}`,
                         visibility: `${isHovered ? '' : 'hidden'}`
                     }}
