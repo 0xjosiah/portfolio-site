@@ -24,19 +24,18 @@ export default function PageScaffold({ children, title = 'page title', socials =
     return (
         <div
             className={noTitle ? "page-scaffold no-title" : "page-scaffold"}
+            {/* allows for any styling to be passed from instance of PageScaffold to this parent div */}
             style={{...style}}
         >
             <Link to="/" className="home-btn">
                 <BsArrowDownLeftSquareFill style={{ borderRadius: '0 10px 0 0' }}/>
             </Link>
             <h2 className="page-title">
-                {/* the callout looks kinda nice */}
-                {/* <span className="keyword-callout"> */}
-                    {/* This allows for providing either title or noTitle prop */}
-                    {!noTitle && title}
-                {/* </span> */}
+                {/* This allows for providing either title or noTitle prop */}
+                {!noTitle && title}
             </h2>
-
+            
+            {/* Contents of page */}
             {children}
 
             {socials &&
