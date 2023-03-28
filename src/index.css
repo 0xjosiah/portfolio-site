@@ -309,6 +309,19 @@ body,
   background-color: var(--white);
 }
 
+.arrow-icon {
+  border-radius: 30px;
+  padding: 2.5px;
+}
+
+.arrow-btn {
+  padding: 0;
+  margin: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 .project-card-container {
   border-radius: 10px;
   width: 100%;
@@ -388,5 +401,12 @@ body,
   }
   .icon-link {
     margin: 1.5rem .5rem 0;
+  }
+  .arrow-icon {
+    font-size: 1.5rem;
+    padding: 2px;
+  }
+  .arrow-btn {
+    margin: .5rem;
   }
 }

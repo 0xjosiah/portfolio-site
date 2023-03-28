@@ -87,21 +87,21 @@ export default function Projects() {
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
 
                 <button
-                    style={{ padding: "0", margin: "1.5rem", background: "none", border: "none", cursor: "pointer" }}
+                    className="arrow-btn"
                     onClick={(e) => handleBtnClick(e)}
                     ref={leftBtn}
                 >
-                    <BsArrowLeftCircleFill id="left" className="social-icon" style={{ borderRadius: "30px", padding: "2.5px" }} />
+                    <BsArrowLeftCircleFill className="social-icon arrow-icon" />
                 </button>
 
                 {projCards}
 
                 <button
-                    style={{ padding: "0", margin: "1.5rem", background: "none", border: "none", cursor: "pointer" }}
+                    className="arrow-btn"
                     onClick={(e) => handleBtnClick(e)}
                     ref={rightBtn}
                 >
-                    <BsArrowRightCircleFill className="social-icon" style={{ borderRadius: "30px", padding: "2.5px" }} />
+                    <BsArrowRightCircleFill className="social-icon arrow-icon" />
                 </button>
 
             </div>
