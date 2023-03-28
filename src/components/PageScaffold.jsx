@@ -24,7 +24,7 @@ export default function PageScaffold({ children, title = 'page title', socials =
     return (
         <div
             className={noTitle ? "page-scaffold no-title" : "page-scaffold"}
-            {/* allows for any styling to be passed from instance of PageScaffold to this parent div */}
+            // allows for any styling to be passed from instance of PageScaffold to this parent div
             style={{...style}}
         >
             <Link to="/" className="home-btn">
