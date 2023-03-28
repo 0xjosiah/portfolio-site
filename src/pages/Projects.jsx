@@ -42,13 +42,14 @@ export default function Projects() {
         if(event.currentTarget == rightBtn.current) cycleProjects('right')
     }
 
-    const keydownCycle = (event) => {
-        if(event.key == 'ArrowLeft') cycleProjects('left')
-        if(event.key == 'ArrowRight') cycleProjects('right')
-    }
+    /* this is unused without the useEffect */
+    // const keydownCycle = (event) => {
+    //     if(event.key == 'ArrowLeft') cycleProjects('left')
+    //     if(event.key == 'ArrowRight') cycleProjects('right')
+    // }
 
     /* Adds listener that allows cycling of proj with arrow key press */
-    // THIS DOESN'T WORK!!!!
+    // THIS DOESN'T WORK!!!! - whole comp rerenders on state change
     // useEffect(() => {
     //     document.addEventListener('keydown', (e) => keydownCycle(e))
 
