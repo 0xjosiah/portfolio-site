@@ -43,17 +43,18 @@ export default function Projects() {
     }
 
     /* Adds listener that allows cycling of proj with arrow key press */
-    useEffect(() => {
-        document.addEventListener('keydown', (e) => {
-            if(e.key == 'ArrowLeft') cycleProjects('left')
-            if(e.key == 'ArrowRight') cycleProjects('right')
-        })
+    // THIS DOESN'T WORK!!!!
+    // useEffect(() => {
+    //     document.addEventListener('keydown', (e) => {
+    //         if(e.key == 'ArrowLeft') cycleProjects('left')
+    //         if(e.key == 'ArrowRight') cycleProjects('right')
+    //     })
 
-        return document.removeEventListener('keydown', (e) => {
-            if(e.key == 'ArrowLeft') cycleProjects('left')
-            if(e.key == 'ArrowRight') cycleProjects('right')
-        })
-    }, [])
+    //     return document.removeEventListener('keydown', (e) => {
+    //         if(e.key == 'ArrowLeft') cycleProjects('left')
+    //         if(e.key == 'ArrowRight') cycleProjects('right')
+    //     })
+    // }, [])
 
     /* produces proj card elements */
     const projCards = projects.map((proj, index) => {
