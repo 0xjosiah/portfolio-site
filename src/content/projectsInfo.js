@@ -38,7 +38,7 @@ const projects = [
     {
         title: 'My Portfolio',
         img: '../images/portfolio.png',
-        tags: ['React', 'CSS', 'Framer Motion?', 'React Router', 'React 3 Fiber'],
+        tags: ['React', 'CSS', 'GLSL', 'React Router', 'React 3 Fiber', 'Three JS'],
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam dolores rem veniam molestiae! Nesciunt cum beatae, saepe molestias labore voluptatum vero repellat accusantium magnam, voluptatem sunt, officia ipsum ea ullam.',
         problem: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. In saepe ipsam ea, doloribus atque, facilis vitae officia voluptate assumenda commodi natus beatae unde ex, velit fuga quasi quo. Debitis, voluptate.',
         solution: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum reiciendis ullam ipsam impedit possimus officia a quisquam pariatur quaerat, voluptatem quasi error inventore perferendis necessitatibus delectus veritatis rerum excepturi numquam!',
