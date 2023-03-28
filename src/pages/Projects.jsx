@@ -42,18 +42,17 @@ export default function Projects() {
         if(event.currentTarget == rightBtn.current) cycleProjects('right')
     }
 
+    const keydownCycle = (event) => {
+        if(event.key == 'ArrowLeft') cycleProjects('left')
+        if(event.key == 'ArrowRight') cycleProjects('right')
+    }
+
     /* Adds listener that allows cycling of proj with arrow key press */
     // THIS DOESN'T WORK!!!!
     // useEffect(() => {
-    //     document.addEventListener('keydown', (e) => {
-    //         if(e.key == 'ArrowLeft') cycleProjects('left')
-    //         if(e.key == 'ArrowRight') cycleProjects('right')
-    //     })
+    //     document.addEventListener('keydown', (e) => keydownCycle(e))
 
-    //     return document.removeEventListener('keydown', (e) => {
-    //         if(e.key == 'ArrowLeft') cycleProjects('left')
-    //         if(e.key == 'ArrowRight') cycleProjects('right')
-    //     })
+    //     return document.removeEventListener('keydown', (e) => keydownCycle(e))
     // }, [])
 
     /* produces proj card elements */
