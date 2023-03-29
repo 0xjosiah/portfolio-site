@@ -16,7 +16,7 @@ export const jobs = [
         duties: [
             'Designed, developed, and deployed e-commerce store for client',
             'Implemented feature updates and UI updates',
-            'Assisted client in e-commerce platform setup and use',
+            'Assisted client in e-commerce platform setup and use'
         ],
         isProjLink: true,
         // projLink: '#' // this is unused but maybe in future
@@ -27,9 +27,9 @@ export const jobs = [
         title: 'Student',
         dates: '2022 - 2023',
         duties: [
-            'this, that, and the other',
-            'this, that, and the other',
-            'this, that, and the other',
+            'Learned how to create, refine, and deploy 3D experiences on the web',
+            'Utilized various JavaScript libraries: Three.js, R3F, CANNON.js, Rapier',
+            'Built models in Blender for experiences'
         ],
         isProjLink: true,
         // projLink: '#' // this is unused but maybe in future
@@ -40,9 +40,9 @@ export const jobs = [
         title: 'Frontend Bootcamp Student',
         dates: '2022 - 2023',
         duties: [
-            'thay, that, and the other',
-            'this, that, and the other',
-            'this, that, and the other',
+            'Learned basic web development including JavaScript, HTML, & CSS',
+            'Completed countless coding challenges and independent projects',
+            'Studied various React concepts: component types, hooks, etc.'
         ],
         isProjLink: true,
         // projLink: '#' // this is unused but maybe in future
@@ -98,6 +98,7 @@ export const jobs = [
         dates: '2013 - 2017',
         duties: [
             'Bachelor of Science in Business Administration',
+            'Finance Major',
             'GPA: 3.7'
         ],
         isProjLink: false,
