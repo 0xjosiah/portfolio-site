@@ -10,7 +10,7 @@
 export const jobs = [
     {
         company: 'Freelance',
-        url: null,
+        url: null, // this is a link to the company's page, null if no link
         title: 'Web Developer',
         dates: '2022 - 2023',
         duties: [
