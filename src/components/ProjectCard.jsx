@@ -26,15 +26,21 @@ export default function ProjectCard({ description, img, links, problem, solution
                     }}
                     className="project-card-description"
                 >
-                    <p>
-                        Description: {description}
-                    </p>
-                    <p>
-                        Problem: {problem}
-                    </p>
-                    <p>
-                        Solution: {solution}
-                    </p>
+                    {description &&
+                        <p>
+                            {description}
+                        </p>
+                    }
+                    {problem && 
+                        <p>
+                            Problem: {problem}
+                        </p>
+                    }
+                    {solution &&
+                        <p>
+                            Solution: {solution}
+                        </p>
+                    }
                 </div>
             </div>
 
