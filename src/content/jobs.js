@@ -1,7 +1,16 @@
+/**
+ * About this file:
+ * holds all content that feeds Experience Page
+ * use strings as all data types except url condition or isProjLink
+ * if no url - use null
+ * isProjLink is a bool on whether to add a link to Projects page on particular experience
+ * duties is an array of strings, each item will be a ul list item
+ */
+
 export const jobs = [
     {
         company: 'Freelance',
-        url: '#',
+        url: null,
         title: 'Web Developer',
         dates: '2022 - 2023',
         duties: [
