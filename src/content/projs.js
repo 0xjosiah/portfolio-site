@@ -27,7 +27,7 @@ const projects = [
         title: '1oft',
         img: '../images/1oft.png',
         tags: ['React', 'CSS', 'JavaScript', 'React Router'],
-        description: null,
+        description: 'A sample e-commerce style site built with React. This was one of the last projects I complete with Scrimba. It uses React Router for various pages.',
         problem: null,
         solution: null,
         links: {
@@ -39,7 +39,7 @@ const projects = [
         title: 'My Portfolio',
         img: '../images/portfolio.png',
         tags: ['React', 'CSS', 'GLSL', 'React Router', 'React 3 Fiber', 'Three JS'],
-        description: null,
+        description: 'This is a culmination of a large portion of my self-study of web development thus far. It is a reactive portfolio website to demonstrate my ability.',
         problem: null,
         solution: null,
         links: {
@@ -51,7 +51,7 @@ const projects = [
         title: 'Dirty Ltd. Store',
         img: '../images/dirty-store.png',
         tags: ['JavaScript', 'CSS', 'Liquid'],
-        description: null,
+        description: 'This is an e-commerce store I built for a client in Shopify. I was tasked with designing the store and deploying it to production. As it is a production project, the code is unavailable. Most of the store was built in the Shopify editor, however, I added various features that required the use of Liquid (Shopifys language) and javascript.',
         problem: null,
         solution: null,
         links: {
