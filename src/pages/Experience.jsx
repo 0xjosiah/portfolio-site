@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import ListLink from "../components/ListLink"
 import PageScaffold from "../components/PageScaffold"
 import ResumeCallout from "../components/ResumeCallout"
 import { jobs } from "../content/jobs"
@@ -78,6 +79,9 @@ export default function Experience() {
                     </div>
                     <ul>
                         {jobShown.duties.map((i, index) => (<li key={`duty${index}`}>{i}</li>))}
+                        {jobShown.isProjLink &&
+                            <ListLink />
+                        }
                     </ul>
                 </div>
             </div>
