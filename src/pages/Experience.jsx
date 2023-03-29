@@ -60,15 +60,17 @@ export default function Experience() {
                     A little about my experience and how it can help any team...
                 </p>
             </div>
+            {/* Renders all experience tabs */}
             <div ref={jobTabContainer} className="job-tab-container" onScroll={(e) => setScrollPosition(e)}>
                 {tabs}
             </div>
+            {/* Renders specific info about selected experience */}
             <div className="page-section-primary">
                 <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <p>{jobShown.title} @ <a
                                 style={{color: 'inherit'}}
-                                href={jobShown.url}
+                                href={jobShown.url} // links to company website
                                 target="_blank"
                                 rel="external"
                             >
@@ -77,8 +79,10 @@ export default function Experience() {
                         </p>
                         <p>{jobShown.dates}</p>
                     </div>
+                    {/* List of selected experience duties */}
                     <ul>
                         {jobShown.duties.map((i, index) => (<li key={`duty${index}`}>{i}</li>))}
+                        {/* if has associated proj to show - adds link to projects page, not specific proj */}
                         {jobShown.isProjLink &&
                             <ListLink />
                         }
