@@ -4,7 +4,7 @@ export default function ResumeCallout() {
     return (
         <p>
             {/* TODO: update resume and replace here */}
-            Download my <a href="./images/website-resume-2023.pdf" download="Josiah Webb Resume" className="resume">
+            Download my <a href="./images/josiah-webb-resume.pdf" download="Josiah Webb Resume" className="resume">
                 <span className="keyword-callout">
                     Resume
                     <HiOutlineDownload className="inline-icon"/>
