@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { BsArrowDownLeftSquareFill } from "react-icons/bs"
 import { Link, useNavigate } from "react-router-dom"
+import { motion } from "framer-motion"
 import Socials from "./Socials"
 
 export default function PageScaffold({ children, title = 'page title', socials = false, noTitle = false, style }) {
@@ -22,10 +23,12 @@ export default function PageScaffold({ children, title = 'page title', socials =
     }, [])
 
     return (
-        <div
+        <motion.div
             className={noTitle ? "page-scaffold no-title" : "page-scaffold"}
-            // allows for any styling to be passed from instance of PageScaffold to this parent div
-            style={{...style}}
+            style={{...style}} // allows for any styling to be passed from instance of PageScaffold to this parent div
+            initial={{ opacity: 0, top: '0%' }}
+            animate={{ opacity: 1, top: '7.5vh' }}
+            // transition={{ ease: "easeOut", duration: 1.5 }}
         >
             <Link to="/" className="home-btn">
                 <BsArrowDownLeftSquareFill style={{ borderRadius: '0 10px 0 0' }}/>
@@ -41,6 +44,6 @@ export default function PageScaffold({ children, title = 'page title', socials =
             {socials &&
                 <Socials />
             }
-        </div>
+        </motion.div>
     )
 }
