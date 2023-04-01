@@ -1,11 +1,12 @@
 import { useEffect } from "react"
 import { BsArrowDownLeftSquareFill } from "react-icons/bs"
 import { Link, useNavigate } from "react-router-dom"
-import { AnimatePresence, motion } from "framer-motion"
+import { motion, useIsPresent } from "framer-motion"
 import Socials from "./Socials"
 
 export default function PageScaffold({ children, title = 'page title', socials = false, noTitle = false, style }) {
     const navigate = useNavigate()
+    const isPresent = useIsPresent()
 
     /* fn to return home */
     const returnHome = (event) => {
@@ -46,6 +47,16 @@ export default function PageScaffold({ children, title = 'page title', socials =
             {socials &&
                 <Socials />
             }
+
+            <motion.div
+                key="page-screen"
+                initial={{ scaleX: 1 }}
+                animate={{ scaleX: 0, transition: { duration: 0.5, ease: "circOut" } }}
+                exit={{ scaleX: 1, transition: { duration: 0.5, ease: "circIn" } }}
+                style={{ originX: isPresent ? 0 : 1 }}
+                className="privacy-screen"
+            />
         </motion.div>
+
     )
 }
