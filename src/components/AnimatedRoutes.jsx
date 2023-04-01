@@ -7,14 +7,15 @@ import Projects from "../pages/Projects";
 
 export default function AnimatedRoutes() {
     const location = useLocation()
+
     return (
         <AnimatePresence>
-                <Routes location={location} key={location.pathname}>
-                    <Route path='/about' element={ <About /> } />
-                    <Route path='/experience' element={ <Experience /> } />
-                    <Route path='/projects' element={ <Projects /> } />
-                    <Route path='/contact' element={ <Contact /> } />
-                </Routes>
+            <Routes location={location} key={location.pathname}>
+                <Route path="/about" element={ <About /> } />
+                <Route path="/experience" element={ <Experience /> } />
+                <Route path="/projects" element={ <Projects /> } />
+                <Route path="/contact" element={ <Contact /> } />
+            </Routes>
         </AnimatePresence>
     )
 }
