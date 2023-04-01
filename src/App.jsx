@@ -10,7 +10,7 @@ const camConfig = {
 }
 
 
-export default function App(props) {
+export default function App() {
 
     return (
         <>
