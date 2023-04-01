@@ -27,6 +27,7 @@
   /* Other */
   --bs-hard: 0px 0px 10px var(--accent-color);
   --bs-soft: 0px 0px 10px 1px var(--accent-alpha-light);
+  --transition: all 250ms ease-in-out;
 }
 
 /**
@@ -76,8 +77,10 @@ body,
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--black);
+  background-color: var(--accent-alpha-light);
   z-index: 2;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
 }
 
 /* Home Button */
@@ -149,6 +152,7 @@ body,
   outline: none;
   border-radius: var(--radius-sm);
   box-shadow: inset 0px -10px 10px 1px var(--accent-color);
+  transition: var(--transition);
 }
 
 .social-icon:hover,
@@ -223,6 +227,7 @@ body,
   border: none;
   border-radius: var(--radius-sm);
   box-shadow: var(--bs-hard);
+  transition: var(--transition);
 }
 
 .btn:hover,

@@ -24,39 +24,41 @@ export default function PageScaffold({ children, title = 'page title', socials =
     }, [])
 
     return (
-        <motion.div
-            className={noTitle ? "page-scaffold no-title" : "page-scaffold"}
-            style={{...style}} // allows for any styling to be passed from instance of PageScaffold to this parent div
-            key="page"
-            initial={{ opacity: 0, top: '0%' }}
-            animate={{ opacity: 1, top: '7.5vh' }}
-            exit={{ opacity: 0, top: 0, transition: { duration: 0.5, ease: 'circOut' }  }}
-            // transition={{ ease: "easeOut", duration: 1.5 }}
-        >
-            <Link to="/" className="home-btn">
-                <BsArrowDownLeftSquareFill style={{ borderRadius: '0 10px 0 0' }}/>
-            </Link>
-            <h2 className="page-title">
-                {/* This allows for providing either title or noTitle prop */}
-                {!noTitle && title}
-            </h2>
-            
-            {/* Contents of page */}
-            {children}
-
-            {socials &&
-                <Socials />
-            }
-
+        <>
             <motion.div
-                key="page-screen"
-                initial={{ scaleX: 1 }}
-                animate={{ scaleX: 0, transition: { duration: 0.5, ease: "circOut" } }}
-                exit={{ scaleX: 1, transition: { duration: 0.5, ease: "circIn" } }}
-                style={{ originX: isPresent ? 0 : 1 }}
-                className="privacy-screen"
-            />
-        </motion.div>
+                className={noTitle ? "page-scaffold no-title" : "page-scaffold"}
+                style={{...style}} // allows for any styling to be passed from instance of PageScaffold to this parent div
+                key="page"
+                initial={{ opacity: 0, }}
+                animate={{ opacity: 1, transition: { duration: .55, ease: 'circInOut' }}}
+                exit={{ opacity: 0, transition: { duration: .8, ease: 'circOut' }  }}
+            >
+                <Link to="/" className="home-btn">
+                    <BsArrowDownLeftSquareFill style={{ borderRadius: '0 10px 0 0' }}/>
+                </Link>
+                <h2 className="page-title">
+                    {/* This allows for providing either title or noTitle prop */}
+                    {!noTitle && title}
+                </h2>
+                
+                {/* Contents of page */}
+                {children}
+
+                {socials &&
+                    <Socials />
+                }
+
+                <motion.div
+                    key="page-screen"
+                    initial={{ scaleY: 1,  }}
+                    animate={{ scaleY: 0, transition: { duration: 0.5, ease: "circIn" } }}
+                    exit={{ scaleY: 1, transition: { duration: 0.5, ease: "circIn" } }}
+                    style={{ originY: 1 }}
+                    className="privacy-screen"
+                />
+            </motion.div>
+
+        </>
 
     )
 }
