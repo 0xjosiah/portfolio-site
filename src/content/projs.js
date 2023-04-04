@@ -8,7 +8,7 @@ const projects = [
         solution: null,
         links: {
             codeLink: 'https://github.com/0xjosiah/53-marble-game-r3f',
-            demoLink: 'https://google.com'
+            demoLink: 'https://marble-combine.vercel.app/'
         },
     },
     {
