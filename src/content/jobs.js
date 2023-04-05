@@ -14,9 +14,9 @@ export const jobs = [
         title: 'Web Developer',
         dates: '2022 - 2023',
         duties: [
-            'Designed, developed, and deployed e-commerce store for client',
-            'Implemented feature updates and UI updates',
-            'Assisted client in e-commerce platform setup and use'
+            'Designed, developed, and deployed e-commerce stores for clients',
+            'Implemented feature updates and UI updates using JavaScript and Liquid',
+            'Assisted clients in e-commerce platform setup and use'
         ],
         isProjLink: true,
         // projLink: '#' // this is unused but maybe in future
