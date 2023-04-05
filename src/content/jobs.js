@@ -53,12 +53,11 @@ export const jobs = [
         title: 'Senior Customer Advocate',
         dates: '2019 - 2021',
         duties: [
-            'Researched and resolved client issues on complex retirement plan details with 100% accuracy',
-            'Created and implemented process improvements to reduce workloads and bolster callback efficiency',
-            'Achieved top quartile satisfaction, retention, and referral rankings on consistent basis',
-            'Promoted investment and advice services resulting in monthly 1% referral rate increase for 2 consecutive quarters',
-            'Met and exceeded requirements for call quality and client experience by 10%',
-            'Increased call efficiency by reducing client waiting time by 40%'
+            'Worked with clients in all matters of financial literacy and account management',
+            'Researched and resolved client issues on complex financial accounts with 100% accuracy',
+            'Achieved top 15% rankings among peers for client satisfaction, retention, and referrals',
+            'Increased call efficiency by reducing client waiting time by 40%',
+            'Promoted to senior position after only 6 months on the job'
         ],
         isProjLink: false,
         // projLink: '#' // this is unused but maybe in future
@@ -70,9 +69,9 @@ export const jobs = [
         dates: '2019 - 2019',
         duties: [
             'Built Excel model to identify and compile erroneous or incongruent data points',
-            'Model checked and cross-referenced over 80,000 data points, for over 4,000 securities in 55 funds',
+            'Program checked and cross-referenced over 80,000 data points',
             'Increased reporting accuracy from 80% to 100%',
-            'Formalized process to expedite fund reporting validation for Investment Company Reporting Modernization'
+            'Formalized process to expedite fund reporting validation for new SEC requirements'
         ],
         isProjLink: false,
         // projLink: '#' // this is unused but maybe in future
