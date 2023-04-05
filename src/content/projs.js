@@ -3,7 +3,7 @@ const projects = [
         title: 'Marble Combine',
         img: '../images/marble-combine.png',
         tags: ['react', 'react 3 fiber', 'CSS', 'Rapier'],
-        description: 'A simple marble race type game, very similar to Marble Blast Gold (if you are familiar). This started as a project in Threejs Journey and I added a few features.',
+        description: 'A simple marble race type game, very similar to Marble Blast Gold (if you are familiar). This started as a project for Three.js Journey and I added a few features.',
         problem: null,
         solution: null,
         links: {
@@ -15,7 +15,7 @@ const projects = [
         title: 'Galaxy Generator',
         img: '../images/galaxy-generator.png',
         tags: ['Three JS', 'JavaScript', 'OOP'],
-        description: 'A three.js experience. This started as another Threejs Journey project. I took the basic galaxy construction, turned all parts into javascript classes, and allowed the user to customize their own galaxy and place it into the scene.',
+        description: 'A three.js experience. This started as another Three.js Journey project. I took the basic galaxy construction, turned all parts into javascript classes, and allowed the user to customize their own galaxy and place it into the scene.',
         problem: null,
         solution: null,
         links: {
@@ -51,7 +51,7 @@ const projects = [
         title: 'Dirty Ltd. Store',
         img: '../images/dirty-store.png',
         tags: ['JavaScript', 'CSS', 'Liquid'],
-        description: 'This is an e-commerce store I built for a client in Shopify. I was tasked with designing the store and deploying it to production. As it is a production project, the code is unavailable. Most of the store was built in the Shopify editor, however, I added various features that required the use of Liquid (Shopifys language) and javascript.',
+        description: 'This is an e-commerce store I built for a client in Shopify. I was tasked with designing the store and deploying it to production. As it is a production project, the code is unavailable. Most of the store was built in the Shopify editor, however, I added various features that required the use of Liquid (Shopify\'s language) and javascript.',
         problem: null,
         solution: null,
         links: {
