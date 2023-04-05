@@ -22,7 +22,7 @@ export const jobs = [
         // projLink: '#' // this is unused but maybe in future
     },
     {
-        company: 'Three JS Journey',
+        company: 'Three.js Journey',
         url: 'https://threejs-journey.com/',
         title: 'Student',
         dates: '2022 - 2023',
