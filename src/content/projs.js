@@ -14,7 +14,7 @@ const projects = [
     {
         title: 'Galaxy Generator',
         img: '../images/galaxy-generator.png',
-        tags: ['Three JS', 'JavaScript', 'OOP'],
+        tags: ['Three.js', 'JavaScript', 'OOP'],
         description: 'A three.js experience. This started as another Three.js Journey project. I took the basic galaxy construction, turned all parts into javascript classes, and allowed the user to customize their own galaxy and place it into the scene.',
         problem: null,
         solution: null,
@@ -38,7 +38,7 @@ const projects = [
     {
         title: 'My Portfolio',
         img: '../images/portfolio.png',
-        tags: ['React', 'CSS', 'GLSL', 'React Router', 'React 3 Fiber', 'Three JS'],
+        tags: ['React', 'CSS', 'GLSL', 'React Router', 'React 3 Fiber', 'Three.js'],
         description: 'This is a culmination of a large portion of my self-study of web development thus far. It is a reactive portfolio website to demonstrate my ability.',
         problem: null,
         solution: null,
