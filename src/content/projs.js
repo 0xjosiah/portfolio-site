@@ -38,7 +38,7 @@ const projects = [
     {
         title: 'My Portfolio',
         img: '../images/portfolio.png',
-        tags: ['React', 'CSS', 'GLSL', 'React Router', 'React 3 Fiber', 'Three.js'],
+        tags: ['React', 'CSS', 'GLSL', 'React Router', 'React 3 Fiber', 'Three.js', 'Framer Motion'],
         description: 'This is a culmination of a large portion of my self-study of web development thus far. It is a reactive portfolio website to demonstrate my ability.',
         problem: null,
         solution: null,
