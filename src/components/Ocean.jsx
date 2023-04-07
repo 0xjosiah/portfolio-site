@@ -4,7 +4,6 @@ import { shaderMaterial } from '@react-three/drei'
 import * as THREE from 'three'
 import { extend, useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
-import { useControls } from 'leva'
 
 const debugObject = {}
 debugObject.depthColor = 0x365187
@@ -43,10 +42,6 @@ export default function Ocean() {
         oceanMat.current.uTime += delta
     })
 
-    // const { pos, rotation } = useControls({
-    //     pos: [ 0, 0, 0 ],
-    //     rotation: [ - Math.PI * 0.5, 0, 0 ]
-    // })
     const pos = [ 0, 0, 0 ]
     const rotation = [ - Math.PI * 0.5, 0, 0 ]
 
