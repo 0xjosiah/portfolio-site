@@ -1,5 +1,5 @@
 import { Text3D, useCursor, useTexture } from "@react-three/drei"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export default function SiteTitle({
@@ -18,7 +18,8 @@ export default function SiteTitle({
     bevelSegments=4.,
     letterSpacing=0
 }) {
-
+    
+    const ref = useRef(null)
     const nav = useNavigate()
     const clickNav = () => nav(navTo)
 
@@ -48,6 +49,7 @@ export default function SiteTitle({
             onPointerOver={() => setHovered(true)}
             onPointerOut={() => setHovered(false)}
             {...textOptions}
+            ref={ref}
         >
             {text}
             <meshMatcapMaterial matcap={chrome} />
