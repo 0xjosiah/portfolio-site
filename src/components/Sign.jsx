@@ -7,6 +7,7 @@ export default function Sign({ text, navTo }) {
 
     return (
         <>
+            {/* Contact title */}
             <SiteTitle
                 text={text}
                 navTo={navTo}
@@ -17,6 +18,22 @@ export default function Sign({ text, navTo }) {
                 bevelSize={.003}
                 letterSpacing={.005}
             />
+
+            {/* arrows for scroll hint */}
+            <SiteTitle
+                text={'<<'}
+                cursorHover={false}
+                navTo={null}
+                position={[ 3.71, -0.02, 6.47 ]}
+                rotation={[ -0.21, 0.33, 1.67 ]}
+                size={.05}
+                height={.03}
+                bevelThickness={0.005}
+                bevelSize={.003}
+                letterSpacing={.005}
+            />
+
+            {/* sign post */}
             <RoundedBox
                 position={[ 3.746, 0.029, 6.515 ]}
                 args={[ .0095, 0.25, 0.035 ]}

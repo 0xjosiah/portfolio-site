@@ -16,7 +16,8 @@ export default function SiteTitle({
     bevelSize=.02,
     bevelOffset=0,
     bevelSegments=4.,
-    letterSpacing=0
+    letterSpacing=0,
+    cursorHover=true
 }) {
     
     const ref = useRef(null)
@@ -24,7 +25,7 @@ export default function SiteTitle({
     const clickNav = () => nav(navTo)
 
     const [hovered, setHovered] = useState(false)
-    useCursor(hovered)
+    if(cursorHover) useCursor(hovered)
     
     const textOptions = {
         size,
