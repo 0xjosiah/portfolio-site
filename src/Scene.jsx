@@ -22,8 +22,15 @@ export default function Scene() {
     // const { camera } = useThree((state) => state)
     // console.log('camPos', position)
 
-    // this makes sure 'About' section title is never in view until scrolled
+    /* makes sure 'About' section title is never in view until scrolled */
     const conditionalWidth = width < 5 ? width : width * 0.6
+
+    /* makes site title responsive to device width */
+    const siteTitlePos = [
+        -0.35,
+        -0.2, 
+        width < 9 ? width * .5 : 4.5
+    ]
 
     return (
         <>
@@ -31,7 +38,7 @@ export default function Scene() {
             {/* <Perf position='top-left' /> */}
 
             <Ocean />
-            <SiteTitle text='0xJosiah' navTo='/' position={[ -0.35, -0.2, 4.5 ]} rotation={[ 0, 1, 0.09 ]} />
+            <SiteTitle text='0xJosiah' navTo='/' position={siteTitlePos} rotation={[ 0, 1, 0.09 ]} />
             <Sign text='CONTACT' navTo='/contact' />
 
             <ScrollControls pages={4} infinite horizontal>
