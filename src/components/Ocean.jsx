@@ -14,7 +14,7 @@ const waterGeometry = new THREE.PlaneGeometry(15, 15, 512, 512)
 const OceanMaterial = shaderMaterial(
     /* Uniforms */
     {
-        uTime: 0,
+        uTime: 5.6,
 
         uBigWavesElevation: 0.283,
         uBigWavesFrequency: new THREE.Vector2( 0.72, 0.369 ),
