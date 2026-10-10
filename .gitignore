@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 .vercel
 .TODO.md
+# Yarn
+.yarn/
+.pnp.*
