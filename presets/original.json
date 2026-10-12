@@ -1,0 +1,218 @@
+{
+  "Camera.cameraPosition": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "Sky & Sun.Sun position.azimuth": 0,
+  "Sky & Sun.Sun position.elevation": 2.6,
+  "Sky & Sun.Sun appearance.uSunSize": 0.045,
+  "Sky & Sun.Sun appearance.sunDisc": "#fff3d6",
+  "Sky & Sun.Sun appearance.uGlowStrength": 0.7,
+  "Sky & Sun.Sun appearance.sun": "#ffd9a0",
+  "Sky & Sun.Sky gradient.zenith": "#2b2f6b",
+  "Sky & Sun.Sky gradient.mid": "#d9708f",
+  "Sky & Sun.Sky gradient.horizon": "#ffb37a",
+  "Sky & Sun.Sky gradient.uHazeStrength": 0.85,
+  "Sky & Sun.Sky gradient.midBlend": [
+    4.6,
+    24.8
+  ],
+  "Sky & Sun.Sky gradient.horizonBlend": [
+    0,
+    8
+  ],
+  "Sky & Sun.Sky gradient.hazeHeight": 3.6,
+  "Lighting.Ambient fill (all sides).ambientOn": true,
+  "Lighting.Ambient fill (all sides).skyColor": "#f291a0",
+  "Lighting.Ambient fill (all sides).groundColor": "#365187",
+  "Lighting.Ambient fill (all sides).ambientIntensity": 0.9,
+  "Lighting.Key light (behind camera).keyOn": true,
+  "Lighting.Key light (behind camera).keyColor": "#ffb37a",
+  "Lighting.Key light (behind camera).keyIntensity": 1.4,
+  "Lighting.Key light (behind camera).keyPosition": [
+    4.75,
+    2.4,
+    8.25
+  ],
+  "Lighting.Sun light (from the sun).sunLightOn": true,
+  "Lighting.Sun light (from the sun).sunLightColor": "#ffd9a0",
+  "Lighting.Sun light (from the sun).sunLightIntensity": 1,
+  "Lighting.Sun light (from the sun).sunLightFollows": true,
+  "Lighting.Sun light (from the sun).sunLightPosition": [
+    -18.66,
+    0.76,
+    -34.03
+  ],
+  "Clouds.Cloud left of sun.position": [
+    -31.25,
+    5.9,
+    -26.75
+  ],
+  "Clouds.Cloud left of sun.bounds": [
+    9,
+    1.5,
+    3
+  ],
+  "Clouds.Cloud left of sun.segments": 30,
+  "Clouds.Cloud left of sun.volume": 8,
+  "Clouds.Cloud left of sun.color": "#ffc2a8",
+  "Clouds.Cloud right of sun.position": [
+    -7.25,
+    4.9,
+    -39.75
+  ],
+  "Clouds.Cloud right of sun.bounds": [
+    8,
+    1.5,
+    3
+  ],
+  "Clouds.Cloud right of sun.segments": 30,
+  "Clouds.Cloud right of sun.volume": 7,
+  "Clouds.Cloud right of sun.color": "#ffb59c",
+  "Clouds.Cloud above sun.position": [
+    -20.25,
+    10.9,
+    -35.75
+  ],
+  "Clouds.Cloud above sun.bounds": [
+    11,
+    1.2,
+    3
+  ],
+  "Clouds.Cloud above sun.segments": 30,
+  "Clouds.Cloud above sun.volume": 6,
+  "Clouds.Cloud above sun.color": "#e9a3c0",
+  "Clouds.All clouds.opacity": 0.85,
+  "Clouds.All clouds.speed": 0.1,
+  "Clouds.All clouds.growth": 2,
+  "Clouds.All clouds.fade": 10,
+  "Ocean.Big waves (rolling swell).uBigWavesElevation": 0.283,
+  "Ocean.Big waves (rolling swell).bigWavesFrequencyX": 0.72,
+  "Ocean.Big waves (rolling swell).bigWavesFrequencyZ": 0.369,
+  "Ocean.Big waves (rolling swell).uBigWavesSpeed": 0.33,
+  "Ocean.Small waves (surface chop).uSmallWavesElevation": 0.167,
+  "Ocean.Small waves (surface chop).uSmallWavesFrequency": 1.765,
+  "Ocean.Small waves (surface chop).uSmallWavesSpeed": 0.178,
+  "Ocean.Small waves (surface chop).uSmallWavesIterations": 2,
+  "Ocean.Water colour.depthColor": "#365187",
+  "Ocean.Water colour.surfaceColor": "#f291a0",
+  "Ocean.Water colour.uColorOffset": 0.051,
+  "Ocean.Water colour.uColorMultiplier": 3.76,
+  "Ocean.Sun glitter on water.uGlitterStrength": 0.3,
+  "Ocean.Sun glitter on water.uShininess": 40,
+  "Ocean.Sun glitter on water, layer 2.uGlitterStrength2": 0,
+  "Ocean.Sun glitter on water, layer 2.uShininess2": 8,
+  "Ocean.Sun glitter on water, layer 2.uGlitterSpread2": 1,
+  "Ocean.Sun glitter on water, layer 2.glitterColor2": "#ffd9a0",
+  "Ocean.Fade into horizon.uFogNear": 9,
+  "Ocean.Fade into horizon.uFogFar": 20,
+  "Travel (everything drifting past).autoSpeed": 0.2,
+  "Travel (everything drifting past).scrollPush": 0.15,
+  "Travel (everything drifting past).coastTime": 1.2,
+  "Titles & sign.Site title.position": [
+    -4.6,
+    -0.8,
+    -3.25
+  ],
+  "Titles & sign.Site title.rotation": [
+    0,
+    57.3,
+    5.16
+  ],
+  "Titles & sign.Site title.size": 1,
+  "Titles & sign.Site title.lead": 0,
+  "Titles & sign.Contact sign.position": [
+    -0.65,
+    -0.45,
+    -1.25
+  ],
+  "Titles & sign.Contact sign.rotation": [
+    0,
+    0,
+    0
+  ],
+  "Titles & sign.Contact sign.size": 1,
+  "Titles & sign.Contact sign.lead": 0,
+  "Titles & sign.About title.position": [
+    -4.6,
+    1.4,
+    -5.6
+  ],
+  "Titles & sign.About title.rotation": [
+    0,
+    0,
+    0
+  ],
+  "Titles & sign.About title.size": 1,
+  "Titles & sign.About title.lead": 1,
+  "Titles & sign.Experience title.position": [
+    -7.6,
+    1.4,
+    -9.8
+  ],
+  "Titles & sign.Experience title.rotation": [
+    0,
+    0,
+    0
+  ],
+  "Titles & sign.Experience title.size": 1,
+  "Titles & sign.Experience title.lead": 2,
+  "Titles & sign.Projects title.position": [
+    -5.2,
+    1.4,
+    -6.4
+  ],
+  "Titles & sign.Projects title.rotation": [
+    0,
+    0,
+    0
+  ],
+  "Titles & sign.Projects title.size": 1,
+  "Titles & sign.Projects title.lead": 3,
+  "Titles & sign.Site title.Motion.speed": 1,
+  "Titles & sign.Site title.Motion.heading": 270,
+  "Titles & sign.Site title.Motion.climb": 0,
+  "Titles & sign.Contact sign.Motion.speed": 1,
+  "Titles & sign.Contact sign.Motion.heading": 270,
+  "Titles & sign.Contact sign.Motion.climb": 0,
+  "Titles & sign.About title.Motion.speed": 1,
+  "Titles & sign.About title.Motion.heading": 270,
+  "Titles & sign.About title.Motion.climb": 0,
+  "Titles & sign.Experience title.Motion.speed": 1,
+  "Titles & sign.Experience title.Motion.heading": 270,
+  "Titles & sign.Experience title.Motion.climb": 0,
+  "Titles & sign.Projects title.Motion.speed": 1,
+  "Titles & sign.Projects title.Motion.heading": 270,
+  "Titles & sign.Projects title.Motion.climb": 0,
+  "Clouds.Cloud left of sun.Motion.speed": 1,
+  "Clouds.Cloud left of sun.Motion.heading": 270,
+  "Clouds.Cloud left of sun.Motion.climb": 0,
+  "Clouds.Cloud right of sun.Motion.speed": 1,
+  "Clouds.Cloud right of sun.Motion.heading": 270,
+  "Clouds.Cloud right of sun.Motion.climb": 0,
+  "Clouds.Cloud above sun.Motion.speed": 1,
+  "Clouds.Cloud above sun.Motion.heading": 270,
+  "Clouds.Cloud above sun.Motion.climb": 0,
+  "Ocean.Motion.speed": 1,
+  "Ocean.Motion.heading": 270,
+  "Ocean.Motion.climb": 0,
+  "Titles & sign.Site title.moving": false,
+  "Titles & sign.Contact sign.moving": false,
+  "Titles & sign.About title.moving": false,
+  "Titles & sign.Experience title.moving": false,
+  "Titles & sign.Projects title.moving": false,
+  "Clouds.Cloud left of sun.moving": false,
+  "Clouds.Cloud right of sun.moving": false,
+  "Clouds.Cloud above sun.moving": false,
+  "Ocean.moving": false,
+  "Titles & sign.Site title.scrolls": false,
+  "Titles & sign.Contact sign.scrolls": false,
+  "Titles & sign.About title.scrolls": true,
+  "Titles & sign.Experience title.scrolls": true,
+  "Titles & sign.Projects title.scrolls": true,
+  "Clouds.Cloud left of sun.scrolls": false,
+  "Clouds.Cloud right of sun.scrolls": false,
+  "Clouds.Cloud above sun.scrolls": false,
+  "Ocean.scrolls": false
+}
