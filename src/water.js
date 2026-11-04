@@ -61,6 +61,27 @@ export function releaseFloatShadow(shadow) {
  */
 export const shadowFrame = { halfWidth: 0.55, bottom: -0.05, reference: 0.85 }
 
+/*
+ * The sailed boat's wake, which the ocean paints on itself (see Wake). Whole uniform objects, shared with the
+ * ocean's material like the shadows, so the wake only has to write them.
+ *   field  - the wake's patch of water as a texture: flow in rg (world x, z), foam in b
+ *   area   - world x, z of the patch's corner, its width, then 1 while there is a wake and 0 to paint none
+ *   look   - (foam strength, colour by direction 0 - 1, ripple, breakup into flecks 0 - 1)
+ *   foam   - colour of the foam
+ *   away, toward, left, right - colours for water flowing away from the camera, toward it, and across the
+ *          screen, mixed in by the 'colour by direction' amount like ChromaFlow's colours
+ */
+export const wakeUniforms = {
+    uWakeField: { value: null },
+    uWakeArea: { value: new THREE.Vector4(0, 0, 1, 0) },
+    uWakeLook: { value: new THREE.Vector4(0, 0, 0, 0) },
+    uWakeFoam: { value: new THREE.Color('#ffffff') },
+    uWakeAway: { value: new THREE.Color('#ffffff') },
+    uWakeToward: { value: new THREE.Color('#ffffff') },
+    uWakeLeft: { value: new THREE.Color('#ffffff') },
+    uWakeRight: { value: new THREE.Color('#ffffff') },
+}
+
 export const waveUniforms = {
     uTime: { value: 0 },
     uWaveOrigin: { value: new THREE.Vector2( sceneCentre[0], sceneCentre[2] ) },

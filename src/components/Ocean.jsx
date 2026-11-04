@@ -9,7 +9,7 @@ import { sceneCentre } from '../camera'
 import { palette, paletteDefaults, sunDirection } from '../sunset'
 import { setRawColor } from '../controls'
 import { useMotion } from '../travel'
-import { floatShadows, horizonFade, waveUniforms } from '../water'
+import { floatShadows, horizonFade, wakeUniforms, waveUniforms } from '../water'
 import WaterGlints from './WaterGlints'
 
 const debugObject = {}
@@ -58,6 +58,9 @@ const OceanMaterial = shaderMaterial(
             [ `uShadowArea${index}`, new THREE.Vector4() ],
             [ `uShadowLook${index}`, new THREE.Vector2() ],
         ])),
+
+        /* the sailed boat's trail, swapped for the shared objects below */
+        ...Object.fromEntries(Object.keys(wakeUniforms).map((name) => [ name, null ])),
     },
     vertexShader,
     fragmentShader,
@@ -73,6 +76,8 @@ const OceanMaterial = shaderMaterial(
             material.uniforms[`uShadowArea${index}`] = shadow.area
             material.uniforms[`uShadowLook${index}`] = shadow.look
         })
+
+        Object.assign(material.uniforms, wakeUniforms)
     }
 )
 
