@@ -27,3 +27,6 @@ dist-ssr
 # Yarn
 .yarn/
 .pnp.*
+
+# Claude Code worktrees
+.claude/worktrees/
