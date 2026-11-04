@@ -101,3 +101,144 @@ export function signedDistance(polygon, point, away) {
 
     return inside ? - nearest : nearest
 }
+
+const hullPoint = new THREE.Vector2()
+const away = new THREE.Vector2()
+const push = new THREE.Vector2()
+
+/* Points along a hull from stern (-1) to bow (1) that are kept out of solids, each with the hull's half-width round it */
+const hullStations = [ -1, -0.5, 0, 0.5, 1 ]
+
+/*
+ * Pushes a boat back out of any solid it has got into, the shortest way, so it keeps any movement along the
+ * solid's side. Moves hull.x and hull.z in place and sets out to the way it was pushed (zero if it wasn't).
+ *   hull - { x, z, yaw, size, halfWidth, height }: where it is on the water, which way its bow points (0 = +Z),
+ *          its length, half its width and its height as fractions of its length
+ */
+export function keepOutOfSolids(hull, out) {
+    out?.set(0, 0)
+    const outlines = solidOutlines(hull.size * hull.height)
+    if(!outlines.length) return
+
+    const radius = hull.size * hull.halfWidth
+    const halfLength = hull.size * 0.5
+
+    /* pushing out of one side can push into another (a corner, two solids), a few passes settle it */
+    for(let pass = 0; pass < 3; pass++) {
+        let deepest = 0
+        for(const outline of outlines) {
+            for(const station of hullStations) {
+                hullPoint.set(hull.x + Math.sin(hull.yaw) * station * halfLength, hull.z + Math.cos(hull.yaw) * station * halfLength)
+                const gap = signedDistance(outline, hullPoint, away) - radius
+                if(gap < deepest) {
+                    deepest = gap
+                    push.copy(away)
+                }
+            }
+        }
+        if(deepest >= 0) return
+        hull.x -= push.x * deepest
+        hull.z -= push.y * deepest
+        out?.addScaledVector(push, - deepest)
+    }
+}
+
+/*
+ * Boats that the sailed boat can shove around. Each is the object a Pushable keeps: its hull, where it is now
+ * ({ x, z, yaw } in the world) and how it is moving ({ vx, vz, spin }), so whatever bumps into it can push it.
+ */
+export const pushables = new Set()
+
+const stern = new THREE.Vector2()
+const bow = new THREE.Vector2()
+const otherStern = new THREE.Vector2()
+const otherBow = new THREE.Vector2()
+const along = new THREE.Vector2()
+const otherAlong = new THREE.Vector2()
+const between = new THREE.Vector2()
+
+/* The hull's centre line from stern to bow */
+const hullLine = (hull, from, to) => {
+    const reach = hull.size * 0.5
+    from.set(hull.x - Math.sin(hull.yaw) * reach, hull.z - Math.cos(hull.yaw) * reach)
+    to.set(hull.x + Math.sin(hull.yaw) * reach, hull.z + Math.cos(hull.yaw) * reach)
+}
+
+/* Nearest points on two line segments a1-a2 and b1-b2, written to onA and onB */
+function closestOnSegments(a1, a2, b1, b2, onA, onB) {
+    along.subVectors(a2, a1)
+    otherAlong.subVectors(b2, b1)
+    between.subVectors(a1, b1)
+    const lengthA = along.lengthSq()
+    const lengthB = otherAlong.lengthSq()
+    const f = otherAlong.dot(between)
+    const c = along.dot(between)
+    const b = along.dot(otherAlong)
+    const denom = lengthA * lengthB - b * b
+
+    let s = denom > 1e-9 ? THREE.MathUtils.clamp((b * f - c * lengthB) / denom, 0, 1) : 0
+    let t = (b * s + f) / lengthB
+    if(t < 0) {
+        t = 0
+        s = THREE.MathUtils.clamp(- c / lengthA, 0, 1)
+    }
+    else if(t > 1) {
+        t = 1
+        s = THREE.MathUtils.clamp((b - c) / lengthA, 0, 1)
+    }
+    onA.copy(a1).addScaledVector(along, s)
+    onB.copy(b1).addScaledVector(otherAlong, t)
+}
+
+const onMover = new THREE.Vector2()
+const onOther = new THREE.Vector2()
+const normal = new THREE.Vector2()
+
+/*
+ * Where two hulls overlap, sets normal to the way from the first to the second and returns how deep the overlap
+ * is (0 if they don't touch). onOther is left at the point on the second hull's centre line nearest the first.
+ */
+export function hullOverlap(mover, other, out) {
+    hullLine(mover, stern, bow)
+    hullLine(other, otherStern, otherBow)
+    closestOnSegments(stern, bow, otherStern, otherBow, onMover, onOther)
+    const reach = mover.size * mover.halfWidth + other.size * other.halfWidth
+    const distance = onMover.distanceTo(onOther)
+    if(distance >= reach) return 0
+    /* exactly on top of each other: push out sideways from the mover's bow */
+    if(distance > 1e-6) out.subVectors(onOther, onMover).divideScalar(distance)
+    else out.set(Math.cos(mover.yaw), - Math.sin(mover.yaw))
+    return reach - distance
+}
+
+/*
+ * Shoves a pushable boat out of the way of a moving one, and the moving one back a little, as if the pushed
+ * boat were lighter. The pushed boat takes up the mover's speed along the push and is spun a little when hit
+ * off-centre, then glides on by itself (see Pushable).
+ *   mover    - { x, z, yaw, size, halfWidth }, moved in place
+ *   velocity - the mover's velocity on the water, THREE.Vector2 (x, z)
+ *   share    - how much of the overlap the pushed boat takes, the mover takes the rest
+ */
+export function shove(mover, velocity, other, share = 0.85) {
+    /* not placed on the water yet, its first frame hasn't run */
+    if(other.placedX === undefined) return false
+    const overlap = hullOverlap(mover, other, normal)
+    if(overlap <= 0) return false
+
+    other.x += normal.x * overlap * share
+    other.z += normal.y * overlap * share
+    mover.x -= normal.x * overlap * (1 - share)
+    mover.z -= normal.y * overlap * (1 - share)
+
+    /* carried along at the mover's speed into it, if that is faster than it was already going that way */
+    const closing = velocity.dot(normal) - (other.vx * normal.x + other.vz * normal.y)
+    if(closing > 0) {
+        other.vx += normal.x * closing
+        other.vz += normal.y * closing
+        /* hit away from its middle it turns: twist of the push about its centre, scaled down for a longer boat */
+        const leverX = onOther.x - other.x
+        const leverZ = onOther.y - other.z
+        other.spin += (leverZ * normal.x - leverX * normal.y) * closing * 3 / (other.size * other.size)
+    }
+    return true
+}

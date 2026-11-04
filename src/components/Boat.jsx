@@ -11,6 +11,7 @@ import { claimFloatShadow, horizonFade, releaseFloatShadow, shadowFrame, waterLe
 import DragFrame from './DragFrame'
 import Drift from './Drift'
 import Steering from './Steering'
+import Pushable from './Pushable'
 
 /*
  * Four boats taken out of 'Origami - Ships and Boats' by Clonk, CC-BY-4.0
@@ -235,8 +236,9 @@ function BoatShadow({ path, boat, geometry, height, yaw, size }) {
  *   shadow  - true to cast a shadow on the water. The ocean can paint a handful at once (maxFloatShadows)
  *   drift   - optional { loop, lead, motion }, passed to Drift so the boat travels with the scene like the titles do
  *   steer   - true to sail it around with the arrow keys (see Steering). Meant for a boat without drift
+ *   pushable - true so the steered boat can shove it around (see Pushable)
  */
-export default function Boat({ path, model, place: placeDefault, heading: headingDefault = 270, size: sizeDefault = 0.6, shadow = false, drift, steer = false }) {
+export default function Boat({ path, model, place: placeDefault, heading: headingDefault = 270, size: sizeDefault = 0.6, shadow = false, drift, steer = false, pushable = false }) {
     const { nodes } = useGLTF(modelPath)
     const [ topFolder, ...subFolders ] = path
     const label = path[path.length - 1]
@@ -324,6 +326,7 @@ export default function Boat({ path, model, place: placeDefault, heading: headin
         <>
             { drift ? <Drift path={path} {...drift}>{ boat }</Drift> : boat }
             { steer && <Steering path={path} mesh={mesh} start={place} yaw={yaw} size={size} height={models[model].height} halfWidth={models[model].halfWidth} /> }
+            { pushable && !steer && <Pushable mesh={mesh} yaw={yaw} size={size} halfWidth={models[model].halfWidth} height={models[model].height} place={place} /> }
             { shadow && <BoatShadow path={path} boat={mesh} geometry={geometry} height={models[model].height} yaw={yaw} size={size} /> }
         </>
     )

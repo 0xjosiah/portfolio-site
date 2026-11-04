@@ -5,7 +5,7 @@ import * as THREE from 'three'
 import { nestFolders } from '../controls'
 import { cameraIntro } from './CameraIntro'
 import { waterLevel } from '../water'
-import { signedDistance, solidOutlines } from '../solids'
+import { keepOutOfSolids, pushables, shove } from '../solids'
 
 const arrowKeys = [ 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight' ]
 
@@ -60,12 +60,7 @@ const onScreen = new THREE.Vector3()
 const ndc = new THREE.Vector2()
 const raycaster = new THREE.Raycaster()
 const water = new THREE.Plane(new THREE.Vector3(0, 1, 0), - waterLevel)
-const hullPoint = new THREE.Vector2()
-const away = new THREE.Vector2()
-const push = new THREE.Vector2()
-
-/* Points along the hull from stern (-1) to bow (1) that are kept out of solids, each with the hull's half-width round it */
-const hullStations = [ -1, -0.5, 0, 0.5, 1 ]
+const velocity = new THREE.Vector2()
 
 /* Where a point in the world is on screen, -1 to 1 each way */
 const toScreen = (point, camera) => onScreen.copy(point).project(camera)
@@ -110,8 +105,8 @@ const screenAxesAt = (camera, x, z) => {
  * right go around it. The boat turns its bow
  * that way and always moves along its bow, so the front leads. Off a side of the screen it comes back on the other
  * side, off the bottom it comes back out at the far edge, and sailing past the far edge brings it in from the bottom.
- * It can't sail through anything marked solid (useSolid, e.g. the site title): it is pushed back out the shortest
- * way, so running into one at an angle slides it along the side.
+ * It can't sail through anything marked solid (useSolid, e.g. the titles): it is pushed back out the shortest
+ * way, so running into one at an angle slides it along the side. Boats marked Pushable are shoved out of its way.
  */
 export default function Steering({ path, mesh, start, yaw: startYaw, size, height, halfWidth }) {
     const held = useArrowKeys()
@@ -129,6 +124,8 @@ export default function Steering({ path, mesh, start, yaw: startYaw, size, heigh
     /* where the boat is and how it is moving, changed every frame so kept out of React */
     const boat = useRef(null)
     if(!boat.current) boat.current = { x: startX, z: startZ, yaw: startYaw, throttle: 0, turning: 0 }
+    /* its hull, for bumping into titles and other boats */
+    Object.assign(boat.current, { size, halfWidth, height })
 
     /* moved or turned from the panel: the boat is put back where it was placed, at rest */
     useEffect(() => {
@@ -188,37 +185,6 @@ export default function Steering({ path, mesh, start, yaw: startYaw, size, heigh
         }
     }
 
-    /*
-     * Pushes the boat back out of any solid it has got into, by sailing or by turning, or by the solid moving onto it.
-     * Only the push straight out of the solid is undone, so the boat keeps any movement along its side.
-     */
-    const keepOut = () => {
-        const outlines = solidOutlines(size * height)
-        if(!outlines.length) return
-
-        const state = boat.current
-        const radius = size * halfWidth
-        const halfLength = size * 0.5
-
-        /* pushing out of one side can push into another (a corner, two solids), a few passes settle it */
-        for(let pass = 0; pass < 3; pass++) {
-            let deepest = 0
-            for(const outline of outlines) {
-                for(const station of hullStations) {
-                    hullPoint.set(state.x + Math.sin(state.yaw) * station * halfLength, state.z + Math.cos(state.yaw) * station * halfLength)
-                    const gap = signedDistance(outline, hullPoint, away) - radius
-                    if(gap < deepest) {
-                        deepest = gap
-                        push.copy(away)
-                    }
-                }
-            }
-            if(deepest >= 0) return
-            state.x -= push.x * deepest
-            state.z -= push.y * deepest
-        }
-    }
-
     useFrame(({ camera }, delta) => {
         if(!mesh.current) return
 
@@ -259,7 +225,11 @@ export default function Steering({ path, mesh, start, yaw: startYaw, size, heigh
         state.z += Math.cos(state.yaw) * speed * dt
 
         if(speed > 0 && !cameraIntro.running) comeRound(camera)
-        keepOut()
+
+        /* shoves any pushable boat it runs into, then is kept out of the titles */
+        velocity.set(Math.sin(state.yaw), Math.cos(state.yaw)).multiplyScalar(speed)
+        for(const other of pushables) shove(state, velocity, other)
+        keepOutOfSolids(state)
 
         mesh.current.position.set(state.x - startX, 0, state.z - startZ)
         mesh.current.rotation.y = state.yaw

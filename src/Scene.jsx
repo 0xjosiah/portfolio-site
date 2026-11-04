@@ -132,14 +132,14 @@ export default function Scene() {
             {/* places here are the fallback, the panel and the preset file decide where each one sits */}
             {/* the one nearest the camera, sailed around with the arrow keys */}
             <Boat path={[ 'Sailboat' ]} model='Sailboat' place={[ -0.3, -3.25 ]} shadow steer />
-            <Boat path={[ boatsFolder, 'Boat left of site title' ]} model='PaperBoat' place={[ -5.8, -3.7 ]} size={0.5} shadow />
+            <Boat path={[ boatsFolder, 'Boat left of site title' ]} model='PaperBoat' place={[ -5.8, -3.7 ]} size={0.5} shadow pushable />
             {/* shares the titles' circuit, so with the same motion switched on in the panel it stays between the two titles as they move */}
-            <Boat path={[ boatsFolder, 'Boat between About and Experience' ]} model='TallSail' place={[ -2.5, -6.6 ]} size={0.5} shadow drift={{ loop: titleLoop }} />
-            <Boat path={[ boatsFolder, 'Boat on the horizon' ]} model='WideSail' place={[ -2.5, -19.2 ]} size={1.4} shadow />
+            <Boat path={[ boatsFolder, 'Boat between About and Experience' ]} model='TallSail' place={[ -2.5, -6.6 ]} size={0.5} shadow pushable drift={{ loop: titleLoop }} />
+            <Boat path={[ boatsFolder, 'Boat on the horizon' ]} model='WideSail' place={[ -2.5, -19.2 ]} size={1.4} shadow pushable />
 
             {/* positions here are the fallback, the panel and the preset file decide where each one starts */}
             <Placed folderName={titlesFolder} name='Site title' position={[ -4.6, -0.8, -3.25 ]} rotation={[ 0, 57.3, 5.16 ]} offset={siteTitleOffset} screen={titleGap} loop={titleLoop}>
-                {/* solid: the sailboat bumps into it rather than sailing through */}
+                {/* solid like the other titles: the sailboat bumps into it rather than sailing through */}
                 <SiteTitle text='0xJosiah' navTo='/' solid />
                 {/* middle of the top of the '0' */}
                 <CrowPerch name='Site title' position={[ 0.185, 0.52, 0.1 ]} />
@@ -149,22 +149,22 @@ export default function Scene() {
                 <LensFrame min={[ 0.092, 0.044 ]} max={[ 0.279, 0.46 ]} z={0.23} />
             </Placed>
             <Placed folderName={titlesFolder} name='Contact sign' position={[ -0.65, -0.45, -1.25 ]} frameSize={[ 0.3, 0.3, 0.3 ]} screen={titleGap} loop={titleLoop}>
-                <Sign text='CONTACT' navTo='/contact' />
+                <Sign text='CONTACT' navTo='/contact' solid />
             </Placed>
 
             {/* each starts a whole number of screens upstream, so its position is where it sits as it passes the middle of the view */}
             <Placed folderName={titlesFolder} name='About title' position={[ -4.6, 1.4, -5.6 ]} loop={titleLoop} lead={1} screen={titleGap}>
-                <SectionTitle text='ABOUT' navTo='/about' />
+                <SectionTitle text='ABOUT' navTo='/about' solid />
                 {/* the bar of the 'T' */}
                 <CrowPerch name='About title' position={[ 1.69, 0.525, 0.1 ]} />
             </Placed>
             <Placed folderName={titlesFolder} name='Experience title' position={[ -7.6, 1.4, -9.8 ]} loop={titleLoop} lead={2} screen={titleGap}>
-                <SectionTitle text='WORK' navTo='/experience' />
+                <SectionTitle text='WORK' navTo='/experience' solid />
                 {/* middle of the top of the 'O' */}
                 <CrowPerch name='Work title' position={[ 0.735, 0.52, 0.1 ]} />
             </Placed>
             <Placed folderName={titlesFolder} name='Projects title' position={[ -5.2, 1.4, -6.4 ]} loop={titleLoop} lead={3} screen={titleGap}>
-                <SectionTitle text='PROJECTS' navTo='/projects' />
+                <SectionTitle text='PROJECTS' navTo='/projects' solid />
             </Placed>
 
             <ScrollControls pages={4} infinite horizontal>
