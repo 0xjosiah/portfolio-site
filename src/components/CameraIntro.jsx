@@ -10,6 +10,9 @@ const look = new Vector3()
 
 const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
 
+/* Whether the opening shot still has hold of the camera, read by anything that should wait for the resting view (the steered boat) */
+export const cameraIntro = { running: true }
+
 /* Skipped for people who have asked their system for less motion */
 const reducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
@@ -35,12 +38,16 @@ export default function CameraIntro({ waiting = false }) {
             start.current = null
             tiltStart.current = null
             done.current = false
+            cameraIntro.running = true
         }),
     }, { collapsed: true })
 
     useFrame(({ camera, clock, controls }) => {
         /* orbit controls (debug only) aim the camera themselves */
-        if(done.current || controls) return
+        if(done.current || controls) {
+            cameraIntro.running = false
+            return
+        }
         const now = clock.elapsedTime
         if(start.current === null) start.current = now
 
@@ -68,6 +75,7 @@ export default function CameraIntro({ waiting = false }) {
             /* land exactly on the resting view, the same aim the rest of the scene uses */
             camera.lookAt(...camTarget)
             done.current = true
+            cameraIntro.running = false
         }
     })
 

@@ -1,14 +1,16 @@
 import wavesShader from '../shaders/ocean/waves.glsl'
 import { useGLTF } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber'
-import { folder, useControls } from 'leva'
+import { useControls } from 'leva'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { compassToDirection } from '../compass'
+import { nestFolders as nest } from '../controls'
 import { useSunPosition } from '../sunset'
 import { claimFloatShadow, horizonFade, releaseFloatShadow, shadowFrame, waterLevel, waveUniforms } from '../water'
 import DragFrame from './DragFrame'
 import Drift from './Drift'
+import Steering from './Steering'
 
 /*
  * Four boats taken out of 'Origami - Ships and Boats' by Clonk, CC-BY-4.0
@@ -40,8 +42,8 @@ const maskSize = 128
 /* How many of the mask's smaller copies the softness slider reaches down through */
 const maxBlur = 5
 
-/* Wraps a set of panel inputs in the folders after the first one in a path, e.g. [ 'Boats', 'Boat on the horizon' ] */
-const nest = (folders, fields) => folders.reduceRight((inner, name) => ({ [name]: folder(inner, { collapsed: true }) }), fields)
+/* How far a turning boat swings, in radians, before its shadow outline is redrawn */
+const redrawTurn = THREE.MathUtils.degToRad(1)
 
 /*
  * Added to the standard material's vertex shader. The boat is moved as one rigid piece: the water height is
@@ -176,10 +178,13 @@ function BoatShadow({ path, boat, geometry, height, yaw, size }) {
      * Redrawn only when the outline the sun sees changes: the boat turns or the sun moves sideways. Not every frame.
      * The camera stands on the sun's side of the boat, level with the water, looking the way the shadow falls.
      */
-    useEffect(() => {
+    const drawnYaw = useRef(yaw)
+
+    const drawMask = (facing) => {
+        drawnYaw.current = facing
         compassToDirection(azimuth, 0, awayFromSun).negate()
 
-        mask.outlined.rotation.y = yaw
+        mask.outlined.rotation.y = facing
         mask.camera.position.copy(awayFromSun).multiplyScalar(-5)
         mask.camera.lookAt(0, 0, 0)
 
@@ -187,7 +192,9 @@ function BoatShadow({ path, boat, geometry, height, yaw, size }) {
         gl.setRenderTarget(mask.target)
         gl.render(mask.stage, mask.camera)
         gl.setRenderTarget(previous)
-    }, [ gl, mask, yaw, azimuth ])
+    }
+
+    useEffect(() => drawMask(boat.current?.rotation.y ?? yaw), [ gl, mask, yaw, azimuth ])
 
     /* the mask's frame is a little larger than the boat, so the shadow's area is scaled up to match and shifted so the hull's base sits at the boat */
     const reach = size * shadowLength * (top - shadowFrame.bottom) / shadowFrame.reference
@@ -204,6 +211,9 @@ function BoatShadow({ path, boat, geometry, height, yaw, size }) {
     /* and where: read from the boat itself every frame, so a boat that drifts or follows the scroll takes its shadow with it */
     useFrame(() => {
         if(!slot || !boat.current) return
+
+        /* a steered boat turns by itself, the outline is redrawn once it has swung round by more than a degree */
+        if(Math.abs(boat.current.rotation.y - drawnYaw.current) > redrawTurn) drawMask(boat.current.rotation.y)
 
         boat.current.updateWorldMatrix(true, false)
         const { elements } = boat.current.matrixWorld
@@ -224,8 +234,9 @@ function BoatShadow({ path, boat, geometry, height, yaw, size }) {
  *   size    - length of the hull in world units
  *   shadow  - true to cast a shadow on the water. The ocean can paint a handful at once (maxFloatShadows)
  *   drift   - optional { loop, lead, motion }, passed to Drift so the boat travels with the scene like the titles do
+ *   steer   - true to sail it around with the arrow keys (see Steering). Meant for a boat without drift
  */
-export default function Boat({ path, model, place: placeDefault, heading: headingDefault = 270, size: sizeDefault = 0.6, shadow = false, drift }) {
+export default function Boat({ path, model, place: placeDefault, heading: headingDefault = 270, size: sizeDefault = 0.6, shadow = false, drift, steer = false }) {
     const { nodes } = useGLTF(modelPath)
     const [ topFolder, ...subFolders ] = path
     const label = path[path.length - 1]
@@ -312,6 +323,7 @@ export default function Boat({ path, model, place: placeDefault, heading: headin
     return (
         <>
             { drift ? <Drift path={path} {...drift}>{ boat }</Drift> : boat }
+            { steer && <Steering path={path} mesh={mesh} start={place} yaw={yaw} size={size} height={models[model].height} /> }
             { shadow && <BoatShadow path={path} boat={mesh} geometry={geometry} height={models[model].height} yaw={yaw} size={size} /> }
         </>
     )

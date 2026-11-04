@@ -130,7 +130,8 @@ export default function Scene() {
             <Ocean />
 
             {/* places here are the fallback, the panel and the preset file decide where each one sits */}
-            <Boat path={[ 'Sailboat' ]} model='Sailboat' place={[ -0.3, -3.25 ]} shadow />
+            {/* the one nearest the camera, sailed around with the arrow keys */}
+            <Boat path={[ 'Sailboat' ]} model='Sailboat' place={[ -0.3, -3.25 ]} shadow steer />
             <Boat path={[ boatsFolder, 'Boat left of site title' ]} model='PaperBoat' place={[ -5.8, -3.7 ]} size={0.5} shadow />
             {/* shares the titles' circuit, so with the same motion switched on in the panel it stays between the two titles as they move */}
             <Boat path={[ boatsFolder, 'Boat between About and Experience' ]} model='TallSail' place={[ -2.5, -6.6 ]} size={0.5} shadow drift={{ loop: titleLoop }} />

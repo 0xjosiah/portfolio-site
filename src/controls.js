@@ -1,9 +1,12 @@
-import { levaStore, useControls } from 'leva'
+import { folder, levaStore, useControls } from 'leva'
 import { useEffect } from 'react'
 /* The preset the site opens with. Point this at another file in presets/ to change it */
 import defaultPreset from '../presets/my-sunset.json'
 import { cloudNamesIn, isCloudSetting, setCloudNames } from './clouds'
 import { forgetStoppedMotion } from './travel'
+
+/* Wraps a set of panel inputs in nested, collapsed folders, e.g. [ 'Boat on the horizon', 'Shadow' ] puts them two levels deep */
+export const nestFolders = (folders, fields) => folders.reduceRight((inner, name) => ({ [name]: folder(inner, { collapsed: true }) }), fields)
 
 /* Leva panel is only shown when the dev server is started with `yarn start` (vite --mode controls) */
 export const controlsEnabled = import.meta.env.MODE === 'controls'
