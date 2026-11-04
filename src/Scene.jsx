@@ -18,6 +18,7 @@ import Crow, { CrowPerch } from './components/Crow'
 import RaySource from './components/RaySource'
 import LensFrame from './components/LensFrame'
 import TravelDriver from './components/TravelDriver'
+import CameraIntro from './components/CameraIntro'
 import { camConfig, camTarget, useSceneViewport } from './camera'
 import { savedValue, useDefaultPreset } from './controls'
 
@@ -26,6 +27,24 @@ const titlesFolder = 'Titles & sign'
 
 /* Panel folder for the boats further out, the one nearest the camera keeps its own 'Sailboat' folder */
 const boatsFolder = 'Boats'
+
+/*
+ * The parts of the scene with no files to load, shown straight away while the rest of it (Scene below) is still
+ * loading. The intro holds the camera looking up into this sky until sceneLoaded, then tilts down onto the sunset.
+ */
+export function Backdrop({ sceneLoaded }) {
+
+    /* after Sky and Stars register their settings, so the sky shows the preset's colours from the start */
+    useDefaultPreset()
+
+    return (
+        <>
+            <Sky />
+            <Stars />
+            <CameraIntro waiting={!sceneLoaded} />
+        </>
+    )
+}
 
 export default function Scene() {
 
@@ -102,8 +121,6 @@ export default function Scene() {
             { orbitCamera && <OrbitControls makeDefault target={camTarget} enableDamping={false} onEnd={syncCameraPosition} /> }
             { showPerf && <Perf position='top-left' /> }
 
-            <Sky />
-            <Stars />
             <SunsetLights />
             <SunsetClouds />
             <Seagulls />

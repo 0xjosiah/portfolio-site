@@ -5,6 +5,8 @@
   /* Colors */
   --bkgd-color: #f5d5d5;
   --bkgd-color-alpha: #f5d5d56b;
+  /* shown while the 3D scene loads: the sky's zenith colour in the default preset (presets/my-sunset.json), so the scene fades in over it */
+  --scene-bkgd: #2b2f6b;
   --accent-color: #430f0f;
   --accent-alpha-light: #430F0F5b;
   --accent-alpha-med: #430F0F7a;
@@ -41,10 +43,20 @@ body,
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--bkgd-color);
+  background: var(--scene-bkgd);
   font-family: var(--ff-main);
 }
 
+
+/* The 3D scene fades in once everything in it has loaded, instead of popping in all at once */
+.scene-canvas {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.scene-canvas.ready {
+  opacity: 1;
+}
 
 /* Light rays over the scene */
 .rays {
