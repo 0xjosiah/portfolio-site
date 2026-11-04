@@ -6,6 +6,7 @@ import { nestFolders } from '../controls'
 import { cameraIntro } from './CameraIntro'
 import { waterLevel } from '../water'
 import { keepOutOfSolids, pushables, shove } from '../solids'
+import Wake from './Wake'
 
 const arrowKeys = [ 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight' ]
 
@@ -107,6 +108,7 @@ const screenAxesAt = (camera, x, z) => {
  * side, off the bottom it comes back out at the far edge, and sailing past the far edge brings it in from the bottom.
  * It can't sail through anything marked solid (useSolid, e.g. the titles): it is pushed back out the shortest
  * way, so running into one at an angle slides it along the side. Boats marked Pushable are shoved out of its way.
+ * It leaves a trail of churned water behind it (see Wake).
  */
 export default function Steering({ path, mesh, start, yaw: startYaw, size, height, halfWidth }) {
     const held = useArrowKeys()
@@ -235,5 +237,5 @@ export default function Steering({ path, mesh, start, yaw: startYaw, size, heigh
         mesh.current.rotation.y = state.yaw
     })
 
-    return null
+    return <Wake path={path} boat={boat} size={size} halfWidth={halfWidth} />
 }
