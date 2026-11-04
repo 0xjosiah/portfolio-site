@@ -1,6 +1,12 @@
-import { Text3D, useCursor, useTexture } from "@react-three/drei"
+import { Text3D, useCursor, useFont, useTexture } from "@react-three/drei"
 import { useRef, useState } from "react"
 import { useNavigate } from "react-router-dom"
+
+/* shared with Sign. Preloaded so they download alongside the models, rather than only once the titles first render */
+const fontPath = './fonts/dosis/Dosis_Regular.json'
+const matcapPath = './textures/matcaps/chrome.png'
+useFont.preload(fontPath)
+useTexture.preload(matcapPath)
 
 export default function SiteTitle({
     /* prop defaults */
@@ -39,11 +45,11 @@ export default function SiteTitle({
         letterSpacing
     }
 
-    const chrome = useTexture('./textures/matcaps/chrome.png')
+    const chrome = useTexture(matcapPath)
 
     return (
         <Text3D
-            font={'./fonts/dosis/Dosis_Regular.json'}
+            font={fontPath}
             position={position}
             rotation={rotation}
             onClick={clickNav}
