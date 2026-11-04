@@ -1,7 +1,7 @@
 import { levaStore, useControls } from 'leva'
 import { useEffect } from 'react'
 /* The preset the site opens with. Point this at another file in presets/ to change it */
-import defaultPreset from '../presets/nice.json'
+import defaultPreset from '../presets/my-sunset.json'
 import { cloudNamesIn, isCloudSetting, setCloudNames } from './clouds'
 import { forgetStoppedMotion } from './travel'
 
