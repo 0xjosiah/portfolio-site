@@ -9,6 +9,7 @@ import SiteTitle from './components/SiteTitle'
 import Sign from './components/Sign'
 import Sky from './components/Sky'
 import Stars from './components/Stars'
+import Aurora from './components/Aurora'
 import SunsetLights from './components/SunsetLights'
 import SunsetClouds from './components/SunsetClouds'
 import Placed from './components/Placed'
@@ -34,13 +35,14 @@ const boatsFolder = 'Boats'
  */
 export function Backdrop({ sceneLoaded }) {
 
-    /* after Sky and Stars register their settings, so the sky shows the preset's colours from the start */
+    /* after Sky, Stars and Aurora register their settings, so the sky shows the preset's colours from the start */
     useDefaultPreset()
 
     return (
         <>
             <Sky />
             <Stars />
+            <Aurora />
             <CameraIntro waiting={!sceneLoaded} />
         </>
     )
