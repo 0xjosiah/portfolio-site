@@ -30,3 +30,7 @@ dist-ssr
 
 # Claude Code worktrees
 .claude/worktrees/
+
+# Agent skills installed locally
+.agents/
+skills-lock.json
