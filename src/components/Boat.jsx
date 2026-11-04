@@ -323,7 +323,7 @@ export default function Boat({ path, model, place: placeDefault, heading: headin
     return (
         <>
             { drift ? <Drift path={path} {...drift}>{ boat }</Drift> : boat }
-            { steer && <Steering path={path} mesh={mesh} start={place} yaw={yaw} size={size} height={models[model].height} /> }
+            { steer && <Steering path={path} mesh={mesh} start={place} yaw={yaw} size={size} height={models[model].height} halfWidth={models[model].halfWidth} /> }
             { shadow && <BoatShadow path={path} boat={mesh} geometry={geometry} height={models[model].height} yaw={yaw} size={size} /> }
         </>
     )

@@ -1,6 +1,7 @@
 import { Text3D, useCursor, useFont, useTexture } from "@react-three/drei"
 import { useRef, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { useSolid } from "../solids"
 
 /* shared with Sign. Preloaded so they download alongside the models, rather than only once the titles first render */
 const fontPath = './fonts/dosis/Dosis_Regular.json'
@@ -23,10 +24,13 @@ export default function SiteTitle({
     bevelOffset=0,
     bevelSegments=4.,
     letterSpacing=0,
-    cursorHover=true
+    cursorHover=true,
+    /* true so the sailed boat can't go through it */
+    solid=false
 }) {
     
     const ref = useRef(null)
+    useSolid(ref, solid)
     const nav = useNavigate()
     const clickNav = () => nav(navTo)
 

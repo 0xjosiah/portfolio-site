@@ -139,7 +139,8 @@ export default function Scene() {
 
             {/* positions here are the fallback, the panel and the preset file decide where each one starts */}
             <Placed folderName={titlesFolder} name='Site title' position={[ -4.6, -0.8, -3.25 ]} rotation={[ 0, 57.3, 5.16 ]} offset={siteTitleOffset} screen={titleGap} loop={titleLoop}>
-                <SiteTitle text='0xJosiah' navTo='/' />
+                {/* solid: the sailboat bumps into it rather than sailing through */}
+                <SiteTitle text='0xJosiah' navTo='/' solid />
                 {/* middle of the top of the '0' */}
                 <CrowPerch name='Site title' position={[ 0.185, 0.52, 0.1 ]} />
                 {/* the dot in the middle of the '0', on its front face */}
